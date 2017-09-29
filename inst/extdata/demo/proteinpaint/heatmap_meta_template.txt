@@ -1,0 +1,8 @@
+sample	term	group	value	color	legendorder
+A1	NA	NA	NA	NA	
+A2	NA	NA	NA	NA	
+A3	NA	NA	NA	NA	
+A4	NA	NA	NA	NA	
+A5	NA	NA	NA	NA	
+A6	NA	NA	NA	NA	
+A7	NA	NA	NA	NA	

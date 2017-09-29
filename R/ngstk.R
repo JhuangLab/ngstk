@@ -13,5 +13,5 @@
 #'
 #' @docType package
 #' @name ngstk
-#' @import stringr configr
+#' @import stringr configr utils
 NULL

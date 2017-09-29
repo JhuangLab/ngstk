@@ -1,0 +1,15 @@
+sample	term	group	value	color	legendorder
+A1	Age	Age	Pediatric	#c20b01	
+A2	Age	Age	Pediatric		
+A3	Age	Age	Pediatric		
+A4	Age	Age	Adult	#196abd	
+A5	Age	Age	Adult		
+A6	Age	Age	Adult		
+A7	Gender	Gender	Female	#c20b01	
+A1	Gender	Gender	Female		
+A2	Gender	Gender	Female		
+A3	Gender	Gender	Female		
+A4	Gender	Gender	Male	#196abd	
+A5	Gender	Gender	Male		
+A6	Gender	Gender	Female		
+A7	Gender	Gender	Male		
