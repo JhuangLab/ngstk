@@ -4,9 +4,7 @@
 \alias{format_pp_meta_fusions}
 \title{To format ProteinPaint input meta data of gender}
 \usage{
-format_pp_meta_fusions(raw_meta, outfn = NULL, fusions_color = c("#0073c3",
-  "#efc000", "#696969", "#ce534c", "#7ba6db", "#035892", "#052135", "#666633",
-  "#660000", "#990000"))
+format_pp_meta_fusions(raw_meta, outfn = NULL, fusions_color = NULL, ...)
 }
 \arguments{
 \item{raw_meta}{A data.frame contain cols of 'sample', 
@@ -14,7 +12,10 @@ format_pp_meta_fusions(raw_meta, outfn = NULL, fusions_color = c("#0073c3",
 
 \item{outfn}{Output file, default is NULL and not output to file}
 
-\item{fusions_color}{Colors of meta row (different value in one group will have different color)}
+\item{fusions_color}{In one group, different fusions show different colors, 
+default is NULL and use the setted theme color}
+
+\item{...}{Parameters pass to \code{\link{set_colors}}}
 }
 \value{
 A data frame

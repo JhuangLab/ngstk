@@ -6,7 +6,7 @@
 \usage{
 format_pp_meta_age(raw_meta, outfn = NULL, age_group = "Age",
   adult_value = "Adult", child_value = "Pediatric",
-  adult_color = "#c20b01", child_color = "#196abd")
+  adult_color = "#c20b01", child_color = "#196abd", ...)
 }
 \arguments{
 \item{raw_meta}{A data.frame contain cols of 'sample', 'term', 
@@ -23,6 +23,8 @@ format_pp_meta_age(raw_meta, outfn = NULL, age_group = "Age",
 \item{adult_color}{Color of adult, default is '#c20b01'}
 
 \item{child_color}{Color of child, default is '#196abd'}
+
+\item{...}{Parameters pass to \code{\link{set_colors}}}
 }
 \value{
 A data frame

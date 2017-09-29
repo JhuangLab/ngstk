@@ -31,6 +31,7 @@ get_pp_samplegroup <- function(samples, group, outfn = NULL) {
 #' @param child_value Value of child, default is 'Pediatric'
 #' @param adult_color Color of adult, default is '#c20b01'
 #' @param child_color Color of child, default is '#196abd'
+#' @param ... Parameters pass to \code{\link{set_colors}}
 #' @return 
 #' A data frame
 #' @export
@@ -46,9 +47,9 @@ get_pp_samplegroup <- function(samples, group, outfn = NULL) {
 #' raw_meta$value <- c(rep(c('Adult', 'Pediatric'), 3),  'Male')
 #' meta_age <- format_pp_meta_age(raw_meta)
 format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_value = "Adult", child_value = "Pediatric", 
-  adult_color = "#c20b01", child_color = "#196abd") {
+  adult_color = "#c20b01", child_color = "#196abd", ...) {
   pp_meta <- format_pp_meta_2_level(raw_meta, outfn, age_group, adult_value, child_value, adult_color, 
-    child_color)
+    child_color, ...)
   return(pp_meta)
 }
 
@@ -62,6 +63,7 @@ format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_
 #' @param female_value Value of female, default is 'Female'
 #' @param male_color Color of male, default is '#c20b01'
 #' @param female_color Color of female, default is '#196abd'
+#' @param ... Parameters pass to \code{\link{set_colors}}
 #' @return 
 #' A data frame
 #' @export
@@ -75,14 +77,21 @@ format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_
 #' raw_meta$value <- c(rep(c('Male', 'Female'), 3), 'Male')
 #' meta_gender <- format_pp_meta_gender(raw_meta)
 format_pp_meta_gender <- function(raw_meta, outfn = NULL, gender_group = "Gender", male_value = "Male", 
-  female_value = "Female", male_color = "#c20b01", female_color = "#196abd") {
+  female_value = "Female", male_color = "#c20b01", female_color = "#196abd", ...) {
   pp_meta <- format_pp_meta_2_level(raw_meta, outfn, gender_group, male_value, female_value, male_color, 
-    female_color)
+    female_color, ...)
   return(pp_meta)
 }
 
 format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", positive_value = "1", negative_value = "0", 
-  positive_color = "#c20b01", negative_color = "#196abd") {
+  positive_color = NULL, negative_color = NULL, ...) {
+  if (is.null(positive_color)) {
+    colors <- set_colors(...)
+  } else {
+    colors <- c(positive_color, negative_color)
+  }
+  positive_color <- colors[1]
+  negative_color <- colors[2]
   pp_meta <- raw_meta
   pp_meta$color <- ""
   pp_meta$value <- str_replace(pp_meta$value, " ", "")
@@ -104,7 +113,9 @@ format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", po
 #' @param raw_meta A data.frame contain cols of 'sample', 
 #' 'term', 'group', 'value', 'color' and 'legendorder'
 #' @param outfn Output file, default is NULL and not output to file
-#' @param fusions_color Colors of meta row (different value in one group will have different color)
+#' @param fusions_color In one group, different fusions show different colors, 
+#' default is NULL and use the setted theme color
+#' @param ... Parameters pass to \code{\link{set_colors}}
 #' 
 #' @return 
 #' A data frame
@@ -130,8 +141,10 @@ format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", po
 #' 'MEF2D-PB', 'ABC-ZNF384', 'MEF2D-PB', 'ABD-ZNF384', 
 #'                        'DUX4-IGH')
 #' meta_fusions <- format_pp_meta_fusions(meta_test_2)
-format_pp_meta_fusions <- function(raw_meta, outfn = NULL, fusions_color = c("#0073c3", "#efc000", "#696969", 
-  "#ce534c", "#7ba6db", "#035892", "#052135", "#666633", "#660000", "#990000")) {
+format_pp_meta_fusions <- function(raw_meta, outfn = NULL, fusions_color = NULL, ...) {
+  if (is.null(fusions_color)) {
+    fusions_color <- set_colors(...)
+  }
   pp_meta <- raw_meta
   pp_meta$color <- ""
   pp_meta$value <- str_replace(pp_meta$value, " ", "")
@@ -151,4 +164,5 @@ format_pp_meta_fusions <- function(raw_meta, outfn = NULL, fusions_color = c("#0
   }
   return(pp_meta)
 }
+
 

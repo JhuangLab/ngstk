@@ -8,3 +8,10 @@ test_that("set_tools", {
   expect_that(length(tools), equals(3))
   expect_that(names(tools)[1], equals("gmap"))
 })
+
+test_that("set_colors", {
+  red_blue <- set_colors("red_blue")
+  expect_that(length(red_blue) > 0, equals(TRUE))
+  default <- set_colors("default")
+  expect_that(length(default) > 0, equals(TRUE))
+})

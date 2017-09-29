@@ -6,7 +6,7 @@
 \usage{
 format_pp_meta_gender(raw_meta, outfn = NULL, gender_group = "Gender",
   male_value = "Male", female_value = "Female", male_color = "#c20b01",
-  female_color = "#196abd")
+  female_color = "#196abd", ...)
 }
 \arguments{
 \item{raw_meta}{A data.frame contain cols of 'sample', 
@@ -23,6 +23,8 @@ format_pp_meta_gender(raw_meta, outfn = NULL, gender_group = "Gender",
 \item{male_color}{Color of male, default is '#c20b01'}
 
 \item{female_color}{Color of female, default is '#196abd'}
+
+\item{...}{Parameters pass to \code{\link{set_colors}}}
 }
 \value{
 A data frame

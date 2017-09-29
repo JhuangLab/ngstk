@@ -39,3 +39,26 @@ set_tools <- function(config.file = "", config.list = list(), config.vec = c(), 
   }
   return(tools)
 }
+
+
+#' Function to get a series defined theme colors
+#' 
+#' @param theme Colors theme, e.g. default, red_blue
+#' @param theme_config_file Theme configuration file, default is 
+#' system.file('extdata', 'config/theme.toml', package = 'ngstk')
+#' @export
+#' @return
+#' A character
+#' @examples 
+#' red_blue <- set_colors('red_blue')
+#' default <- set_colors('default')
+set_colors <- function(theme = NULL, theme_config_file = NULL) {
+  if (is.null(theme_config_file)) {
+    theme_config_file <- system.file("extdata", "config/theme.toml", package = "ngstk")
+  }
+  if (is.null(theme)) {
+    theme <- "default"
+  }
+  colors <- eval.config(value = "colors", config = theme, file = theme_config_file)
+  return(colors)
+}

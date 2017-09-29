@@ -1,0 +1,8 @@
+Title = "ngstk theme configuration file (colors)"
+
+[default]
+colors = ["#0073c3", "#efc000", "#696969",
+          "#ce534c", "#7ba6db", "#035892",
+					"#052135", "#666633", "#660000", "#990000"]
+[red_blue]
+colors = ["#c20b01", "#196abd"]

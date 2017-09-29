@@ -222,3 +222,7 @@ handler_proteinpaint <- function(result, config_input, defined_cols, input_data,
   options(old_op)
   return(result)
 }
+
+handler_proteinpaint_fusions <- function(result, match.method = "any", colors = "") {
+  
+}
