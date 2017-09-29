@@ -4,15 +4,17 @@
 \alias{fusion2pp}
 \title{Function to convert fusion data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.}
 \usage{
-fusion2pp(input_data, format = "fusioncatcher", order = list(gene5 = 1,
-  gene3 = 2))
+fusion2pp(input_data, input_type = "fusioncatcher",
+  config_file = system.file("extdata", "config/proteinpaint.toml", package =
+  "ngstk"))
 }
 \arguments{
 \item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input.}
 
-\item{format}{Point the input data format (annovar or others)}
+\item{input_type}{Point the input data format (fusioncatcher or others)}
 
-\item{order}{Input data cols order (chr, start, end, trascript and aachange)}
+\item{config_file}{ngstk ProteinPaint configuration file path, default is 
+system.file("extdata", "config/proteinpaint.toml", package = "ngstk")}
 }
 \value{
 A data frame

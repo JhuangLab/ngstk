@@ -4,12 +4,16 @@
 \alias{mut2pp}
 \title{Function to convert mutation data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.}
 \usage{
-mut2pp(input_data, input_type = "iseq")
+mut2pp(input_data, input_type = "iseq", config_file = system.file("extdata",
+  "config/proteinpaint.toml", package = "ngstk"))
 }
 \arguments{
 \item{input_data}{A mutation data.frame need to be converted to ProteinPaint input.}
 
 \item{input_type}{Point the input data format (iseq or others)}
+
+\item{config_file}{ngstk ProteinPaint configuration file path, default is 
+system.file("extdata", "config/proteinpaint.toml", package = "ngstk")}
 }
 \value{
 A data frame

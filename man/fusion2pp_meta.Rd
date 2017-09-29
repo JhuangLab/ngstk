@@ -4,15 +4,16 @@
 \alias{fusion2pp_meta}
 \title{Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.}
 \usage{
-fusion2pp_meta(input_data, format = "fusioncatcher", order = list(sample =
-  1, gene5 = 2, gene3 = 3))
+fusion2pp_meta(input_data, input_type = "fusioncatcher",
+  config_file = system.file("extdata", "config/proteinpaint.toml", package =
+  "ngstk"))
 }
 \arguments{
-\item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input (heatmap meta rows).}
+\item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input.}
 
-\item{format}{Point the input data format (annovar or others)}
+\item{input_type}{Point the input data format (fusioncatcher or others)}
 
-\item{order}{Input data cols order (chr, start, end, trascript and aachange)}
+\item{config_file}{ngstk ProteinPaint configuration file path, default is}
 }
 \value{
 A data frame
