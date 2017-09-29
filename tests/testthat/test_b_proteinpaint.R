@@ -1,0 +1,15 @@
+test_that("mut2pp", {
+  demo_file <- system.file("extdata", "demo/mut2pp_iseq.txt", package = "ngstk")
+  input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+  disease <- "T-ALL"
+  input_data <- data.frame(input_data, disease)
+  input_data$disease <- as.character(input_data$disease)
+  result <- mut2pp(input_data, input_type = "iseq")
+  result_colnames <- colnames(result)
+  colnames_len <- length(result_colnames)
+  expect_that(colnames_len, equals(8))
+  expect_that(result_colnames[1], equals("gene"))
+  expect_that(result_colnames[3], equals("chromosome"))
+  expect_that(result_colnames[6], equals("class"))
+  expect_that(result_colnames[8], equals("sample"))
+})

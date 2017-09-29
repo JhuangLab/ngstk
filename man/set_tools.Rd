@@ -23,7 +23,7 @@ List object contain the tools path that can be used by other function in ngstk p
 Function to generate tools path object
 }
 \examples{
-config.file <- system.file("extdata", "demo/config.json", package = "ngstk")
+config.file <- system.file("extdata", "demo/tools_config.json", package = "ngstk")
 config.list <- list(gatk = "/path/gatk")
 config.vec <- c("/path/samtools")
 names(config.vec) <- "samtools"

@@ -5,12 +5,12 @@
 \alias{ngstk}
 \alias{ngstk-package}
 \title{ngstk can be used to facilitate the analysis of NGS data, 
-such as visualization, input data format convertion (for WEB service and others), 
-database id convertion.}
+such as visualization, conversion of input data format (for WEB service and others), 
+conversion of database id}
 \description{
 ngstk can be used to facilitate the analysis of NGS data, 
-such as visualization, input data format convertion (for WEB service and others), 
-database id convertion.
+such as visualization, conversion of input data format (for WEB service and others), 
+conversion of database id
 }
 \seealso{
 Useful links:

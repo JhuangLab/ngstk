@@ -4,15 +4,12 @@
 \alias{mut2pp}
 \title{Function to convert mutation data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.}
 \usage{
-mut2pp(input_data, format = "annovar", order = list(chr = 1, start = 2, end
-  = 3, transcript = 4, aachange = 5))
+mut2pp(input_data, input_type = "iseq")
 }
 \arguments{
 \item{input_data}{A mutation data.frame need to be converted to ProteinPaint input.}
 
-\item{format}{Point the input data format (annovar or others)}
-
-\item{order}{Input data cols order (chr, start, end, trascript and aachange)}
+\item{input_type}{Point the input data format (iseq or others)}
 }
 \value{
 A data frame
@@ -21,5 +18,10 @@ A data frame
 Function to convert mutation data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
 }
 \examples{
-example <- NULL
+demo_file <- system.file("extdata", "demo/mut2pp_iseq.txt", package = "ngstk")
+input_data <- read.table(demo_file, sep = "\\t", header = TRUE, stringsAsFactors = FALSE)
+disease <- "T-ALL"
+input_data <- data.frame(input_data, disease)
+input_data$disease <- as.character(input_data$disease)
+mut2pp(input_data, input_type = "iseq")
 }

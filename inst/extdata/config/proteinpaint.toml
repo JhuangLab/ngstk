@@ -1,0 +1,43 @@
+Title = "Proteinpaint configuration file"
+[mut2pp.meta.defined_cols]
+colnames=["gene", "refseq", "chromosome", "start", "aachange", "class", "disease", "sample"]
+[mut2pp.meta.defined_cols.description]
+gene = "Gene symbol, e.g TP53, PTEN"
+refseq = "Transcript of refSeq or Ensemble, e.g NM_000546, ENST00000635293"
+chromosome = "Chromosome, e.g. chr1, chr2"
+start = "Chromosome start location of a mutation site, e.g. 153249385"
+aachange = "Amino acid level change of gene mutation, e.g. p.R347C, p.L615delinsDL"
+class = "Mutation type, e.g. nonsense, proteinIns, proteinDel, frameshift"
+disease = "Disease name or sample group name, e.g. B-ALL, T-ALL, G1, G2"
+sample = "Sample name"
+
+[mut2pp.format.iseq.gene]
+alias = ["gene", "symbol"]
+
+[mut2pp.format.iseq.refseq]
+alias = ["refseq", "transcription.id"]
+
+[mut2pp.format.iseq.chromosome]
+alias = ["chromosome"]
+
+[mut2pp.format.iseq.start]
+alias = ["start"]
+
+[mut2pp.format.iseq.aachange]
+alias = ["aachange", "amino.acid.change"]
+extract_pattern = "p.*$"
+
+[mut2pp.format.iseq.class]
+alias = ["mutation_type", "mutation.type"]
+raw = ["nonframeshift ins", "nonframeshift del",
+       "frameshift ins", "frameshift del", "stoploss", "nonsense",
+			 "splice"]
+new = ["proteinIns", "proteinDel", "frameshift", "frameshift",
+       "nonsense", "nonsense", "splice"]
+na_replace = "splice"
+
+[mut2pp.format.iseq.disease]
+alias = ["disease"]
+
+[mut2pp.format.iseq.sample]
+alias = ["sample", "patient.id"]

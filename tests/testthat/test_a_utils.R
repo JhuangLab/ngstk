@@ -1,5 +1,5 @@
 test_that("set_tools", {
-  config.file <- system.file("extdata", "demo/config.json", package = "ngstk")
+  config.file <- system.file("extdata", "demo/tools_config.json", package = "ngstk")
   config.list <- list(gatk = "/path/gatk")
   config.vec <- c("/path/samtools")
   names(config.vec) <- "samtools"
