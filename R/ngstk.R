@@ -1,7 +1,6 @@
-#' ngstk can be used to facilitate the analysis of NGS data, 
-#' such as visualization, conversion of input data format (for WEB service and others), 
-#' conversion of database id
-#' 
+#' ngstk can be used to facilitate the analysis of NGS data,
+#' such as visualization, conversion of data format for WEB service input and other purpose.
+#'
 #' @author
 #' Li Jianfeng \url{lee_jianfeng@sjtu.edu.cn}
 #' @seealso
@@ -9,7 +8,7 @@
 #'
 #' \url{https://github.com/Miachol/ngstk}
 #'
-#' Report bugs at \url{https://github.com/Miachol/ngstk/issues} 
+#' Report bugs at \url{https://github.com/Miachol/ngstk/issues}
 #'
 #' @docType package
 #' @name ngstk

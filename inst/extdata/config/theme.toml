@@ -17,3 +17,7 @@ colors = ["#a6d854", "#8dd3c7", "#fb8072", "#80b1d3", "#bebada", "#e5c494", "#fd
 
 [proteinpaint_significance]
 colors = ["#aaaaaa", "#e99002", "#5bc0de", "#f04124", "#90c3d4", "#f04124", "#43ac6a"]
+
+[adobe_color_cc_1]
+colors = ["#FFE350", "#E8740C", "#FF0000", "#9C0CE8", "#0D43FF",
+          "#A6B212", "#1991FF", "#ECFF00", "#CC1E14", "#B25C58"]
