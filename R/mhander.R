@@ -19,8 +19,11 @@ mhander_fusions_left_match <- function(hander_data, config_input,
                                                            left_match = TRUE)) {
   left_gene <- extra_params$left_gene
   gene_5 <- extra_params$gene_5
-  left_match <- extra_params$left_match
-  if (!is.null(left_gene) && !is.null(left_match) && left_match) {
+  flag <- extra_params$left_match
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  if (!is.null(left_gene)) {
     index <- str_detect(hander_data[, gene_5], sprintf("^%s$", left_gene))
     return(hander_data[index, ])
   } else {
@@ -33,8 +36,11 @@ mhander_fusions_right_match <- function(hander_data, config_input,
                                                             right_match = TRUE)) {
   right_gene <- extra_params$right_gene
   gene_3 <- extra_params$gene_3
-  right_match <- extra_params$right_match
-  if (!is.null(right_gene) && !is.null(right_match) && right_match ) {
+  flag <- extra_params$right_match
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  if (!is.null(right_gene)) {
     index <- str_detect(hander_data[, gene_3], sprintf("^%s$", right_gene))
     return(hander_data[index, ])
   } else {
@@ -48,8 +54,11 @@ mhander_fusions_any_match <- function(hander_data, config_input,
   any_gene <- extra_params$any_gene
   gene_5 <- extra_params$gene_5
   gene_3 <- extra_params$gene_3
-  any_match <- extra_params$any_match
-  if (!is.null(any_gene) && !is.null(any_match) && any_match ) {
+  flag <- extra_params$any_match
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  if (!is.null(any_gene)) {
     index_1 <- str_detect(hander_data[, gene_5], sprintf("^%s$", any_gene))
     index_2 <- str_detect(hander_data[, gene_3], sprintf("^%s$", any_gene))
     return(hander_data[index_1 | index_2, ])
@@ -62,10 +71,13 @@ mhander_fusions_full_match <- function(hander_data, config_input, extra_params =
   left_gene = NULL, right_gene = NULL, full_match = TRUE)) {
   left_gene <- extra_params$left_gene
   right_gene <- extra_params$right_gene
-  full_match <- extra_params$full_match
+  flag <- extra_params$full_match
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
   gene_5 <- extra_params$gene_5
   gene_3 <- extra_params$gene_3
-  if (!is.null(left_gene) && !is.null(right_gene) && !is.null(full_match) && full_match) {
+  if (!is.null(left_gene) && !is.null(right_gene)) {
     index_1 <- str_detect(hander_data[, gene_5], sprintf("^%s$", left_gene))
     index_2 <- str_detect(hander_data[, gene_3], sprintf("^%s$", right_gene))
     return(hander_data[index_1 & index_2, ])
@@ -82,8 +94,11 @@ mhander_fusions_anyfull_match <- function(hander_data, config_input,
   right_gene <- extra_params$right_gene
   gene_5 <- extra_params$gene_5
   gene_3 <- extra_params$gene_3
-  anyfull_match <- extra_params$anyfull_match
-  if (!is.null(left_gene) && !is.null(right_gene) && !is.null(anyfull_match) && anyfull_match) {
+  flag <- extra_params$anyfull_match
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  if (!is.null(left_gene) && !is.null(right_gene)) {
     index_1 <- str_detect(hander_data[, gene_5], sprintf("^%s$", left_gene))
     index_2 <- str_detect(hander_data[, gene_3], sprintf("^%s$", right_gene))
     

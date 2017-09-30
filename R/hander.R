@@ -36,19 +36,29 @@ get_valid_col_index <- function(config_input, defined_col, input_data) {
 ### Framework util functions ###
 
 # na.replace
-handler_na_replace <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  na.replace <- get_config_value(config_input, defined_col, "na_replace")
-  if (!is.null(na.replace)) {
+handler_na_replace <- function(hander_data, config_input, defined_col, index, 
+                               extra_params = list(na_replace_flag  = TRUE)) {
+  flag <- extra_params$na_replace_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  na_replace <- get_config_value(config_input, defined_col, "na_replace")
+  if (!is.null(na_replace)) {
     index <- is.na(hander_data[, index])
     if (any(index)) {
-      hander_data[index, index] <- na.replace
+      hander_data[index, index] <- na_replace
     }
   }
   return(hander_data)
 }
 
 # map old value to new value
-handler_value_map <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
+handler_value_map <- function(hander_data, config_input, defined_col, index, 
+                              extra_params = list(value_map_flag  = TRUE)) {
+  flag <- extra_params$value_map_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
   raw_value <- get_config_value(config_input, defined_col, "raw")
   new_value <- get_config_value(config_input, defined_col, "new")
   if (!is.null(raw_value)) {
@@ -60,7 +70,12 @@ handler_value_map <- function(hander_data, config_input, defined_col, index, ext
 }
 
 # use str_extract get value
-handler_extract <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
+handler_extract <- function(hander_data, config_input, defined_col, index, 
+                            extra_params = list(extract_flag  = TRUE)) {
+  flag <- extra_params$extract_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
   # Process extract
   extract_pattern <- get_config_value(config_input, defined_col, "extract_pattern")
   if (!is.null(extract_pattern)) {
@@ -71,19 +86,29 @@ handler_extract <- function(hander_data, config_input, defined_col, index, extra
 
 
 # use str_split get value
-handler_split <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  split_flag <- get_config_value(config_input, defined_col, "split_flag")
+handler_split <- function(hander_data, config_input, defined_col, index, 
+                          extra_params = list(split_flag  = TRUE)) {
+  flag <- extra_params$split_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  split_marker <- get_config_value(config_input, defined_col, "split_marker")
   split_index <- get_config_value(config_input, defined_col, "split_index")
   split_index <- as.numeric(split_index)
-  if (!is.null(split_flag)) {
-    hander_data[, index] <- sapply(str_split(hander_data[, index], split_flag), function(x) return(x[split_index]))
+  if (!is.null(split_marker)) {
+    hander_data[, index] <- sapply(str_split(hander_data[, index], split_marker), function(x) return(x[split_index]))
   }
   return(hander_data)
 }
 
 # add prefix
-handler_prefix <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  prefix_flag <- get_config_value(config_input, defined_col, "prefix_flag")
+handler_prefix <- function(hander_data, config_input, defined_col, index, 
+                           extra_params = list(prefix_flag  = TRUE)) {
+  flag <- extra_params$prefix_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  prefix_flag <- get_config_value(config_input, defined_col, "prefix_marker")
   if (!is.null(prefix_flag)) {
     hander_data[, index] <- unname(sapply(hander_data[, index], function(x) {
       if (!str_detect(x, paste0("^", prefix_flag))) {
@@ -97,12 +122,17 @@ handler_prefix <- function(hander_data, config_input, defined_col, index, extra_
 }
 
 # add postfix
-handler_postfix <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  postfix_flag <- get_config_value(config_input, defined_col, "postfix_flag")
-  if (!is.null(postfix_flag)) {
+handler_postfix <- function(hander_data, config_input, defined_col, index, 
+                            extra_params = list(postfix_flag  = TRUE)) {
+  flag <- extra_params$postfix_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  postfix_marker <- get_config_value(config_input, defined_col, "postfix_marker")
+  if (!is.null(postfix_marker)) {
     hander_data[, index] <- unname(sapply(hander_data[, index], function(x) {
-      if (!str_detect(x, paste0(postfix_flag, "$"))) {
-        return(paste0(postfix_flag, x))
+      if (!str_detect(x, paste0(postfix_marker, "$"))) {
+        return(paste0(postfix_marker, x))
       } else {
         return(x)
       }
@@ -112,18 +142,28 @@ handler_postfix <- function(hander_data, config_input, defined_col, index, extra
 }
 
 # lower
-handler_lower <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  flag <- get_config_value(config_input, defined_col, "lower")
-  if (!is.null(flag)) {
+handler_lower <- function(hander_data, config_input, defined_col, index, 
+                          extra_params = list(lower_flag  = TRUE)) {
+  flag <- extra_params$lower_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  lower <- get_config_value(config_input, defined_col, "lower")
+  if (!is.null(lower)) {
     hander_data[, index] <- tolower(hander_data[, index])
   }
   return(hander_data)
 }
 
 # upper
-handler_upper <- function(hander_data, config_input, defined_col, index, extra_params = NULL) {
-  flag <- get_config_value(config_input, defined_col, "upper")
-  if (!is.null(flag)) {
+handler_upper <- function(hander_data, config_input, defined_col, index, 
+                          extra_params = list(upper_flag  = TRUE)) {
+  flag <- extra_params$upper_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  upper <- get_config_value(config_input, defined_col, "upper")
+  if (!is.null(upper)) {
     hander_data[, index] <- tolower(hander_data[, index])
   }
   return(hander_data)

@@ -90,36 +90,36 @@ alias = ["refseq_b", "Gene_2_id.3end_fusion_partner."]
 
 [fusion2pp.format.fusioncatcher.chr_a]
 alias = ["chr_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "1"
-prefix_flag = "chr"
+prefix_marker = "chr"
 lower = true
 
 [fusion2pp.format.fusioncatcher.chr_b]
 alias = ["chr_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "1"
-prefix_flag = "chr"
+prefix_marker = "chr"
 lower = true
 
 [fusion2pp.format.fusioncatcher.position_a]
 alias = ["position_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "2"
 
 [fusion2pp.format.fusioncatcher.position_b]
 alias = ["position_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "2"
 
 [fusion2pp.format.fusioncatcher.strand_a]
 alias = ["strand_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "3"
 
 [fusion2pp.format.fusioncatcher.strand_b]
 alias = ["strand_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
-split_flag = ":"
+split_marker = ":"
 split_index = "3"
 
 [fusion2pp.format.fusioncatcher.patient]
