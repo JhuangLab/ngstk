@@ -6,7 +6,8 @@ hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
               "handler_value_map", "handler_extract", "handler_split",
               "handler_prefix", "handler_postfix"]
 mhander_funs = ["mhander_fusions_left_match", "mhander_fusions_right_match",
-                "mhander_fusions_any_match", "mhander_fusions_full_match"]
+                "mhander_fusions_any_match", "mhander_fusions_full_match",
+                "mhander_fusions_full_match", "mhander_fusions_anyfull_match"]
 
 [fusions_filter.format.common.gene5]
 alias = ["gene5", "gene_a", "Gene_1_symbol.5end_fusion_partner."]

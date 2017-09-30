@@ -7,4 +7,5 @@ avaliable_handers = ["handler_na_replace", "handler_lower", "handler_upper",
 
 [mhander]
 avaliable_handers = ["mhander_fusions_left_match", "mhander_fusions_right_match",
-                     "mhander_fusions_any_match"]
+                     "mhander_fusions_any_match", "mhander_fusions_full_match", 
+                     "mhander_fusions_anyfull_match"]
