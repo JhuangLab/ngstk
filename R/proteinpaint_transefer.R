@@ -12,6 +12,7 @@
 #' #' default is NULL and get value from config_file
 #' @param hander_extra_params Extra parameters pass to handler
 #' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param outfn Default is NULL and not output the result to file
 #' 
 #' @return
 #' A data frame
@@ -27,7 +28,7 @@
 
 muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
   package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL) {
+  mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "muts2pp"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -44,6 +45,9 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
       hander_extra_params)
   }
   hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
+  if (!is.null(outfn)) {
+    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
+  }
   return(hander_data)
 }
 
@@ -61,6 +65,7 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' #' default is NULL and get value from config_file
 #' @param hander_extra_params Extra parameters pass to handler
 #' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param outfn Default is NULL and not output the result to file
 #' @return
 #' A data frame
 #' @export
@@ -75,7 +80,7 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
 fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
   package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL) {
+  mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions2pp"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -92,6 +97,9 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
       hander_extra_params)
   }
   hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
+  if (!is.null(outfn)) {
+    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
+  }
   return(hander_data)
 }
 
@@ -109,6 +117,7 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' #' default is NULL and get value from config_file
 #' @param hander_extra_params Extra parameters pass to handler
 #' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param outfn Default is NULL and not output the result to file
 #' @return
 #' A data frame
 #' @export
@@ -123,7 +132,7 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
   "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL) {
+  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions2pp_meta"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -140,6 +149,9 @@ fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_fil
       hander_extra_params)
   }
   hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
+  if (!is.null(outfn)) {
+    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
+  }
   return(hander_data)
 }
 

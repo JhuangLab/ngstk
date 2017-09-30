@@ -7,7 +7,7 @@
 fusions_filter(input_data, input_type = "common",
   config_file = system.file("extdata", "config/filter.toml", package =
   "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL,
-  hander_extra_params = NULL, mhander_extra_params = NULL)
+  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A data frame containing the fusions cols (gene5, gene3, fusion_type)}
@@ -30,6 +30,8 @@ default is NULL and get value from config_file}
 
 \item{mhander_extra_params}{Extra parameters pass to mhandler
 system.file('extdata', 'config/filter.toml', package = 'ngstk')}
+
+\item{outfn}{Default is NULL and not output the result to file}
 }
 \value{
 A data frame

@@ -13,6 +13,7 @@
 #' @param hander_extra_params Extra parameters pass to handler
 #' @param mhander_extra_params Extra parameters pass to mhandler
 #' system.file('extdata', 'config/filter.toml', package = 'ngstk')
+#' @param outfn Default is NULL and not output the result to file
 #' @export
 #' @return 
 #' A data frame
@@ -23,7 +24,7 @@
 #' result <- fusions_filter(input_data)
 fusions_filter <- function(input_data, input_type = "common", config_file = system.file("extdata", "config/filter.toml", 
   package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL) {
+  mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions_filter"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -40,6 +41,9 @@ fusions_filter <- function(input_data, input_type = "common", config_file = syst
       hander_extra_params)
   }
   hander_data <- fusions_filter_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
+  if (!is.null(outfn)) {
+    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
+  }
   return(hander_data)
 }
 

@@ -7,7 +7,7 @@
 fusions2pp_meta(input_data, input_type = "fusioncatcher",
   config_file = system.file("extdata", "config/proteinpaint.toml", package =
   "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL,
-  hander_extra_params = NULL, mhander_extra_params = NULL)
+  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input.}
@@ -29,6 +29,8 @@ default is NULL and get value from config_file}
 \item{hander_extra_params}{Extra parameters pass to handler}
 
 \item{mhander_extra_params}{Extra parameters pass to mhandler}
+
+\item{outfn}{Default is NULL and not output the result to file}
 }
 \value{
 A data frame
