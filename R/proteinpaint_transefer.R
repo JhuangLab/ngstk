@@ -4,6 +4,8 @@
 #' @param input_type Point the input data format (iseq or others)
 #' @param config_file ngstk ProteinPaint configuration file path, default is 
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
+#' @param config_list ngstk ProteinPaint configuration, default is NULL and 
+#' read from config_file
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -24,17 +26,18 @@
 #' mut2pp(input_data, input_type = 'iseq')
 
 mut2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL) {
-  config_meta <- eval.config(value = "meta", config = "mut2pp", file = config_file)
-  defined_cols <- config_meta[["defined_cols"]][["colnames"]]
-  if (is.null(hander_funs)) {
-    hander_funs <- config_meta[["defined_cols"]][["hander_funs"]]
-  }
-  if (is.null(mhander_funs)) {
-    mhander_funs <- config_meta[["defined_cols"]][["mhander_funs"]]
-  }
-  config_format <- eval.config(value = "format", config = "mut2pp", file = config_file)
-  config_input <- config_format[[input_type]]
+  package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
+  mhander_extra_params = NULL) {
+  this_section <- "mut2pp"
+  meta_flag <- "meta"
+  format_flag <- "format"
+  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
+    hander_funs, mhander_funs)
+  config_input <- params$config_input
+  defined_cols <- params$defined_cols
+  config_input <- params$config_input
+  hander_funs <- params$hander_funs
+  mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
     hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
@@ -50,6 +53,8 @@ mut2pp <- function(input_data, input_type = "iseq", config_file = system.file("e
 #' @param input_type Point the input data format (fusioncatcher or others)
 #' @param config_file ngstk ProteinPaint configuration file path, default is 
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
+#' @param config_list ngstk ProteinPaint configuration, default is NULL and 
+#' read from config_file
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -69,17 +74,18 @@ mut2pp <- function(input_data, input_type = "iseq", config_file = system.file("e
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusion2pp(input_data, input_type = 'fusioncatcher')
 fusion2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL) {
-  config_meta <- eval.config(value = "meta", config = "fusion2pp", file = config_file)
-  defined_cols <- config_meta[["defined_cols"]][["colnames"]]
-  if (is.null(hander_funs)) {
-    hander_funs <- config_meta[["defined_cols"]][["hander_funs"]]
-  }
-  if (is.null(mhander_funs)) {
-    mhander_funs <- config_meta[["defined_cols"]][["mhander_funs"]]
-  }
-  config_format <- eval.config(value = "format", config = "fusion2pp", file = config_file)
-  config_input <- config_format[[input_type]]
+  package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
+  mhander_extra_params = NULL) {
+  this_section <- "fusion2pp"
+  meta_flag <- "meta"
+  format_flag <- "format"
+  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
+    hander_funs, mhander_funs)
+  config_input <- params$config_input
+  defined_cols <- params$defined_cols
+  config_input <- params$config_input
+  hander_funs <- params$hander_funs
+  mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
     hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
@@ -95,6 +101,8 @@ fusion2pp <- function(input_data, input_type = "fusioncatcher", config_file = sy
 #' @param input_type Point the input data format (fusioncatcher or others)
 #' @param config_file ngstk ProteinPaint configuration file path, default is 
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
+#' @param config_list ngstk ProteinPaint configuration, default is NULL and 
+#' read from config_file
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -114,18 +122,18 @@ fusion2pp <- function(input_data, input_type = "fusioncatcher", config_file = sy
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusion2pp_meta(input_data, input_type = 'fusioncatcher')
 fusion2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL) {
-  config_meta <- eval.config(value = "meta", config = "fusion2pp_meta", file = config_file)
-  defined_cols <- config_meta[["defined_cols"]][["colnames"]]
-  if (is.null(hander_funs)) {
-    hander_funs <- config_meta[["defined_cols"]][["hander_funs"]]
-  }
-  if (is.null(mhander_funs)) {
-    mhander_funs <- config_meta[["defined_cols"]][["mhander_funs"]]
-  }
-  config_format <- eval.config(value = "format", config = "fusion2pp_meta", file = config_file)
-  config_input <- config_format[[input_type]]
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, 
+  hander_extra_params = NULL, mhander_extra_params = NULL) {
+  this_section <- "fusion2pp_meta"
+  meta_flag <- "meta"
+  format_flag <- "format"
+  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
+    hander_funs, mhander_funs)
+  config_input <- params$config_input
+  defined_cols <- params$defined_cols
+  config_input <- params$config_input
+  hander_funs <- params$hander_funs
+  mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
     hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 

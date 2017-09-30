@@ -5,8 +5,8 @@
 \title{Function to convert mutation data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.}
 \usage{
 mut2pp(input_data, input_type = "iseq", config_file = system.file("extdata",
-  "config/proteinpaint.toml", package = "ngstk"), hander_funs = NULL,
-  mhander_funs = NULL, hander_extra_params = NULL,
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL,
+  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL,
   mhander_extra_params = NULL)
 }
 \arguments{
@@ -16,6 +16,9 @@ mut2pp(input_data, input_type = "iseq", config_file = system.file("extdata",
 
 \item{config_file}{ngstk ProteinPaint configuration file path, default is 
 system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')}
+
+\item{config_list}{ngstk ProteinPaint configuration, default is NULL and 
+read from config_file}
 
 \item{hander_funs}{hander function for single colnum, 
 default is NULL and get value from config_file}

@@ -6,7 +6,7 @@
 \usage{
 fusion2pp_meta(input_data, input_type = "fusioncatcher",
   config_file = system.file("extdata", "config/proteinpaint.toml", package =
-  "ngstk"), hander_funs = NULL, mhander_funs = NULL,
+  "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL,
   hander_extra_params = NULL, mhander_extra_params = NULL)
 }
 \arguments{
@@ -16,6 +16,9 @@ fusion2pp_meta(input_data, input_type = "fusioncatcher",
 
 \item{config_file}{ngstk ProteinPaint configuration file path, default is 
 system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')}
+
+\item{config_list}{ngstk ProteinPaint configuration, default is NULL and 
+read from config_file}
 
 \item{hander_funs}{hander function for single colnum, 
 default is NULL and get value from config_file}

@@ -6,7 +6,7 @@
 \usage{
 fusions_filter(input_data, input_type = "common",
   config_file = system.file("extdata", "config/filter.toml", package =
-  "ngstk"), hander_funs = NULL, mhander_funs = NULL,
+  "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL,
   hander_extra_params = NULL, mhander_extra_params = NULL)
 }
 \arguments{
@@ -16,6 +16,9 @@ fusions_filter(input_data, input_type = "common",
 
 \item{config_file}{ngstk filter configuration file path, default is 
 system.file('extdata', 'config/filter.toml', package = 'ngstk')}
+
+\item{config_list}{ngstk filter configuration, default is NULL and 
+read from config_file}
 
 \item{hander_funs}{hander function for single colnum, 
 default is NULL and get value from config_file}
@@ -35,8 +38,8 @@ A data frame
 Fusions hander_data filter that can be used to prepare the input data for downstream analysis
 }
 \examples{
-demo_file <- system.file("extdata", 
-"demo/proteinpaint/fusion2pp_fusioncatcher.txt", package = "ngstk")
-input_data <- read.table(demo_file, sep = "\\t", header = TRUE, stringsAsFactors = FALSE)
+demo_file <- system.file('extdata', 
+'demo/proteinpaint/fusion2pp_fusioncatcher.txt', package = 'ngstk')
+input_data <- read.table(demo_file, sep = '\\t', header = TRUE, stringsAsFactors = FALSE)
 result <- fusions_filter(input_data)
 }

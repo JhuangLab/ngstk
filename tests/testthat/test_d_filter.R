@@ -12,14 +12,10 @@ test_that("fusions_filter", {
   mhander_extra_params = list(gene_5 = 1, left_gene = "GYPA", left_match = TRUE)
   result_3 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
   
-  mhander_extra_params = list(gene_5 = 1, gene_3 = 2, 
-                              left_gene = "GYPE", right_gene = "GYPA", 
-                              full_match = TRUE)
+  mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", full_match = TRUE)
   result_4 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
   
-  mhander_extra_params = list(gene_5 = 1, gene_3 = 2, 
-                              left_gene = "GYPE", right_gene = "GYPA", 
-                              anyfull_match = TRUE)
+  mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", anyfull_match = TRUE)
   result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
   
   expect_that(nrow(result_1), equals(5))

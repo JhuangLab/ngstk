@@ -67,3 +67,27 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 get_config_value <- function(config_input, level_1, level_2) {
   config_input[[level_1]][[level_2]]
 }
+
+
+# initial config_meta_format
+
+initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, format_flag, hander_funs = NULL, 
+  mhander_funs = NULL) {
+  if (is.null(config_list)) {
+    config_meta <- eval.config(value = meta_flag, config = this_section, file = config_file)
+    config_format <- eval.config(value = format_flag, config = this_section, file = config_file)
+  } else {
+    config_meta <- config_list[[this_section]][[meta_flag]]
+    config_format <- config_list[[this_section]][[format_flag]]
+  }
+  defined_cols <- config_meta[["defined_cols"]][["colnames"]]
+  if (is.null(hander_funs)) {
+    hander_funs <- config_meta[["defined_cols"]][["hander_funs"]]
+  }
+  if (is.null(mhander_funs)) {
+    mhander_funs <- config_meta[["defined_cols"]][["mhander_funs"]]
+  }
+  config_input <- config_format[[input_type]]
+  return(list(config_meta = config_meta, config_format = config_format, config_input = config_input, defined_cols = defined_cols, 
+    hander_funs = hander_funs, mhander_funs = mhander_funs))
+}
