@@ -1,10 +1,10 @@
-test_that("mut2pp", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/mut2pp_iseq.txt", package = "ngstk")
+test_that("muts2pp", {
+  demo_file <- system.file("extdata", "demo/proteinpaint/muts2pp_iseq.txt", package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   disease <- "T-ALL"
   input_data <- data.frame(input_data, disease)
   input_data$disease <- as.character(input_data$disease)
-  result <- mut2pp(input_data, input_type = "iseq")
+  result <- muts2pp(input_data, input_type = "iseq")
   result_colnames <- colnames(result)
   colnames_len <- length(result_colnames)
   expect_that(colnames_len, equals(8))
@@ -15,14 +15,14 @@ test_that("mut2pp", {
 })
 
 
-test_that("fusion2pp", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusion2pp_fusioncatcher.txt", package = "ngstk")
+test_that("fusions2pp", {
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   disease <- "B-ALL"
   sampletype <- "diagnose"
   input_data <- data.frame(input_data, disease, sampletype)
   input_data$disease <- as.character(input_data$disease)
-  result <- fusion2pp(input_data, input_type = "fusioncatcher")
+  result <- fusions2pp(input_data, input_type = "fusioncatcher")
   result_colnames <- colnames(result)
   colnames_len <- length(result_colnames)
   expect_that(colnames_len, equals(13))
@@ -38,12 +38,12 @@ test_that("fusion2pp", {
 })
 
 
-test_that("fusion2pp_meta", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusion2pp_fusioncatcher.txt", package = "ngstk")
+test_that("fusions2pp_meta", {
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   disease <- "B-ALL"
   sampletype <- "diagnose"
   input_data <- data.frame(input_data, disease, sampletype)
   input_data$disease <- as.character(input_data$disease)
-  result <- suppressWarnings(fusion2pp_meta(input_data, input_type = "fusioncatcher"))
+  result <- suppressWarnings(fusions2pp_meta(input_data, input_type = "fusioncatcher"))
 })

@@ -3,6 +3,7 @@
                 * R/hander.R, R/mhander.R and R/filter.R be added
                 * inst/extdata/config/filter.toml, hander.toml be added
                 * hander and mhander functions be added
+                * rename mut2pp and fusion2pp
 
 2017-09-29 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 

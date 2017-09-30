@@ -1,6 +1,6 @@
 
 test_that("fusions_filter", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusion2pp_fusioncatcher.txt", package = "ngstk")
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   
   mhander_extra_params = list(gene_5 = 1, gene_3 = 2, any_gene = "TCF3", any_match = TRUE)

@@ -1,12 +1,12 @@
 Title = "Proteinpaint configuration file"
 
-# mut2pp is a function that can convert mutation data to Proteinpaint input format
-[mut2pp.meta.defined_cols]
+# muts2pp is a function that can convert mutation data to Proteinpaint input format
+[muts2pp.meta.defined_cols]
 colnames = ["gene", "refseq", "chromosome", "start", "aachange", "class", "disease", "sample"]
 hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
               "handler_value_map", "handler_extract", "handler_split",
               "handler_prefix", "handler_postfix"]
-[mut2pp.meta.defined_cols.description]
+[muts2pp.meta.defined_cols.description]
 gene = "Gene symbol, e.g TP53, PTEN"
 refseq = "Transcript of refSeq or Ensemble, e.g NM_000546, ENST00000635293"
 chromosome = "Chromosome, e.g. chr1, chr2"
@@ -16,23 +16,23 @@ class = "Mutation type, e.g. nonsense, proteinIns, proteinDel, frameshift"
 disease = "Disease name or sample group name, e.g. B-ALL, T-ALL, G1, G2"
 sample = "Sample name"
 
-[mut2pp.format.iseq.gene]
+[muts2pp.format.iseq.gene]
 alias = ["gene", "symbol"]
 
-[mut2pp.format.iseq.refseq]
+[muts2pp.format.iseq.refseq]
 alias = ["refseq", "transcription.id"]
 
-[mut2pp.format.iseq.chromosome]
+[muts2pp.format.iseq.chromosome]
 alias = ["chromosome"]
 
-[mut2pp.format.iseq.start]
+[muts2pp.format.iseq.start]
 alias = ["start"]
 
-[mut2pp.format.iseq.aachange]
+[muts2pp.format.iseq.aachange]
 alias = ["aachange", "amino.acid.change"]
 extract_pattern = "p[.]+.*$"
 
-[mut2pp.format.iseq.class]
+[muts2pp.format.iseq.class]
 alias = ["mutation_type", "mutation.type"]
 raw = ["nonframeshift ins", "nonframeshift del",
        "frameshift ins", "frameshift del", "stoploss", "nonsense",
@@ -41,13 +41,13 @@ new = ["proteinIns", "proteinDel", "frameshift", "frameshift",
        "nonsense", "nonsense", "splice"]
 na_replace = "splice"
 
-[mut2pp.format.iseq.disease]
+[muts2pp.format.iseq.disease]
 alias = ["disease"]
 
-[mut2pp.format.iseq.sample]
+[muts2pp.format.iseq.sample]
 alias = ["sample", "patient.id", "patient"]
 
-[fusion2pp.meta.defined_cols]
+[fusions2pp.meta.defined_cols]
 colnames = ["disease", "sampletype", "gene_a", "refseq_a",
             "chr_a", "position_a", 	"gene_b",	"refseq_b", "chr_b",
             "position_b",  "strand_a", "strand_b", "patient"]
@@ -55,7 +55,7 @@ hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
                "handler_value_map", "handler_extract", "handler_split",
                "handler_prefix", "handler_postfix"]
 
-[fusion2pp.meta.defined_cols.description]
+[fusions2pp.meta.defined_cols.description]
 disease = "Disease type, e.g. B-ALL, T-ALL, AML"
 sampletype = "Sample group information ,e.g diagnosis, relapse"
 gene_a = "gene on 5' end of a fusion. Do not apply value for intergenic break-end."
@@ -70,68 +70,68 @@ strand_a = "+ or -"
 strand_b = "+ or -"
 patient = "Patient samplename"
 
-[fusion2pp.format.fusioncatcher.disease]
+[fusions2pp.format.fusioncatcher.disease]
 alias = ["disease"]
 
-[fusion2pp.format.fusioncatcher.sampletype]
+[fusions2pp.format.fusioncatcher.sampletype]
 alias = ["sampletype", "sample.type", "sample_type"]
 
-[fusion2pp.format.fusioncatcher.gene_a]
+[fusions2pp.format.fusioncatcher.gene_a]
 alias = ["gene_a", "Gene_1_symbol.5end_fusion_partner."]
 
-[fusion2pp.format.fusioncatcher.gene_b]
+[fusions2pp.format.fusioncatcher.gene_b]
 alias = ["gene_b", "Gene_2_symbol.3end_fusion_partner."]
 
-[fusion2pp.format.fusioncatcher.refseq_a]
+[fusions2pp.format.fusioncatcher.refseq_a]
 alias = ["refseq_a", "Gene_1_id.5end_fusion_partner."]
 
-[fusion2pp.format.fusioncatcher.refseq_b]
+[fusions2pp.format.fusioncatcher.refseq_b]
 alias = ["refseq_b", "Gene_2_id.3end_fusion_partner."]
 
-[fusion2pp.format.fusioncatcher.chr_a]
+[fusions2pp.format.fusioncatcher.chr_a]
 alias = ["chr_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
 split_marker = ":"
 split_index = "1"
 prefix_marker = "chr"
 lower = true
 
-[fusion2pp.format.fusioncatcher.chr_b]
+[fusions2pp.format.fusioncatcher.chr_b]
 alias = ["chr_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
 split_marker = ":"
 split_index = "1"
 prefix_marker = "chr"
 lower = true
 
-[fusion2pp.format.fusioncatcher.position_a]
+[fusions2pp.format.fusioncatcher.position_a]
 alias = ["position_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
 split_marker = ":"
 split_index = "2"
 
-[fusion2pp.format.fusioncatcher.position_b]
+[fusions2pp.format.fusioncatcher.position_b]
 alias = ["position_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
 split_marker = ":"
 split_index = "2"
 
-[fusion2pp.format.fusioncatcher.strand_a]
+[fusions2pp.format.fusioncatcher.strand_a]
 alias = ["strand_a", "Fusion_point_for_gene_1.5end_fusion_partner."]
 split_marker = ":"
 split_index = "3"
 
-[fusion2pp.format.fusioncatcher.strand_b]
+[fusions2pp.format.fusioncatcher.strand_b]
 alias = ["strand_b", "Fusion_point_for_gene_2.3end_fusion_partner."]
 split_marker = ":"
 split_index = "3"
 
-[fusion2pp.format.fusioncatcher.patient]
+[fusions2pp.format.fusioncatcher.patient]
 alias = ["sample", "patient.id", "patient", "SampleName"]
 
 
-[fusion2pp_meta.meta.defined_cols]
+[fusions2pp_meta.meta.defined_cols]
 colnames = ["sample", "term", "group", "value", "color", "legendorder"]
 hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
                "handler_value_map", "handler_extract", "handler_split",
                "handler_prefix", "handler_postfix"]
-[fusion2pp_meta.meta.defined_cols.description]
+[fusions2pp_meta.meta.defined_cols.description]
 sample = "Patient samplename"
 term = "Such as Age, Sex .etc."
 group = "Same with term"
@@ -139,20 +139,20 @@ value = "The defined value"
 color = "Indicating the different value by different color"
 legendorder = "Legend order"
 
-[fusion2pp_meta.format.fusioncatcher.sample]
+[fusions2pp_meta.format.fusioncatcher.sample]
 alias = ["sample", "patient.id", "patient", "SampleName"]
 
-[fusion2pp_meta.format.fusioncatcher.term]
+[fusions2pp_meta.format.fusioncatcher.term]
 alias = ["term"]
 
-[fusion2pp_meta.format.fusioncatcher.group]
+[fusions2pp_meta.format.fusioncatcher.group]
 alias = ["group"]
 
-[fusion2pp_meta.format.fusioncatcher.value]
+[fusions2pp_meta.format.fusioncatcher.value]
 alias = ["value"]
 
-[fusion2pp_meta.format.fusioncatcher.color]
+[fusions2pp_meta.format.fusioncatcher.color]
 alias = ["color"]
 
-[fusion2pp_meta.format.fusioncatcher.legendorder]
+[fusions2pp_meta.format.fusioncatcher.legendorder]
 alias = ["legendorder"]

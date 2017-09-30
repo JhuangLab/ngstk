@@ -18,17 +18,17 @@
 #' @export
 #' @examples
 #' demo_file <- system.file('extdata', 
-#' 'demo/proteinpaint/mut2pp_iseq.txt', package = 'ngstk')
+#' 'demo/proteinpaint/muts2pp_iseq.txt', package = 'ngstk')
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' disease <- 'T-ALL'
 #' input_data <- data.frame(input_data, disease)
 #' input_data$disease <- as.character(input_data$disease)
-#' mut2pp(input_data, input_type = 'iseq')
+#' muts2pp(input_data, input_type = 'iseq')
 
-mut2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
+muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
   package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
   mhander_extra_params = NULL) {
-  this_section <- "mut2pp"
+  this_section <- "muts2pp"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
@@ -66,17 +66,17 @@ mut2pp <- function(input_data, input_type = "iseq", config_file = system.file("e
 #' @export
 #' @examples
 #' demo_file <- system.file('extdata', 
-#' 'demo/proteinpaint/fusion2pp_fusioncatcher.txt', package = 'ngstk')
+#' 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' disease <- 'B-ALL'
 #' sampletype <- 'diagnose'
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
-#' hander_data <- fusion2pp(input_data, input_type = 'fusioncatcher')
-fusion2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
+#' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
+fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
   package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
   mhander_extra_params = NULL) {
-  this_section <- "fusion2pp"
+  this_section <- "fusions2pp"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
@@ -114,17 +114,17 @@ fusion2pp <- function(input_data, input_type = "fusioncatcher", config_file = sy
 #' @export
 #' @examples
 #' demo_file <- system.file('extdata', 
-#' 'demo/proteinpaint/fusion2pp_fusioncatcher.txt', package = 'ngstk')
+#' 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' disease <- 'B-ALL'
 #' sampletype <- 'diagnose'
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
-#' hander_data <- fusion2pp_meta(input_data, input_type = 'fusioncatcher')
-fusion2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
+#' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
+fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
   "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, 
   hander_extra_params = NULL, mhander_extra_params = NULL) {
-  this_section <- "fusion2pp_meta"
+  this_section <- "fusions2pp_meta"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
