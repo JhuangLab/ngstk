@@ -86,14 +86,16 @@ initial_params <- function(config_file, config_list, input_type, this_section, m
     if (is.null(hander_lib)) {
       hander_lib <- "default_handers"
     }
-    hander_funs <- eval.config(value = hander_lib, config = "hander", file = hander_confg_file) 
+    hander_lib_data <- eval.config(value = hander_lib, config = "hander", file = hander_confg_file)
+    hander_funs <- hander_lib_data$hander_funs
   }
   if (is.null(mhander_funs)) {
     mhander_lib <- config_meta[["defined_cols"]][["mhander_lib"]]
     if (is.null(mhander_lib)) {
       mhander_lib <- "default_mhanders"
     }
-    mhander_funs <- eval.config(value = mhander_lib, config = "mhander", file = mhander_confg_file) 
+    mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", file = mhander_confg_file)
+    mhander_funs <- mhander_lib_data$mhander_funs
   }
   config_input <- config_format[[input_type]]
   return(list(config_meta = config_meta, config_format = config_format, config_input = config_input, defined_cols = defined_cols, 

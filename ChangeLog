@@ -6,6 +6,7 @@
                 * rename mut2pp and fusion2pp
                 * inst/extdata/config/hander.toml and mhander.toml be added
                 * hander_confg_file and mhander_confg_file API be added
+                * show_handers and show_mhanders be added
 
 2017-09-29 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 

@@ -31,9 +31,9 @@
 #' muts2pp(input_data, input_type = 'iseq')
 
 muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
-  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL, outfn = NULL) {
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
+  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
+  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "muts2pp"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -88,9 +88,9 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
 fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
-  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL, outfn = NULL) {
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
+  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
+  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions2pp"
   meta_flag <- "meta"
   format_flag <- "format"
@@ -145,9 +145,10 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
-  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
+  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", 
+  package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
+  outfn = NULL) {
   this_section <- "fusions2pp_meta"
   meta_flag <- "meta"
   format_flag <- "format"

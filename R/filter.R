@@ -27,9 +27,9 @@
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' result <- fusions_filter(input_data)
 fusions_filter <- function(input_data, input_type = "common", config_file = system.file("extdata", "config/filter.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
-  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
-  mhander_extra_params = NULL, outfn = NULL) {
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
+  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
+  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions_filter"
   meta_flag <- "meta"
   format_flag <- "format"

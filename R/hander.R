@@ -1,3 +1,71 @@
+#' Function to show all avaliabe handler function
+#' 
+#' @param hander_lib hander lib name
+#' @param show_all_funs Default is TRUE and to show all functions in the hander_lib
+#' @param show_code Default is NULL, select hander you want to see its source code
+#' @param show_description Default is FALSE
+#' @param hander_confg_file ngstk hander configuration file path, default is
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @return 
+#' NULL
+#' @export
+#' @examples 
+#' show_handers(show_description = TRUE)
+#' show_handers(show_description = FALSE, show_all_funs = FALSE, 
+#'             show_code = 'handler_na_replace')
+show_handers <- function(hander_lib = "default_handers", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, 
+  hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk")) {
+  hander_lib_data <- eval.config(value = hander_lib, config = "hander", file = hander_confg_file)
+  if (show_all_funs) {
+    hander_funs <- paste0(hander_lib_data[["hander_funs"]], collapse = ", ")
+    msg <- sprintf("%s were exists in file %s %s.", hander_funs, hander_confg_file, hander_lib)
+    message(paste0("[INFO] ", msg))
+  }
+  if (show_description) {
+    description <- hander_lib_data$description
+    message(description)
+  }
+  if (!is.null(show_code)) {
+    for (i in show_code) {
+      print(eval(parse(text = i)))
+    }
+  }
+}
+
+#' Function to show all avaliabe mhandler function
+#' 
+#' @param mhander_lib hander lib name 
+#' @param show_all_funs Default is TRUE and to show all functions in the hander_lib
+#' @param show_code Default is NULL, select hander you want to see its source code
+#' @param show_description Default is FALSE
+#' @param mhander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @return 
+#' NULL
+#' @export
+#' @examples 
+#' show_mhanders(show_description = TRUE)
+#' show_mhanders(show_description = FALSE, show_all_funs = FALSE, 
+#'              show_code = 'mhander_fusions_anyfull_match')
+show_mhanders <- function(mhander_lib = "default_mhanders", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, 
+  mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk")) {
+  mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", file = mhander_confg_file)
+  if (show_all_funs) {
+    mhander_funs <- paste0(mhander_lib_data[["mhander_funs"]], collapse = ", ")
+    msg <- sprintf("%s were exists in file %s %s.", mhander_funs, mhander_confg_file, mhander_lib)
+    message(paste0("[INFO] ", msg))
+  }
+  if (show_description) {
+    description <- mhander_lib_data$description
+    message(description)
+  }
+  if (!is.null(show_code)) {
+    for (i in show_code) {
+      print(eval(parse(text = i)))
+    }
+  }
+}
+
 # Function that can be uesd to process data
 handler <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, extra_params = NULL) {
   defined_col <- defined_cols[index]
