@@ -5,7 +5,7 @@ ngstk package
 
 # Introduction
 
-The R package [ngstk](https://github.com/Miachol/ngstk) can be used to facilitate the analysis of NGS data, such as visualization, input data format convertion (for WEB service input and other purpose), database id convertion.
+The R package [ngstk](https://github.com/Miachol/ngstk) can be used to facilitate the analysis of NGS data, such as visualization, conversion of input data format for WEB service input and other purpose.
 
 
 # Installation
