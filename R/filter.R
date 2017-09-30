@@ -6,6 +6,10 @@
 #' system.file('extdata', 'config/filter.toml', package = 'ngstk')
 #' @param config_list ngstk filter configuration, default is NULL and 
 #' read from config_file
+#' @param hander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @param mhander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -23,13 +27,14 @@
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' result <- fusions_filter(input_data)
 fusions_filter <- function(input_data, input_type = "common", config_file = system.file("extdata", "config/filter.toml", 
-  package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
+  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
   mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions_filter"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs)
+    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input

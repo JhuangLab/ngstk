@@ -6,6 +6,10 @@
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
+#' @param hander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @param mhander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -27,13 +31,14 @@
 #' muts2pp(input_data, input_type = 'iseq')
 
 muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
+  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
   mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "muts2pp"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs)
+    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
@@ -59,6 +64,10 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
+#' @param hander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @param mhander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -79,13 +88,14 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
 fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
+  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, 
   mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions2pp"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs)
+    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
@@ -111,6 +121,10 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
+#' @param hander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
+#' @param mhander_confg_file ngstk hander configuration file path, default is 
+#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
 #' @param hander_funs hander function for single colnum, 
 #' default is NULL and get value from config_file
 #' @param mhander_funs hander function for mulitple colnums,
@@ -131,13 +145,14 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL, 
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file('extdata', 'config/hander.toml', package = 'ngstk'),
+  mhander_confg_file = system.file('extdata', 'config/mhander.toml', package = 'ngstk'), hander_funs = NULL, mhander_funs = NULL, 
   hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
   this_section <- "fusions2pp_meta"
   meta_flag <- "meta"
   format_flag <- "format"
   params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs)
+    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input

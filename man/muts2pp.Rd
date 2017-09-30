@@ -6,7 +6,10 @@
 \usage{
 muts2pp(input_data, input_type = "iseq",
   config_file = system.file("extdata", "config/proteinpaint.toml", package =
-  "ngstk"), config_list = NULL, hander_funs = NULL, mhander_funs = NULL,
+  "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata",
+  "config/hander.toml", package = "ngstk"),
+  mhander_confg_file = system.file("extdata", "config/mhander.toml", package =
+  "ngstk"), hander_funs = NULL, mhander_funs = NULL,
   hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL)
 }
 \arguments{
@@ -19,6 +22,12 @@ system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')}
 
 \item{config_list}{ngstk ProteinPaint configuration, default is NULL and 
 read from config_file}
+
+\item{hander_confg_file}{ngstk hander configuration file path, default is 
+system.file('extdata', 'config/hander.toml', package = 'ngstk')}
+
+\item{mhander_confg_file}{ngstk hander configuration file path, default is 
+system.file('extdata', 'config/mhander.toml', package = 'ngstk')}
 
 \item{hander_funs}{hander function for single colnum, 
 default is NULL and get value from config_file}
