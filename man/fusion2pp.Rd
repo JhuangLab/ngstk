@@ -6,7 +6,8 @@
 \usage{
 fusion2pp(input_data, input_type = "fusioncatcher",
   config_file = system.file("extdata", "config/proteinpaint.toml", package =
-  "ngstk"))
+  "ngstk"), hander_funs = NULL, mhander_funs = NULL,
+  hander_extra_params = NULL, mhander_extra_params = NULL)
 }
 \arguments{
 \item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input.}
@@ -15,6 +16,16 @@ fusion2pp(input_data, input_type = "fusioncatcher",
 
 \item{config_file}{ngstk ProteinPaint configuration file path, default is 
 system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')}
+
+\item{hander_funs}{hander function for single colnum, 
+default is NULL and get value from config_file}
+
+\item{mhander_funs}{hander function for mulitple colnums,
+#' default is NULL and get value from config_file}
+
+\item{hander_extra_params}{Extra parameters pass to handler}
+
+\item{mhander_extra_params}{Extra parameters pass to mhandler}
 }
 \value{
 A data frame
@@ -30,5 +41,5 @@ disease <- 'B-ALL'
 sampletype <- 'diagnose'
 input_data <- data.frame(input_data, disease, sampletype)
 input_data$disease <- as.character(input_data$disease)
-result <- fusion2pp(input_data, input_type = 'fusioncatcher')
+hander_data <- fusion2pp(input_data, input_type = 'fusioncatcher')
 }

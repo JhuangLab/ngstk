@@ -1,3 +1,9 @@
+2017-09-30 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+                * R/hander.R, R/mhander.R and R/filter.R be added
+                * inst/extdata/config/filter.toml, hander.toml be added
+                * hander and mhander functions be added
+
 2017-09-29 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
                 * age, gender and fusions format of proteinpaint be added in R/proteinpaint_utils.R

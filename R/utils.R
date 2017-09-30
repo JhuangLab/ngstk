@@ -62,3 +62,8 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
   colors <- eval.config(value = "colors", config = theme, file = theme_config_file)
   return(colors)
 }
+
+# Get config value (2 depth)
+get_config_value <- function(config_input, level_1, level_2) {
+  config_input[[level_1]][[level_2]]
+}

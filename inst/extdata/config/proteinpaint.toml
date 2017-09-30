@@ -3,6 +3,9 @@ Title = "Proteinpaint configuration file"
 # mut2pp is a function that can convert mutation data to Proteinpaint input format
 [mut2pp.meta.defined_cols]
 colnames = ["gene", "refseq", "chromosome", "start", "aachange", "class", "disease", "sample"]
+hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
+              "handler_value_map", "handler_extract", "handler_split",
+              "handler_prefix", "handler_postfix"]
 [mut2pp.meta.defined_cols.description]
 gene = "Gene symbol, e.g TP53, PTEN"
 refseq = "Transcript of refSeq or Ensemble, e.g NM_000546, ENST00000635293"
@@ -48,6 +51,9 @@ alias = ["sample", "patient.id", "patient"]
 colnames = ["disease", "sampletype", "gene_a", "refseq_a",
             "chr_a", "position_a", 	"gene_b",	"refseq_b", "chr_b",
             "position_b",  "strand_a", "strand_b", "patient"]
+hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
+               "handler_value_map", "handler_extract", "handler_split",
+               "handler_prefix", "handler_postfix"]
 
 [fusion2pp.meta.defined_cols.description]
 disease = "Disease type, e.g. B-ALL, T-ALL, AML"
@@ -122,7 +128,9 @@ alias = ["sample", "patient.id", "patient", "SampleName"]
 
 [fusion2pp_meta.meta.defined_cols]
 colnames = ["sample", "term", "group", "value", "color", "legendorder"]
-
+hander_funs = ["handler_na_replace", "handler_lower", "handler_upper",
+               "handler_value_map", "handler_extract", "handler_split",
+               "handler_prefix", "handler_postfix"]
 [fusion2pp_meta.meta.defined_cols.description]
 sample = "Patient samplename"
 term = "Such as Age, Sex .etc."
