@@ -34,26 +34,9 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
   package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
   package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
   hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  this_section <- "muts2pp"
-  meta_flag <- "meta"
-  format_flag <- "format"
-  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
-  config_input <- params$config_input
-  defined_cols <- params$defined_cols
-  config_input <- params$config_input
-  hander_funs <- params$hander_funs
-  mhander_funs <- params$mhander_funs
-  hander_data <- NULL
-  for (i in 1:length(defined_cols)) {
-    hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
-      hander_extra_params)
-  }
-  hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
-  if (!is.null(outfn)) {
-    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
-  }
-  return(hander_data)
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
+    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "muts2pp", "default_hander_api", 
+    "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
@@ -91,26 +74,9 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
   package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
   package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
   hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  this_section <- "fusions2pp"
-  meta_flag <- "meta"
-  format_flag <- "format"
-  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
-  config_input <- params$config_input
-  defined_cols <- params$defined_cols
-  config_input <- params$config_input
-  hander_funs <- params$hander_funs
-  mhander_funs <- params$mhander_funs
-  hander_data <- NULL
-  for (i in 1:length(defined_cols)) {
-    hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
-      hander_extra_params)
-  }
-  hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
-  if (!is.null(outfn)) {
-    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
-  }
-  return(hander_data)
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
+    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp", "default_hander_api", 
+    "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.
@@ -149,40 +115,7 @@ fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_fil
   "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", 
   package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
   outfn = NULL) {
-  this_section <- "fusions2pp_meta"
-  meta_flag <- "meta"
-  format_flag <- "format"
-  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
-  config_input <- params$config_input
-  defined_cols <- params$defined_cols
-  config_input <- params$config_input
-  hander_funs <- params$hander_funs
-  mhander_funs <- params$mhander_funs
-  hander_data <- NULL
-  for (i in 1:length(defined_cols)) {
-    hander_data <- proteinpaint_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
-      hander_extra_params)
-  }
-  hander_data <- proteinpaint_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
-  if (!is.null(outfn)) {
-    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
-  }
-  return(hander_data)
-}
-
-
-# main interface for proteinpaint data process
-proteinpaint_handler <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, 
-  extra_params = NULL) {
-  
-  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, hander_funs = hander_funs, 
-    extra_params = extra_params)
-  return(hander_data)
-}
-
-proteinpaint_mhandler <- function(hander_data, config_input, mhander_funs = NULL, extra_params = NULL) {
-  
-  hander_data <- mhandler(hander_data, config_input, mhander_funs, extra_params)
-  return(hander_data)
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
+    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp_meta", 
+    "default_hander_api", "default_mhandler_api")
 }

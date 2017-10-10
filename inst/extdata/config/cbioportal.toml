@@ -1,6 +1,38 @@
 Title = "cBioportal configuration file"
 
-# muts2mutation_mapper is a function that can convert mutation data to Proteinpaint input format
+# muts2mutation_mapper is a function that can convert mutation data to cBioportal MutationMapper input format
+[muts2oncoprinter.meta.defined_cols]
+colnames = ["Sample", "Gene", "Alteration", "Type"]
+hander_lib = "default_handers"
+mhander_lib = "default_mhanders"
+[muts2oncoprinter.meta.defined_cols.description]
+Sample="Sample ID"
+Gene="Gene symbol (or other gene identifier)"
+Alteration="Definition of the alteration event. Mutation event: amino acid change or any other information about the mutation"
+Type="Definition of the alteration type. It has to be one of the following. MISSENSE: a missense mutation, INFRAME: a inframe mutation, TRUNC: a truncation mutation"
+
+[muts2oncoprinter.format.iseq.Sample]
+alias = ["sample", "patient.id", "patient"]
+
+[muts2oncoprinter.format.iseq.Gene]
+alias = ["gene", "symbol"]
+
+[muts2oncoprinter.format.iseq.Alteration]
+alias = ["aachange", "amino.acid.change"]
+extract_pattern = "p[.]+.*$"
+replace_pattern = "p."
+replace_string = ""
+
+[muts2oncoprinter.format.iseq.Type]
+alias = ["mutation_type", "mutation.type"]
+raw = ["missense", "nonframeshift ins", "nonframeshift del",
+       "frameshift ins", "frameshift del", "stoploss", "nonsense",
+			 "splice"]
+new = ["MISSENSE", "INFRAME", "INFRAME", "TRUNC", "TRUNC",
+       "TRUNC", "TRUNC", "TRUNC"]
+na_replace = "TRUNC"
+
+# muts2mutation_mapper is a function that can convert mutation data to cBioportal MutationMapper input format
 [muts2mutation_mapper.meta.defined_cols]
 colnames = ["Hugo_Symbol", "Sample_ID", "Protein_Change", "Mutation_Type",
             "Chromosome", "Start_Position", "End_Position", "Reference_Allele", "Variant_Allele",
