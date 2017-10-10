@@ -1,5 +1,5 @@
 2017-10-10 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * muts2mutation_mapper and muts2oncoprinter be added in R/cbioportal_trasefer.R
+                * muts2mutation_mapper, muts2oncoprinter and fusions2oncoprinter be added in R/cbioportal_trasefer.R
                 * inst/extdata/config/cbioportal.toml be added
                 * reducing redundant code
 

@@ -3,6 +3,7 @@
 export(format_pp_meta_age)
 export(format_pp_meta_fusions)
 export(format_pp_meta_gender)
+export(fusions2oncoprinter)
 export(fusions2pp)
 export(fusions2pp_meta)
 export(fusions_filter)

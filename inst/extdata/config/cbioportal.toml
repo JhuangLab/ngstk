@@ -1,6 +1,6 @@
 Title = "cBioportal configuration file"
 
-# muts2mutation_mapper is a function that can convert mutation data to cBioportal MutationMapper input format
+# muts2mutation_mapper is a function that can convert mutation data to cBioportal Oncoprinter input format
 [muts2oncoprinter.meta.defined_cols]
 colnames = ["Sample", "Gene", "Alteration", "Type"]
 hander_lib = "default_handers"
@@ -103,3 +103,29 @@ alias = ["mutation_status"]
 
 [muts2mutation_mapper.format.iseq.center]
 alias = ["center"]
+
+# fusions2oncoprinter is a function that can convert fusions data to cBioportal Oncoprinter input format
+[fusions2oncoprinter.meta.defined_cols]
+colnames = ["Sample", "Gene_a", "Gene_b", "Alteration", "Type"]
+hander_lib = "default_handers"
+mhander_lib = "default_mhanders"
+[fusions2oncoprinter.meta.defined_cols.description]
+Sample="Sample ID"
+Gene="Gene symbol (or other gene identifier)"
+Alteration="Definition of the alteration event. Mutation event: amino acid change or any other information about the mutation"
+Type="Definition of the alteration type. It has to be one of the following. MISSENSE: a missense mutation, INFRAME: a inframe mutation, TRUNC: a truncation mutation"
+
+[fusions2oncoprinter.format.fusioncatcher.Sample]
+alias = ["sample", "patient.id", "patient", "SampleName"]
+
+[fusions2oncoprinter.format.fusioncatcher.Gene_a]
+alias = ["gene_a", "Gene_1_symbol.5end_fusion_partner."]
+
+[fusions2oncoprinter.format.fusioncatcher.Gene_b]
+alias = ["gene_b", "Gene_2_symbol.3end_fusion_partner."]
+
+[fusions2oncoprinter.format.fusioncatcher.Alteration]
+default_value = "FUSION"
+
+[fusions2oncoprinter.format.fusioncatcher.Type]
+default_value = "FUSION"

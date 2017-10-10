@@ -29,3 +29,17 @@ test_that("muts2oncoprinter", {
   expect_that(result_colnames[3], equals("Alteration"))
   expect_that(result_colnames[4], equals("Type"))
 })
+
+test_that("fusions2oncoprinter", {
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+  input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+  suppressWarnings(result <- fusions2oncoprinter(input_data, input_type = "fusioncatcher"))
+  result_colnames <- colnames(result)
+  colnames_len <- length(result_colnames)
+  expect_that(colnames_len, equals(5))
+  expect_that(result_colnames[1], equals("Sample"))
+  expect_that(result_colnames[2], equals("Gene_a"))
+  expect_that(result_colnames[3], equals("Gene_b"))
+  expect_that(result_colnames[4], equals("Alteration"))
+  expect_that(result_colnames[5], equals("Type"))
+})

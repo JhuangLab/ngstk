@@ -253,3 +253,17 @@ handler_replace <- function(hander_data, config_input, defined_col, index, extra
   }
   return(hander_data)
 }
+
+# default value
+handler_default_value <- function(hander_data, config_input, defined_col, index, extra_params = list(default_value_flag = TRUE)) {
+  flag <- extra_params$default_value_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  default_value <- get_config_value(config_input, defined_col, "default_value")
+  if (!is.null(default_value)) {
+    
+    hander_data[, index] <- default_value
+  }
+  return(hander_data)
+}
