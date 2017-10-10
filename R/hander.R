@@ -95,7 +95,13 @@ handler <- function(hander_data, config_input, defined_cols, input_data, index, 
 # use config alias value to get the candidate colum index
 get_valid_col_index <- function(config_input, defined_col, input_data) {
   valid_cols <- get_config_value(config_input, defined_col, "alias")
+  if (is.null(valid_cols)) {
+    valid_cols <- defined_col
+  } else {
+    valid_cols <- c(valid_cols, defined_col)
+  }
   valid_cols <- tolower(valid_cols)
+  valid_cols <- unique(valid_cols)
   input_data_col_lower <- tolower(colnames(input_data))
   valid_col_index <- which(input_data_col_lower %in% valid_cols)
   return(valid_col_index)
@@ -143,9 +149,12 @@ handler_extract <- function(hander_data, config_input, defined_col, index, extra
   }
   # Process extract
   extract_pattern <- get_config_value(config_input, defined_col, "extract_pattern")
-  if (!is.null(extract_pattern)) {
-    hander_data[, index] <- str_extract(hander_data[, index], extract_pattern)
+  for (i in extract_pattern) {
+    if (!is.null(i)) {
+      hander_data[, index] <- str_extract(hander_data[, index], i)
+    }
   }
+  
   return(hander_data)
 }
 
@@ -225,6 +234,22 @@ handler_upper <- function(hander_data, config_input, defined_col, index, extra_p
   upper <- get_config_value(config_input, defined_col, "upper")
   if (!is.null(upper)) {
     hander_data[, index] <- tolower(hander_data[, index])
+  }
+  return(hander_data)
+}
+
+# str_replace
+handler_replace <- function(hander_data, config_input, defined_col, index, extra_params = list(upper_flag = TRUE)) {
+  flag <- extra_params$upper_flag
+  if (!is.null(flag) && !flag) {
+    return(hander_data)
+  }
+  replace_pattern <- get_config_value(config_input, defined_col, "replace_pattern")
+  replace_string <- get_config_value(config_input, defined_col, "replace_string")
+  for (i in 1:length(replace_pattern)) {
+    if (!is.null(replace_pattern[i])) {
+      hander_data[, index] <- str_replace(hander_data[, index], replace_pattern[i], replace_string[i])
+    }
   }
   return(hander_data)
 }

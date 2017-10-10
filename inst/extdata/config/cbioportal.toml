@@ -1,0 +1,73 @@
+Title = "cBioportal configuration file"
+
+# muts2mutation_mapper is a function that can convert mutation data to Proteinpaint input format
+[muts2mutation_mapper.meta.defined_cols]
+colnames = ["Hugo_Symbol", "Sample_ID", "Protein_Change", "Mutation_Type",
+            "Chromosome", "Start_Position", "End_Position", "Reference_Allele", "Variant_Allele",
+            "Validation_Status", "Mutation_Status", "Center"]
+hander_lib = "default_handers"
+mhander_lib = "default_mhanders"
+[muts2mutation_mapper.meta.defined_cols.description]
+Hugo_Symbol = "HUGO symbol for the gene, TP53"
+Protein_Change = "Amino acid change	V600E"
+Sample_ID = "Tumor sample ID	TCGA-B5-A11E"
+Mutation_Type =	"Translational effect of variant allele	Missense_Mutation, Nonsense_Mutation, etc."
+Chromosome =	"Chromosome number	X, Y, M, 1, 2, etc."
+Start_Position =	"Lowest numeric position of the reported variant on the genomic reference sequence	666"
+End_Position =	"Highest numeric position of the reported variant on the genomic reference sequence	667"
+Reference_Allele =	"The plus strand reference allele at this position	A"
+Variant_Allele =	"Tumor sequencing (discovery) allele	C"
+Validation_Status =	"Second pass results from orthogonal technology	Valid"
+Mutation_Status =	"Mutation status	Somatic, Germline, etc."
+Center =	"Center/Institute reporting the variant	mskcc.org"
+
+[muts2mutation_mapper.format.iseq.Hugo_Symbol]
+alias = ["gene", "symbol"]
+
+[muts2mutation_mapper.format.iseq.Sample_ID]
+alias = ["sample", "patient.id", "patient"]
+
+[muts2mutation_mapper.format.iseq.Protein_Change]
+alias = ["aachange", "amino.acid.change"]
+extract_pattern = "p[.]+.*$"
+replace_pattern = "p."
+replace_string = ""
+
+[muts2mutation_mapper.format.iseq.Mutation_Type]
+alias = ["mutation_type", "mutation.type"]
+raw = ["missense", "nonframeshift ins", "nonframeshift del",
+       "frameshift ins", "frameshift del", "stoploss", "nonsense",
+			 "splice"]
+new = ["Missense_Mutation", "In_Frame_Ins", "In_Frame_Del", "Frame_Shift_Ins", "Frame_Shift_Del",
+       "Nonsense_Mutation", "Nonsense_Mutation", "Splice_Site"]
+na_replace = "Splice_Site"
+
+[muts2mutation_mapper.format.iseq.Chromosome]
+alias = ["chromosome"]
+
+[muts2mutation_mapper.format.iseq.Start_Position]
+alias = ["start"]
+
+[muts2mutation_mapper.format.iseq.End_Position]
+alias = ["end"]
+
+[muts2mutation_mapper.format.iseq.Reference_Allele]
+alias = ["base.change"]
+extract_pattern = ".*>"
+replace_pattern = ">"
+replace_string = ""
+
+[muts2mutation_mapper.format.iseq.Variant_Allele]
+alias = ["base.change"]
+extract_pattern = ">.*"
+replace_pattern = ">"
+replace_string = ""
+
+[muts2mutation_mapper.format.iseq.Validation_Status]
+alias = ["validation_status"]
+
+[muts2mutation_mapper.format.iseq.Mutation_Status]
+alias = ["mutation_status"]
+
+[muts2mutation_mapper.format.iseq.center]
+alias = ["center"]
