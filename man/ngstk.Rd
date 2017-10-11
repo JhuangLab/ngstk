@@ -15,7 +15,7 @@ Useful links:
 
 \url{https://github.com/JhuangLab/ngstk}
 
-Report bugs at \url{https://github.com/Miachol/JhuangLab/issues}
+Report bugs at \url{https://github.com/JhuangLab/issues}
 }
 \author{
 Li Jianfeng \url{lee_jianfeng@sjtu.edu.cn}
