@@ -7,8 +7,8 @@ Description:
     Can be used to facilitate the analysis of NGS data, such as visualization, conversion of data format for WEB service input and other purpose.
 Depends:
     R (>= 3.3.0)
-URL: https://github.com/Miachol/ngstk
-BugReports: https://github.com/Miachol/ngstk/issues
+URL: https://github.com/JhuangLab/ngstk
+BugReports: https://github.com/JhuangLab/ngstk/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -6,9 +6,9 @@
 #' @seealso
 #' Useful links:
 #'
-#' \url{https://github.com/Miachol/ngstk}
+#' \url{https://github.com/JhuangLab/ngstk}
 #'
-#' Report bugs at \url{https://github.com/Miachol/ngstk/issues}
+#' Report bugs at \url{https://github.com/Miachol/JhuangLab/issues}
 #'
 #' @docType package
 #' @name ngstk
