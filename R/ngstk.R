@@ -8,7 +8,7 @@
 #'
 #' \url{https://github.com/JhuangLab/ngstk}
 #'
-#' Report bugs at \url{https://github.com/JhuangLab/issues}
+#' Report bugs at \url{https://github.com/JhuangLab/ngstk/issues}
 #'
 #' @docType package
 #' @name ngstk

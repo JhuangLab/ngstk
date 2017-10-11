@@ -35,17 +35,66 @@ devtools::install_github("JhuangLab/ngstk")
 2. Unzip the file and change directories into the configr directory
 3. Run `R CMD INSTALL pkg`
 
+## Usage
+
+### Data format conversion
+
+```r
+demo_file <- system.file('extdata', 'demo/proteinpaint/muts2pp_iseq.txt', package = 'ngstk')
+input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
+disease <- 'T-ALL'
+input_data <- data.frame(input_data, disease)
+input_data$disease <- as.character(input_data$disease)
+# Convert mutation data to proteinpaint input
+muts2mutation_mapper(input_data, input_type = 'iseq')
+# Convert mutation data to cbioportal oncoprinter input
+muts2oncoprinter(input_data, input_type = 'iseq')
+
+demo_file <- system.file('extdata', 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
+input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
+disease <- 'B-ALL'
+sampletype <- 'diagnose'
+input_data <- data.frame(input_data, disease, sampletype)
+input_data$disease <- as.character(input_data$disease)
+# Convert fusions data to proteinpaint input
+hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
+# Convert fusions data to proteinpaint input (Meta rows)
+hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
+```
+
+### Data filtration
+
+```r
+demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+# Get data subset according the defined rule
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, any_gene = "TCF3", fusions_any_match_flag = TRUE)
+result_1 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+
+mhander_extra_params = list(gene_3 = 2, right_gene = "GYPA", fusions_right_match_flag = TRUE)
+result_2 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+
+mhander_extra_params = list(gene_5 = 1, left_gene = "GYPA", fusions_left_match_flag = TRUE)
+result_3 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", fusions_full_match_flag = TRUE)
+result_4 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", fusions_anyfull_match_flag = TRUE)
+result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+```
+
 ## Tools
 
-Some of scripts or tools for NGS data analysis will be included in ngstk package. A defined markdown document will guide you to use it, such as [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md).
+Some of non-core scripts or tools for NGS data analysis will be included in ngstk package. A defined markdown document will guide you to use it, such as [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md).
 
 ### QualityConfirm
 
-[QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is an small quality control tool for gene panel sequencing data. Usage of QualityConfirm can be found in [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and the [demo](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/demo.R) can help you to use it more easily.
+[QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is a quality control tool for gene panel sequencing data. Usage of QualityConfirm can be found in [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and the [demo](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/demo.R) can help you to use it more easily.
 
 ## Theme
 
-ngstk provide some of defined colors [theme](https://github.com/JhuangLab/ngstk/blob/master/inst/extdata/config/theme.toml), you can directly download it: https://raw.githubusercontent.com/JhuangLab/ngstk/master/inst/extdata/config/theme.toml.
+ngstk provide some of defined colors [theme](https://github.com/JhuangLab/ngstk/blob/master/inst/extdata/config/theme.toml), you can directly [download](https://raw.githubusercontent.com/JhuangLab/ngstk/master/inst/extdata/config/theme.toml) it.
 
 ```toml
 Title = "ngstk theme configuration file (colors)"
@@ -53,7 +102,7 @@ Title = "ngstk theme configuration file (colors)"
 [default]
 colors = ["#0073c3", "#efc000", "#696969",
           "#ce534c", "#7ba6db", "#035892",
-					"#052135", "#666633", "#660000", "#990000"]
+          "#052135", "#666633", "#660000", "#990000"]
 [red_blue]
 colors = ["#c20b01", "#196abd"]
 

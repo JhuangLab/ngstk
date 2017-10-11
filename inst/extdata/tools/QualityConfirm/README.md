@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is an quality control tool for gene panel sequencing data.
+[QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is a quality control tool for gene panel sequencing data.
 
 ## Guide
 
