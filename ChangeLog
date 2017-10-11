@@ -1,3 +1,6 @@
+2017-10-11 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+                * control flag be added in extra_params of hander and mhander
+
 2017-10-10 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
                 * muts2mutation_mapper, muts2oncoprinter and fusions2oncoprinter be added in R/cbioportal_trasefer.R
                 * inst/extdata/config/cbioportal.toml be added

@@ -113,10 +113,11 @@ muts2oncoprinter <- function(input_data, input_type = "iseq", config_file = syst
 #' input_data <- data.frame(input_data, disease)
 #' input_data$disease <- as.character(input_data$disease)
 #' fusions2oncoprinter(input_data, input_type = 'fusioncatcher')
-fusions2oncoprinter <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/cbioportal.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
-  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
-  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
+fusions2oncoprinter <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
+  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
+  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", 
+  package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
+  outfn = NULL) {
   data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
     hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2oncoprinter", 
     "default_hander_api", "default_mhandler_api")
