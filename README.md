@@ -1,4 +1,4 @@
-# [![Build Status](https://travis-ci.org/Miachol/ngstk.svg)](https://travis-ci.org/Miachol/ngstk) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://en.wikipedia.org/wiki/MIT_License) [![CRAN](http://www.r-pkg.org/badges/version/ngstk)](https://cran.r-project.org/package=ngstk) [![Downloads](http://cranlogs.r-pkg.org/badges/ngstk?color=brightgreen)](http://www.r-pkg.org/pkg/ngstk) [![codecov](https://codecov.io/github/Miachol/ngstk/branch/master/graphs/badge.svg)](https://codecov.io/github/Miachol/ngstk)
+# [![Build Status](https://travis-ci.org/JhuangLab/ngstk.svg)](https://travis-ci.org/JhuangLab/ngstk) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://en.wikipedia.org/wiki/MIT_License) [![codecov](https://codecov.io/github/JhuangLab/ngstk/branch/master/graphs/badge.svg)](https://codecov.io/github/JhuangLab/ngstk)
 
 ngstk package
 ==============
