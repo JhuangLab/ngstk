@@ -1,0 +1,379 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> 
+
+<svg width="1600" height="1200" version="1.1" 
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<defs>
+<g id="sample_name_list">
+<text x="0" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,0,5)">C064</text>
+<text x="14" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,14,5)">C068</text>
+<text x="28" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,28,5)">C176</text>
+<text x="42" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,42,5)">S144</text>
+<text x="56" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,56,5)">C093</text>
+<text x="70" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,70,5)">C121</text>
+<text x="84" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,84,5)">C143</text>
+<text x="98" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,98,5)">J44</text>
+<text x="112" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,112,5)">C187</text>
+<text x="126" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,126,5)">C084</text>
+<text x="140" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,140,5)">SJHM013480</text>
+<text x="154" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,154,5)">C085</text>
+<text x="168" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,168,5)">C111</text>
+<text x="182" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,182,5)">SJBALL015422</text>
+<text x="196" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,196,5)">C091</text>
+<text x="210" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,210,5)">SJBALL015479</text>
+<text x="224" y="5" style="text-anchor: start;font-size: 12pt; font-family:Arial;" transform="rotate(90,224,5)">C138</text>
+</g>
+<g id="group_1">
+<rect x="0" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="0" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="0" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="12.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,12.8)">Age</text>
+<line x1="0" y1="8" x2="-3" y2="8" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="16" width="14" height="16" style="fill:#196ABD; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="16" width="14" height="16" style="fill:#C20B01; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="28.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,28.8)">Gender</text>
+<line x1="0" y1="24" x2="-3" y2="24" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="32" width="14" height="16" style="fill:#696969; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="32" width="14" height="16" style="fill:#696969; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="32" width="14" height="16" style="fill:#696969; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="32" width="14" height="16" style="fill:#696969; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="32" width="14" height="16" style="fill:#696969; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="44.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,44.8)">Fusion</text>
+<line x1="0" y1="40" x2="-3" y2="40" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="48" width="14" height="16" style="fill:#1B9E77; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="48" width="14" height="16" style="fill:#D95F02; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="48" width="14" height="16" style="fill:#7570B3; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="48" width="14" height="16" style="fill:#E7298A; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="48" width="14" height="16" style="fill:#66A61E; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="48" width="14" height="16" style="fill:#E6AB02; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="48" width="14" height="16" style="fill:#A6761D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="48" width="14" height="16" style="fill:#A6CEE3; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="48" width="14" height="16" style="fill:#1F78B4; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="48" width="14" height="16" style="fill:#B2DF8A; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="48" width="14" height="16" style="fill:#33A02C; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="60.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,60.8)">other_fusion</text>
+<line x1="0" y1="56" x2="-3" y2="56" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_1_outline">
+<rect x="0" y="0" width="238" height="64" style="fill:none; stroke: #000000; stroke-width:1; opacity:1.0"/>
+<line x1="98" y1="0" x2="98" y2="64" style="stroke:#000000; stroke-width:1"/>
+<line x1="210" y1="0" x2="210" y2="64" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_1_leg">
+<text x="0" y="0" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,0)">Age</text>
+<rect x="0" y="8" width="11.2" height="11.2" style="fill:#196ABD; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,16)">Adult</text>
+<rect x="50" y="8" width="11.2" height="11.2" style="fill:#C20B01; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,16)">Child</text>
+<text x="0" y="40" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,40)">Gender</text>
+<rect x="0" y="48" width="11.2" height="11.2" style="fill:#196ABD; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,56)">Female</text>
+<rect x="50" y="48" width="11.2" height="11.2" style="fill:#C20B01; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,56)">Male</text>
+<text x="0" y="80" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,80)">Fusion</text>
+<rect x="0" y="88" width="11.2" height="11.2" style="fill:#696969; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="96" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,96)">ETV6-RUNX1</text>
+<text x="0" y="120" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,120)">other_fusion</text>
+<rect x="0" y="128" width="11.2" height="11.2" style="fill:#1B9E77; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,136)">ETV6-PMEL</text>
+<rect x="50" y="128" width="11.2" height="11.2" style="fill:#D95F02; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,136)">ETV6-BORCS5</text>
+<rect x="100" y="128" width="11.2" height="11.2" style="fill:#7570B3; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="116" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,116,136)">ETV6-NID1</text>
+<rect x="150" y="128" width="11.2" height="11.2" style="fill:#E7298A; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="166" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,166,136)">ERG-FUS</text>
+<rect x="200" y="128" width="11.2" height="11.2" style="fill:#66A61E; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="216" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,216,136)">RUNX1-UGGT2</text>
+<rect x="250" y="128" width="11.2" height="11.2" style="fill:#E6AB02; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="266" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,266,136)">ZZZ3-AK5</text>
+<rect x="300" y="128" width="11.2" height="11.2" style="fill:#A6761D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="316" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,316,136)">IKZF1-SETD5</text>
+<rect x="350" y="128" width="11.2" height="11.2" style="fill:#A6CEE3; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="366" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,366,136)">RUNX1-DYRK1A</text>
+<rect x="400" y="128" width="11.2" height="11.2" style="fill:#1F78B4; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="416" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,416,136)">RUNX1-PRDM7</text>
+<rect x="450" y="128" width="11.2" height="11.2" style="fill:#B2DF8A; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="466" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,466,136)">PRKCB-NUFIP2</text>
+<rect x="500" y="128" width="11.2" height="11.2" style="fill:#33A02C; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="516" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,516,136)">ARL11-RNASEH2B</text>
+</g>
+<g id="group_2">
+<rect x="0" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="0" width="14" height="16" style="fill:#FF7F0E; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="0" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="12.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,12.8)">KRAS</text>
+<line x1="0" y1="8" x2="-3" y2="8" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="16" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="28.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,28.8)">P53</text>
+<line x1="0" y1="24" x2="-3" y2="24" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="32" width="14" height="8" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="0" y="40" width="14" height="8" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="0" y="32" width="14" height="16" style="fill:none; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="32" width="14" height="5.33333333333333" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="70" y="37.3333333333333" width="14" height="10.6666666666667" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="70" y="32" width="14" height="16" style="fill:none; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="32" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="32" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="44.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,44.8)">NRAS</text>
+<line x1="0" y1="40" x2="-3" y2="40" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_2_outline">
+<rect x="0" y="0" width="238" height="48" style="fill:none; stroke: #000000; stroke-width:1; opacity:1.0"/>
+<line x1="98" y1="0" x2="98" y2="48" style="stroke:#000000; stroke-width:1"/>
+<line x1="210" y1="0" x2="210" y2="48" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_2_leg">
+<text x="0" y="0" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,0)">KRAS</text>
+<rect x="0" y="8" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,16)">missense</text>
+<rect x="50" y="8" width="11.2" height="11.2" style="fill:#FF7F0E; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,16)">nonsense</text>
+<rect x="100" y="8" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="116" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,116,16)">frameshift</text>
+<text x="0" y="40" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,40)">P53</text>
+<rect x="0" y="48" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,56)">frameshift</text>
+<rect x="50" y="48" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,56)">missense</text>
+<text x="0" y="80" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,80)">NRAS</text>
+<rect x="0" y="88" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="96" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,96)">missense</text>
+<rect x="50" y="88" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="96" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,96)">frameshift</text>
+</g>
+<g id="group_3">
+<rect x="0" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="0" width="14" height="16" style="fill:#FF7F0E; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="0" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="0" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="0" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="12.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,12.8)">KRAS-2</text>
+<line x1="0" y1="8" x2="-3" y2="8" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="16" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="16" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="16" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="28.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,28.8)">P53-1</text>
+<line x1="0" y1="24" x2="-3" y2="24" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="32" width="14" height="16" style="fill:#00FFFF; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="32" width="14" height="16" style="fill:#00FFFF; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="32" width="14" height="16" style="fill:#00FFFF; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="32" width="14" height="16" style="fill:#00FFFF; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="32" width="14" height="16" style="fill:#00FFFF; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="32" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="44.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,44.8)">theme-1</text>
+<line x1="0" y1="40" x2="-3" y2="40" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="48" width="14" height="16" style="fill:#CCCC33; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="48" width="14" height="16" style="fill:#CCCC33; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="48" width="14" height="16" style="fill:#CCCC33; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="48" width="14" height="16" style="fill:#CCCC33; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="48" width="14" height="16" style="fill:#CCCC33; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="48" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="60.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,60.8)">theme-2</text>
+<line x1="0" y1="56" x2="-3" y2="56" style="stroke:#000000; stroke-width:1"/>
+<rect x="0" y="64" width="14" height="8" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="0" y="72" width="14" height="8" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="0" y="64" width="14" height="16" style="fill:none; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="14" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="28" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="42" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="56" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="70" y="64" width="14" height="5.33333333333333" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="70" y="69.3333333333333" width="14" height="10.6666666666667" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<rect x="70" y="64" width="14" height="16" style="fill:none; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="84" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="98" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="112" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="126" y="64" width="14" height="16" style="fill:#DB3D3D; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="140" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="154" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="168" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="182" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="196" y="64" width="14" height="16" style="fill:#3987CC; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="210" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<rect x="224" y="64" width="14" height="16" style="fill:#EEEEEE; stroke: #FFFFFF; stroke-width:0.5; opacity:1.0"/>
+<text x="-4" y="76.8" style="text-anchor: end;font-size: 12pt; font-family:Arial;" transform="rotate(0,-4,76.8)">NRAS</text>
+<line x1="0" y1="72" x2="-3" y2="72" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_3_outline">
+<rect x="0" y="0" width="238" height="80" style="fill:none; stroke: #000000; stroke-width:1; opacity:1.0"/>
+<line x1="98" y1="0" x2="98" y2="80" style="stroke:#000000; stroke-width:1"/>
+<line x1="210" y1="0" x2="210" y2="80" style="stroke:#000000; stroke-width:1"/>
+</g>
+<g id="group_3_leg">
+<text x="0" y="0" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,0)">KRAS-2</text>
+<rect x="0" y="8" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,16)">missense</text>
+<rect x="50" y="8" width="11.2" height="11.2" style="fill:#FF7F0E; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,16)">nonsense</text>
+<rect x="100" y="8" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="116" y="16" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,116,16)">frameshift</text>
+<text x="0" y="40" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,40)">P53-1</text>
+<rect x="0" y="48" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,56)">frameshift</text>
+<rect x="50" y="48" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="56" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,56)">missense</text>
+<text x="0" y="80" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,80)">theme-1</text>
+<rect x="0" y="88" width="11.2" height="11.2" style="fill:#00FFFF; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="96" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,96)">ETV6-RUNX1</text>
+<text x="0" y="120" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,120)">theme-2</text>
+<rect x="0" y="128" width="11.2" height="11.2" style="fill:#CCCC33; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="136" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,136)">ETV6-RUNX1</text>
+<text x="0" y="160" style="text-anchor: start;font-size: 6pt; font-family:Arial;" transform="rotate(0,0,160)">NRAS</text>
+<rect x="0" y="168" width="11.2" height="11.2" style="fill:#3987CC; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="16" y="176" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,16,176)">missense</text>
+<rect x="50" y="168" width="11.2" height="11.2" style="fill:#DB3D3D; stroke: none; stroke-width:0; opacity:1.0"/>
+<text x="66" y="176" style="text-anchor: start;font-size: 4pt; font-family:Arial;" transform="rotate(0,66,176)">frameshift</text>
+</g>
+</defs>
+<use xlink:href="#sample_name_list" x="100" y="254" />
+<use xlink:href="#group_1" x="100" y="50" />
+<use xlink:href="#group_1_outline" x="100" y="50" />
+<use xlink:href="#group_1_leg" x="100" y="352" />
+<use xlink:href="#group_2" x="100" y="120" />
+<use xlink:href="#group_2_outline" x="100" y="120" />
+<use xlink:href="#group_2_leg" x="100" y="512" />
+<use xlink:href="#group_3" x="100" y="174" />
+<use xlink:href="#group_3_outline" x="100" y="174" />
+<use xlink:href="#group_3_leg" x="100" y="632" />
+
+</svg>

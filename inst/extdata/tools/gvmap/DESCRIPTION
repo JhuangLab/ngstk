@@ -1,0 +1,12 @@
+Package: gvmap
+Type: Package
+Title: GVmap (Title Case)
+Version: 0.1.0
+Author: Dai Yuting
+Maintainer: Dai Yuting <forlynna@sjtu.edu.cn>
+Description: GVmap is a veruseful R package
+License: MIT
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Packaged: 2017-10-13 06:30:44 UTC; daiyuting

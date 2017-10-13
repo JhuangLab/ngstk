@@ -1,0 +1,48 @@
+map_config:
+  sample_col_num: 1
+  group_num: 2
+  group_1:
+    - ["Age", "binary_col", 2]
+    - ["Gender","binary_col", 3]
+    - ["Fusion", "tag_col", 4]
+    - ["other_fusion", "pool_col", 5]
+  group_2:
+    - ["KRAS", "mutation_col", 6]
+    - ["P53", "mutation_col", 7]
+    - ["NRAS", "mutation_col", 8]
+  split_sample: 
+    - "C143"
+    - "C091"
+
+color_config:
+  bg_col: "#EEEEEE"
+  tag_col: "#696969"
+  binary_col: ["#196ABD", "#C20B01"]
+  white_col: "#FFFFFF"
+  black_col: "#000000"
+  mutation_col:
+    missense: "#3987CC"
+    frameshift: "#DB3D3D"
+    nonsense: "#FF7F0E"
+    protein_del: "#7F7F7F"
+    protein_ins: "#8C564B"
+    one_hit: "#819981"
+    tow_hit: "#499E49"
+    three_hit: "#237023"
+    pool_col: ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D", "#A6CEE3", "#1F78B4", "#B2DF8A", "#33A02C", "#FB9A99", "#E31A1C", "#FDBF6F", "#FF7F00", "#CAB2D6", "#6A3D9A"]
+
+rect_config:
+  plot_width: 1600
+  plot_height: 800
+  width: 2
+  height: 8
+  stroke_width: 0.5
+  span: 10
+  frame: True
+  leg_font_size: 5
+  sample_font_size: 2
+  font_family: "Arial"
+
+
+
+

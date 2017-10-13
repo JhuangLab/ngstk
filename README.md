@@ -92,6 +92,10 @@ Some of non-core scripts or tools for NGS data analysis will be included in ngst
 
 [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is a quality control tool for gene panel sequencing data. Usage of QualityConfirm can be found in [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and the [demo](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/demo.R) can help you to use it more easily.
 
+### gvmap
+
+[gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/) is an R package to draw mutations and fusions heatmap. It relies on *configr*, *rsvg* R package.
+
 ## Theme
 
 ngstk provide some of defined colors [theme](https://github.com/JhuangLab/ngstk/blob/master/inst/extdata/config/theme.toml), you can directly [download](https://raw.githubusercontent.com/JhuangLab/ngstk/master/inst/extdata/config/theme.toml) it.

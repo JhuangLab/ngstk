@@ -1,0 +1,2 @@
+import("configr")
+export("gvmap")
