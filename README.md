@@ -98,7 +98,7 @@ Some of non-core scripts or tools for NGS data analysis will be included in ngst
 
 [gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/) is an R package to draw mutations and fusions heatmap. It relies on *configr*, *rsvg* R package.
 
-![](https://raw.githubusercontent.com/JhuangLab/ngstk/master/inst/extdata/tools/gvmap/inst/extdata/test_data/gvmap.output.svg)
+![](https://github.com/Miachol/ftp/raw/master/files/images/gvmap_fig1.png)
 
 ## Theme
 
