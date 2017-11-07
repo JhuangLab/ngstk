@@ -55,5 +55,5 @@ disease <- 'B-ALL'
 sampletype <- 'diagnose'
 input_data <- data.frame(input_data, disease, sampletype)
 input_data$disease <- as.character(input_data$disease)
-hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
+#hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 }

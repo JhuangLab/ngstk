@@ -107,7 +107,7 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' sampletype <- 'diagnose'
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
-#' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
+#' #hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
   package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk"), 
   mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 

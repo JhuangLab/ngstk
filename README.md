@@ -40,15 +40,17 @@ devtools::install_github("JhuangLab/ngstk")
 ### Data format conversion
 
 ```r
-demo_file <- system.file('extdata', 'demo/proteinpaint/muts2pp_iseq.txt', package = 'ngstk')
-input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
-disease <- 'T-ALL'
+demo_file <- system.file("extdata", "demo/proteinpaint/muts2pp_iseq.txt", package = "ngstk")
+input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+disease <- "T-ALL"
 input_data <- data.frame(input_data, disease)
 input_data$disease <- as.character(input_data$disease)
-# Convert mutation data to proteinpaint input
-muts2mutation_mapper(input_data, input_type = 'iseq')
-# Convert mutation data to cbioportal oncoprinter input
-muts2oncoprinter(input_data, input_type = 'iseq')
+
+# Convert mutations data to proteinpaint input
+result <- muts2pp(input_data, input_type = "iseq")
+# Convert mutations data to cbioportal input
+result <- muts2mutation_mapper(input_data, input_type = "iseq")
+result <- muts2oncoprinter(input_data, input_type = "iseq")
 
 demo_file <- system.file('extdata', 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
 input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
@@ -96,7 +98,7 @@ Some of non-core scripts or tools for NGS data analysis will be included in ngst
 
 ### gvmap
 
-[gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/) is an R package to draw mutations and fusions heatmap. It relies on *configr*, *rsvg* R package.
+[gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/) is an R package to draw mutations and fusions heatmap. It relies on *configr*, *rsvg* R package. This package is an external tool that will be develop independently by [ytdai](https://github.com/ytdai/gvmap).
 
 ![](https://github.com/Miachol/ftp/raw/master/files/images/gvmap_fig1.png)
 

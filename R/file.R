@@ -18,15 +18,15 @@
 #' @examples 
 #' a <- data.frame(col1=1:6, col2=2:7)
 #' b <- data.frame(col1=6:11, col2=1:6)
-#' file_a <- paste0(tempfile(), '.a')
-#' file_b <- paste0(tempfile(), '.a')
+#' file_a <- paste0(tempfile(), '_abcd')
+#' file_b <- paste0(tempfile(), '_abcd')
 #' write.table(a, file_a, sep = '\t', row.names = FALSE)
 #' write.table(b, file_b, sep = '\t', row.names = FALSE)
 #' input_files <- c(file_a, file_b)
 #' x1 <- merge_table_files(input_files = input_files)
-#' x2 <- merge_table_files(files_dir = tempdir(), pattern = '.*.a$')
+#' x2 <- merge_table_files(files_dir = tempdir(), pattern = '.*_abcd$')
 #' outfn = tempfile()
-#  x3 <- merge_table_files(files_dir = tempdir(), pattern = ".*.a$", outfn = outfn)
+#  x3 <- merge_table_files(files_dir = tempdir(), pattern = ".*_abcd$", outfn = outfn)
 merge_table_files <- function(input_files = NULL, files_dir = NULL, pattern = ".*.txt", outfn = NULL, add.filename = TRUE, 
   read_fun = "read.table", read_params_file = "file", read_params = list(sep = "\t", header = TRUE), write_fun = "write.table", 
   write_params_x = "x", write_params_file = "file", write_params = list(sep = "\t", row.names = FALSE), 

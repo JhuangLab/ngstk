@@ -1,0 +1,155 @@
+---
+title: "Introduction to ngstk"
+author: "Jianfeng Li"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to ngstk}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(comment = "#>", collapse = TRUE)
+library(ngstk)
+```
+
+## Introduction
+
+[ngstk](https://github.com/JhuangLab/ngstk) is an R package to facilitate the analysis of NGS data, such as visualization, conversion of the data format for WEB service input and another purpose.
+
+You can learn some usage of ngstk through this tutorial.
+
+## Usage
+
+### Data format conversion
+
+We defined a rule to facilitate the data format conversion. It is a good choice to save the all of output colums meta information. Moreover, the other input data should establish a connection with the output colums according the requirement.
+
+- alias, connect the two table by colnames
+- extract_pattern, extract defined pattern from one of colum 
+- raw and new, repace the raw value with the new value
+- na.replace, replace the NA value to defined value
+
+The follow example configuration file can be used to convert [iseq](https://github.com/JhuangLab/iseq), a pipeline to analysis genetic variants from NGS data, output data to the web service [ProteinPaint](https://proteinpaint.stjude.org/), a tool to visulize the mutation data. 
+
+```{toml}
+Title = "Proteinpaint configuration file"
+
+# muts2pp is a function that can convert mutation data to Proteinpaint input format
+[muts2pp.meta.defined_cols]
+colnames = ["gene", "refseq", "chromosome", "start", "aachange", "class", "disease", "sample"]
+hander_lib = "default_handers"
+mhander_lib = "default_mhanders"
+[muts2pp.meta.defined_cols.description]
+gene = "Gene symbol, e.g TP53, PTEN"
+refseq = "Transcript of refSeq or Ensemble, e.g NM_000546, ENST00000635293"
+chromosome = "Chromosome, e.g. chr1, chr2"
+start = "Chromosome start location of a mutation site, e.g. 153249385"
+aachange = "Amino acid level change of gene mutation, e.g. p.R347C, p.L615delinsDL"
+class = "Mutation type, e.g. nonsense, proteinIns, proteinDel, frameshift"
+disease = "Disease name or sample group name, e.g. B-ALL, T-ALL, G1, G2"
+sample = "Sample name"
+
+[muts2pp.format.iseq.gene]
+alias = ["gene", "symbol"]
+
+[muts2pp.format.iseq.refseq]
+alias = ["refseq", "transcription.id"]
+
+[muts2pp.format.iseq.chromosome]
+alias = ["chromosome"]
+
+[muts2pp.format.iseq.start]
+alias = ["start"]
+
+[muts2pp.format.iseq.aachange]
+alias = ["aachange", "amino.acid.change"]
+extract_pattern = "p[.]+.*$"
+
+[muts2pp.format.iseq.class]
+alias = ["mutation_type", "mutation.type"]
+raw = ["nonframeshift ins", "nonframeshift del",
+       "frameshift ins", "frameshift del", "stoploss", "nonsense",
+             "splice"]
+new = ["proteinIns", "proteinDel", "frameshift", "frameshift",
+       "nonsense", "nonsense", "splice"]
+na_replace = "splice"
+```
+
+muts2pp, muts2mutation_mapper, muts2oncoprinter and fusions2pp are the example functions based on the established rules.
+
+```{r}
+demo_file <- system.file("extdata", "demo/proteinpaint/muts2pp_iseq.txt", package = "ngstk")
+input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+disease <- "T-ALL"
+input_data <- data.frame(input_data, disease)
+input_data$disease <- as.character(input_data$disease)
+
+# Convert mutations data to proteinpaint input
+result <- muts2pp(input_data, input_type = "iseq")
+head(result)
+# Convert mutations data to cbioportal input
+result <- muts2mutation_mapper(input_data, input_type = "iseq")
+head(result)
+result <- muts2oncoprinter(input_data, input_type = "iseq")
+head(result)
+
+demo_file <- system.file('extdata', 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
+input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
+disease <- 'B-ALL'
+sampletype <- 'diagnose'
+input_data <- data.frame(input_data, disease, sampletype)
+input_data$disease <- as.character(input_data$disease)
+# Convert fusions data to proteinpaint input
+result <- fusions2pp(input_data, input_type = 'fusioncatcher')
+head(result)
+```
+
+merge_table_files is the another util function to merge multiple table files.
+
+```{r}
+a <- data.frame(col1=1:6, col2=2:7)
+b <- data.frame(col1=6:11, col2=1:6)
+file_a <- paste0(tempfile(), '_abcd')
+file_b <- paste0(tempfile(), '_abcd')
+write.table(a, file_a, sep = '\t', row.names = FALSE)
+write.table(b, file_b, sep = '\t', row.names = FALSE)
+input_files <- c(file_a, file_b)
+x1 <- merge_table_files(input_files = input_files)
+head(x1)
+x2 <- merge_table_files(files_dir = tempdir(), pattern = '.*_abcd$')
+head(x2)
+outfn = tempfile()
+x3 <- merge_table_files(files_dir = tempdir(), pattern = ".*_abcd$", outfn = outfn)
+head(read.table(outfn, sep = "\t", header = TRUE))
+```
+
+### Data filtration
+
+Data filtration or subset is an important step to clean or run the specific analysis. A series of data filtration function will be establish and fixed that can be re-used in the future.
+
+```{r}
+demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+# Get data subset according the defined rule
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, any_gene = "TCF3", fusions_any_match_flag = TRUE)
+result_1 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+head(result_1)
+
+mhander_extra_params = list(gene_3 = 2, right_gene = "GYPA", fusions_right_match_flag = TRUE)
+result_2 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+head(result_2)
+
+mhander_extra_params = list(gene_5 = 1, left_gene = "GYPA", fusions_left_match_flag = TRUE)
+result_3 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+head(result_3)
+
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", fusions_full_match_flag = TRUE)
+result_4 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+head(result_4)
+
+mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_gene = "GYPA", fusions_anyfull_match_flag = TRUE)
+result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
+head(result_5)
+```
