@@ -92,9 +92,13 @@ Some of non-core scripts or tools for NGS data analysis will be included in ngst
 
 [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/) is a quality control tool for gene panel sequencing data. Usage of QualityConfirm can be found in [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and the [demo](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/demo.R) can help you to use it more easily.
 
+![](https://github.com/Miachol/ftp/raw/master/files/images/quality_confirm_fig1.png)
+
 ### gvmap
 
 [gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/) is an R package to draw mutations and fusions heatmap. It relies on *configr*, *rsvg* R package.
+
+![](https://raw.githubusercontent.com/JhuangLab/ngstk/master/inst/extdata/tools/gvmap/inst/extdata/test_data/gvmap.output.svg)
 
 ## Theme
 
@@ -117,6 +121,11 @@ colors = ["#3987cc", "#ff7f0e", "#db3d3d", "#6633ff",
 
 [proteinpaint_domains]
 colors = ["#a6d854", "#8dd3c7", "#fb8072", "#80b1d3", "#bebada", "#e5c494", "#fdb462", "#b3b3b3"]
+
+[proteinpaint_chromHMM_state]
+colors = ["#c0222c", "#f12424", "#ff00c7", "#d192fb", "#f9982f", "#fcc88e",
+          "#fbf876", "#a6d67b", "#1fb855", "#007d37", "#00a99e", "#11aaec",
+          "#186db9", "#3800f8", "#961a8b", "#47005f"]
 
 [proteinpaint_significance]
 colors = ["#aaaaaa", "#e99002", "#5bc0de", "#f04124", "#90c3d4", "#f04124", "#43ac6a"]

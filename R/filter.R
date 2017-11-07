@@ -26,15 +26,15 @@
 #' 'demo/proteinpaint/fusions2pp_fusioncatcher.txt', package = 'ngstk')
 #' input_data <- read.table(demo_file, sep = '\t', header = TRUE, stringsAsFactors = FALSE)
 #' result <- fusions_filter(input_data)
-fusions_filter <- function(input_data, input_type = "common", config_file = system.file("extdata", "config/filter.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
-  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
-  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
+fusions_filter <- function(input_data, input_type = "common", config_file = system.file("extdata", "config/filter.toml", package = "ngstk"), 
+  config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
+    "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
+  outfn = NULL) {
   this_section <- "fusions_filter"
   meta_flag <- "meta"
   format_flag <- "format"
-  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, 
-    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
+  params <- initial_params(config_file, config_list, input_type, this_section, meta_flag, format_flag, hander_funs, mhander_funs, 
+    hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
@@ -42,8 +42,7 @@ fusions_filter <- function(input_data, input_type = "common", config_file = syst
   mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
-    hander_data <- fusions_filter_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, 
-      hander_extra_params)
+    hander_data <- fusions_filter_handler(hander_data, config_input, defined_cols, input_data, i, hander_funs, hander_extra_params)
   }
   hander_data <- fusions_filter_mhandler(hander_data, config_input, mhander_funs, mhander_extra_params)
   if (!is.null(outfn)) {
@@ -53,8 +52,7 @@ fusions_filter <- function(input_data, input_type = "common", config_file = syst
 }
 
 # main interface for fusions_filter data process
-fusions_filter_handler <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, 
-  extra_params) {
+fusions_filter_handler <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, extra_params) {
   hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, hander_funs, extra_params)
   return(hander_data)
 }

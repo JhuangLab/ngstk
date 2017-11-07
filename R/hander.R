@@ -13,8 +13,8 @@
 #' show_handers(show_description = TRUE)
 #' show_handers(show_description = FALSE, show_all_funs = FALSE, 
 #'             show_code = 'handler_na_replace')
-show_handers <- function(hander_lib = "default_handers", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, 
-  hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk")) {
+show_handers <- function(hander_lib = "default_handers", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, hander_confg_file = system.file("extdata", 
+  "config/hander.toml", package = "ngstk")) {
   hander_lib_data <- eval.config(value = hander_lib, config = "hander", file = hander_confg_file)
   if (show_all_funs) {
     hander_funs <- paste0(hander_lib_data[["hander_funs"]], collapse = ", ")
@@ -47,8 +47,8 @@ show_handers <- function(hander_lib = "default_handers", show_all_funs = TRUE, s
 #' show_mhanders(show_description = TRUE)
 #' show_mhanders(show_description = FALSE, show_all_funs = FALSE, 
 #'              show_code = 'mhander_fusions_anyfull_match')
-show_mhanders <- function(mhander_lib = "default_mhanders", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, 
-  mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk")) {
+show_mhanders <- function(mhander_lib = "default_mhanders", show_all_funs = TRUE, show_code = NULL, show_description = FALSE, mhander_confg_file = system.file("extdata", 
+  "config/mhander.toml", package = "ngstk")) {
   mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", file = mhander_confg_file)
   if (show_all_funs) {
     mhander_funs <- paste0(mhander_lib_data[["mhander_funs"]], collapse = ", ")
@@ -83,8 +83,8 @@ handler <- function(hander_data, config_input, defined_cols, input_data, index, 
   colnames(hander_data)[index] <- defined_col
   if (!is.null(hander_funs)) {
     for (i in hander_funs) {
-      hander_data <- do.call(i, list(hander_data = hander_data, config_input = config_input, defined_col = defined_col, 
-        index = index, extra_params = extra_params))
+      hander_data <- do.call(i, list(hander_data = hander_data, config_input = config_input, defined_col = defined_col, index = index, 
+        extra_params = extra_params))
     }
     
   }
@@ -110,8 +110,7 @@ get_valid_col_index <- function(config_input, defined_col, input_data) {
 ### Framework util functions ###
 
 # na.replace
-handler_na_replace <- function(hander_data, config_input, defined_col, index, extra_params = list(na_replace = NULL, 
-  na_replace_flag = TRUE)) {
+handler_na_replace <- function(hander_data, config_input, defined_col, index, extra_params = list(na_replace = NULL, na_replace_flag = TRUE)) {
   flag <- extra_params$na_replace_flag
   na_replace <- extra_params$na_replace
   if (!is.null(flag) && !flag) {
@@ -130,8 +129,8 @@ handler_na_replace <- function(hander_data, config_input, defined_col, index, ex
 }
 
 # map old value to new value
-handler_value_map <- function(hander_data, config_input, defined_col, index, extra_params = list(raw_value = NULL, 
-  new_value = NULL, value_map_flag = TRUE)) {
+handler_value_map <- function(hander_data, config_input, defined_col, index, extra_params = list(raw_value = NULL, new_value = NULL, 
+  value_map_flag = TRUE)) {
   flag <- extra_params$value_map_flag
   raw_value <- extra_params$raw_value
   new_value <- extra_params$new_value
@@ -151,8 +150,7 @@ handler_value_map <- function(hander_data, config_input, defined_col, index, ext
 }
 
 # use str_extract get value
-handler_extract <- function(hander_data, config_input, defined_col, index, extra_params = list(extract_pattern = NULL, 
-  extract_flag = TRUE)) {
+handler_extract <- function(hander_data, config_input, defined_col, index, extra_params = list(extract_pattern = NULL, extract_flag = TRUE)) {
   flag <- extra_params$extract_flag
   extract_pattern <- extra_params$extract_pattern
   if (!is.null(flag) && !flag) {
@@ -173,8 +171,8 @@ handler_extract <- function(hander_data, config_input, defined_col, index, extra
 
 
 # use str_split get value
-handler_split <- function(hander_data, config_input, defined_col, index, extra_params = list(split_marker = NULL, 
-  split_index = NULL, split_flag = TRUE)) {
+handler_split <- function(hander_data, config_input, defined_col, index, extra_params = list(split_marker = NULL, split_index = NULL, 
+  split_flag = TRUE)) {
   flag <- extra_params$split_flag
   split_marker <- extra_params$split_marker
   split_index <- extra_params$split_index
@@ -193,8 +191,7 @@ handler_split <- function(hander_data, config_input, defined_col, index, extra_p
 }
 
 # add prefix
-handler_prefix <- function(hander_data, config_input, defined_col, index, extra_params = list(prefix_marker = NULL, 
-  prefix_flag = TRUE)) {
+handler_prefix <- function(hander_data, config_input, defined_col, index, extra_params = list(prefix_marker = NULL, prefix_flag = TRUE)) {
   flag <- extra_params$prefix_flag
   prefix_marker <- extra_params$prefix_marker
   if (!is.null(flag) && !flag) {
@@ -216,8 +213,7 @@ handler_prefix <- function(hander_data, config_input, defined_col, index, extra_
 }
 
 # add postfix
-handler_postfix <- function(hander_data, config_input, defined_col, index, extra_params = list(postfix_marker = NULL, 
-  postfix_flag = TRUE)) {
+handler_postfix <- function(hander_data, config_input, defined_col, index, extra_params = list(postfix_marker = NULL, postfix_flag = TRUE)) {
   flag <- extra_params$postfix_flag
   postfix_marker <- extra_params$postfix_marker
   if (!is.null(flag) && !flag) {
@@ -239,8 +235,7 @@ handler_postfix <- function(hander_data, config_input, defined_col, index, extra
 }
 
 # lower
-handler_lower <- function(hander_data, config_input, defined_col, index, extra_params = list(lower = NULL, 
-  lower_flag = TRUE)) {
+handler_lower <- function(hander_data, config_input, defined_col, index, extra_params = list(lower = NULL, lower_flag = TRUE)) {
   flag <- extra_params$lower_flag
   lower <- extra_params$lower
   if (!is.null(flag) && !flag) {
@@ -256,8 +251,7 @@ handler_lower <- function(hander_data, config_input, defined_col, index, extra_p
 }
 
 # upper
-handler_upper <- function(hander_data, config_input, defined_col, index, extra_params = list(upper = NULL, 
-  upper_flag = TRUE)) {
+handler_upper <- function(hander_data, config_input, defined_col, index, extra_params = list(upper = NULL, upper_flag = TRUE)) {
   flag <- extra_params$upper_flag
   upper <- extra_params$upper
   if (!is.null(flag) && !flag) {
@@ -273,8 +267,8 @@ handler_upper <- function(hander_data, config_input, defined_col, index, extra_p
 }
 
 # str_replace
-handler_replace <- function(hander_data, config_input, defined_col, index, extra_params = list(replace_pattern = NULL, 
-  replace_string = NULL, replace_flag = TRUE)) {
+handler_replace <- function(hander_data, config_input, defined_col, index, extra_params = list(replace_pattern = NULL, replace_string = NULL, 
+  replace_flag = TRUE)) {
   flag <- extra_params$replace_flag
   replace_pattern <- extra_params$replace_pattern
   replace_string <- extra_params$replace_string
@@ -294,8 +288,7 @@ handler_replace <- function(hander_data, config_input, defined_col, index, extra
 }
 
 # default value
-handler_default_value <- function(hander_data, config_input, defined_col, index, extra_params = list(default_value = NULL, 
-  default_value_flag = TRUE)) {
+handler_default_value <- function(hander_data, config_input, defined_col, index, extra_params = list(default_value = NULL, default_value_flag = TRUE)) {
   flag <- extra_params$default_value_flag
   default_value <- extra_params$default_value
   if (!is.null(flag) && !flag) {

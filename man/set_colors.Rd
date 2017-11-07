@@ -9,7 +9,7 @@ set_colors(theme = NULL, theme_config_file = NULL)
 \arguments{
 \item{theme}{Colors theme, e.g. default, red_blue}
 
-\item{theme_config_file}{Theme configuration file, default is 
+\item{theme_config_file}{Theme configuration file, default is
 system.file('extdata', 'config/theme.toml', package = 'ngstk')}
 }
 \value{

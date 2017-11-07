@@ -30,13 +30,12 @@
 #' input_data$disease <- as.character(input_data$disease)
 #' muts2pp(input_data, input_type = 'iseq')
 
-muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
-  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
-  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
-    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "muts2pp", "default_hander_api", 
-    "default_mhandler_api")
+muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", "config/proteinpaint.toml", package = "ngstk"), 
+  config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
+    "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
+  outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, hander_funs, 
+    mhander_funs, hander_extra_params, mhander_extra_params, outfn, "muts2pp", "default_hander_api", "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
@@ -71,12 +70,11 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
 fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
-  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", 
-  package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), 
-  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
-    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp", "default_hander_api", 
-    "default_mhandler_api")
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk"), 
+  mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
+  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, hander_funs, 
+    mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp", "default_hander_api", "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.
@@ -110,12 +108,10 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
 #' hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
-fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", "config/mhander.toml", 
-  package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
-  outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, 
-    hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp_meta", 
-    "default_hander_api", "default_mhandler_api")
+fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", "config/proteinpaint.toml", 
+  package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", "config/hander.toml", package = "ngstk"), 
+  mhander_confg_file = system.file("extdata", "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
+  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, mhander_confg_file, hander_funs, 
+    mhander_funs, hander_extra_params, mhander_extra_params, outfn, "fusions2pp_meta", "default_hander_api", "default_mhandler_api")
 }

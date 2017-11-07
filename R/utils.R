@@ -1,9 +1,9 @@
 #' Function to generate tools path object
 #' @param config.file Path of tools configuration file (json, ini, yaml and toml be supported)
-#' @param config.list List object of tools that all of tools path (exclude those without names). 
-#' @param config.vec Vector object of tools that all of tools path (exclude those without names). 
+#' @param config.list List object of tools that all of tools path (exclude those without names).
+#' @param config.vec Vector object of tools that all of tools path (exclude those without names).
 #' @param eval.params Params pass to configr::eval.config
-#' 
+#'
 #' @return
 #' List object contain the tools path that can be used by other function in ngstk package
 #' @export
@@ -12,7 +12,7 @@
 #' config.list <- list(gatk = '/path/gatk')
 #' config.vec <- c('/path/samtools')
 #' names(config.vec) <- 'samtools'
-#' tools <- set_tools(config.file, config.list, config.vec, 
+#' tools <- set_tools(config.file, config.list, config.vec,
 #'                   eval.params = list(config = 'tools'))
 
 set_tools <- function(config.file = "", config.list = list(), config.vec = c(), eval.params = list()) {
@@ -42,14 +42,14 @@ set_tools <- function(config.file = "", config.list = list(), config.vec = c(), 
 
 
 #' Function to get a series defined theme colors
-#' 
+#'
 #' @param theme Colors theme, e.g. default, red_blue
-#' @param theme_config_file Theme configuration file, default is 
+#' @param theme_config_file Theme configuration file, default is
 #' system.file('extdata', 'config/theme.toml', package = 'ngstk')
 #' @export
 #' @return
 #' A character
-#' @examples 
+#' @examples
 #' red_blue <- set_colors('red_blue')
 #' default <- set_colors('default')
 set_colors <- function(theme = NULL, theme_config_file = NULL) {
@@ -71,8 +71,8 @@ get_config_value <- function(config_input, level_1, level_2) {
 
 # initial config_meta_format
 
-initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, format_flag, hander_funs = NULL, 
-  mhander_funs = NULL, hander_confg_file = NULL, mhander_confg_file = NULL) {
+initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, format_flag, hander_funs = NULL, mhander_funs = NULL, 
+  hander_confg_file = NULL, mhander_confg_file = NULL) {
   if (is.null(config_list)) {
     config_meta <- eval.config(value = meta_flag, config = this_section, file = config_file)
     config_format <- eval.config(value = format_flag, config = this_section, file = config_file)
@@ -103,12 +103,12 @@ initial_params <- function(config_file, config_list, input_type, this_section, m
 }
 
 # format converter
-data_format_converter <- function(input_data, input_type = "", config_file = "", config_list = NULL, hander_confg_file = "", 
-  mhander_confg_file = "", hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
-  outfn = NULL, function_name = "", hander_api = "", mhander_api = "", meta_flag = "meta", format_flag = "format") {
+data_format_converter <- function(input_data, input_type = "", config_file = "", config_list = NULL, hander_confg_file = "", mhander_confg_file = "", 
+  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL, function_name = "", 
+  hander_api = "", mhander_api = "", meta_flag = "meta", format_flag = "format") {
   
-  params <- initial_params(config_file, config_list, input_type, function_name, meta_flag, format_flag, 
-    hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
+  params <- initial_params(config_file, config_list, input_type, function_name, meta_flag, format_flag, hander_funs, mhander_funs, 
+    hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
@@ -116,9 +116,8 @@ data_format_converter <- function(input_data, input_type = "", config_file = "",
   mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
-    hander_data <- do.call(hander_api, list(hander_data = hander_data, config_input = config_input, 
-      defined_cols = defined_cols, input_data = input_data, index = i, hander_funs = hander_funs, 
-      extra_params = hander_extra_params))
+    hander_data <- do.call(hander_api, list(hander_data = hander_data, config_input = config_input, defined_cols = defined_cols, 
+      input_data = input_data, index = i, hander_funs = hander_funs, extra_params = hander_extra_params))
   }
   hander_data <- do.call(mhander_api, list(hander_data = hander_data, config_input = config_input, mhander_funs = mhander_funs, 
     extra_params = hander_extra_params))
@@ -128,11 +127,9 @@ data_format_converter <- function(input_data, input_type = "", config_file = "",
   return(hander_data)
 }
 
-default_hander_api <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, 
-  extra_params = NULL) {
+default_hander_api <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, extra_params = NULL) {
   
-  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, hander_funs = hander_funs, 
-    extra_params = extra_params)
+  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, hander_funs = hander_funs, extra_params = extra_params)
   return(hander_data)
 }
 
