@@ -88,7 +88,7 @@ result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_para
 
 ## Tools
 
-Some of non-core scripts or tools for NGS data analysis will be included in ngstk package. A defined markdown document will guide you to use it, such as [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md).
+Some of experimental or unpacked scripts or tools for NGS data analysis will be collected in ngstk package. A defined markdown document will tell you how to use it, such as [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and [gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/).
 
 ### QualityConfirm
 
@@ -111,28 +111,28 @@ Title = "ngstk theme configuration file (colors)"
 
 [default]
 colors = ["#0073c3", "#efc000", "#696969",
-          "#ce534c", "#7ba6db", "#035892",
-          "#052135", "#666633", "#660000", "#990000"]
+"#ce534c", "#7ba6db", "#035892",
+"#052135", "#666633", "#660000", "#990000"]
 [red_blue]
 colors = ["#c20b01", "#196abd"]
 
 [proteinpaint_mutations]
 colors = ["#3987cc", "#ff7f0e", "#db3d3d", "#6633ff",
-          "#bbbbbb", "#9467bd", "#998199", "#8c564b", "#819981",
-          "#5781ff"]
+"#bbbbbb", "#9467bd", "#998199", "#8c564b", "#819981",
+"#5781ff"]
 
 [proteinpaint_domains]
 colors = ["#a6d854", "#8dd3c7", "#fb8072", "#80b1d3", "#bebada", "#e5c494", "#fdb462", "#b3b3b3"]
 
 [proteinpaint_chromHMM_state]
 colors = ["#c0222c", "#f12424", "#ff00c7", "#d192fb", "#f9982f", "#fcc88e",
-          "#fbf876", "#a6d67b", "#1fb855", "#007d37", "#00a99e", "#11aaec",
-          "#186db9", "#3800f8", "#961a8b", "#47005f"]
+"#fbf876", "#a6d67b", "#1fb855", "#007d37", "#00a99e", "#11aaec",
+"#186db9", "#3800f8", "#961a8b", "#47005f"]
 
 [proteinpaint_significance]
 colors = ["#aaaaaa", "#e99002", "#5bc0de", "#f04124", "#90c3d4", "#f04124", "#43ac6a"]
 
 [adobe_color_cc_1]
 colors = ["#FFE350", "#E8740C", "#FF0000", "#9C0CE8", "#0D43FF",
-          "#A6B212", "#1991FF", "#ECFF00", "#CC1E14", "#B25C58"]
+"#A6B212", "#1991FF", "#ECFF00", "#CC1E14", "#B25C58"]
 ```
