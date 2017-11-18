@@ -26,18 +26,17 @@
 #' x1 <- merge_table_files(input_files = input_files)
 #' x2 <- merge_table_files(files_dir = tempdir(), pattern = '.*_abcd$')
 #' outfn = tempfile()
-#  x3 <- merge_table_files(files_dir = tempdir(), pattern = ".*_abcd$", outfn = outfn)
-merge_table_files <- function(input_files = NULL, files_dir = NULL, pattern = ".*.txt", outfn = NULL, add.filename = TRUE, 
-  read_fun = "read.table", read_params_file = "file", read_params = list(sep = "\t", header = TRUE), write_fun = "write.table", 
-  write_params_x = "x", write_params_file = "file", write_params = list(sep = "\t", row.names = FALSE), 
+# x3 <- merge_table_files(files_dir = tempdir(), pattern = '.*_abcd$', outfn =
+# outfn)
+merge_table_files <- function(input_files = NULL, files_dir = NULL, pattern = ".*.txt", 
+  outfn = NULL, add.filename = TRUE, read_fun = "read.table", read_params_file = "file", 
+  read_params = list(sep = "\t", header = TRUE), write_fun = "write.table", write_params_x = "x", 
+  write_params_file = "file", write_params = list(sep = "\t", row.names = FALSE), 
   op = list(stringsAsFactors = FALSE)) {
   old_options <- options()
   do.call(options, op)
   
-  if (!is.null(files_dir)) {
-    input_files_tmp <- list.files(files_dir, pattern = pattern)
-    input_files <- c(input_files, input_files_tmp)
-  }
+  input_files <- get_files(input_files, files_dir, pattern)
   if (is.null(input_files)) {
     return(NULL)
   }
@@ -52,7 +51,8 @@ merge_table_files <- function(input_files = NULL, files_dir = NULL, pattern = ".
     if (!file.exists(input_file)) {
       next
     }
-    read_params <- eval(parse(text = sprintf("config.list.merge(read_params, list(%s=input_file))", read_params_file)))
+    read_params <- eval(parse(text = sprintf("config.list.merge(read_params, list(%s=input_file))", 
+      read_params_file)))
     result.tmp <- do.call(read_fun, read_params)
     if (add.filename) {
       filename = input_file
@@ -63,10 +63,19 @@ merge_table_files <- function(input_files = NULL, files_dir = NULL, pattern = ".
   if (is.null(outfn)) {
     return(result)
   } else {
-    write_params <- eval(parse(text = sprintf("config.list.merge(write_params, list(%s=result, %s=outfn))", write_params_x, 
-      write_params_file)))
+    write_params <- eval(parse(text = sprintf("config.list.merge(write_params, list(%s=result, %s=outfn))", 
+      write_params_x, write_params_file)))
     status <- do.call(write_fun, write_params)
   }
   options(old_options)
   return(status)
+}
+
+# Function to get input files by filename or pattern
+get_files <- function(input_files = NULL, files_dir = NULL, pattern = NULL) {
+  if (!is.null(files_dir)) {
+    input_files_tmp <- list.files(files_dir, pattern = pattern)
+    input_files <- c(input_files, input_files_tmp)
+  }
+  return(input_files)
 }

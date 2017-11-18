@@ -1,8 +1,14 @@
+2017-11-18 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+                * get_files_mtime and get_files_ctime be added in R/log.R 
+
 2017-11-08 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
                 * vignettes be added
+
 2017-11-07 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
                 * merge_table_files be added
                 * reduce qualityconfirm size
+
 2017-10-13 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
                 * gvmap be added in inst/extdata/tools/
 

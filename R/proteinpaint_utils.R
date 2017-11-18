@@ -16,7 +16,8 @@
 get_pp_samplegroup <- function(samples, group, outfn = NULL) {
   pp_samplegroup <- data.frame(group, samples)
   if (!is.null(outfn)) {
-    write.table(pp_samplegroup, outfn, sep = "\t", row.names = F, quote = F, col.names = F)
+    write.table(pp_samplegroup, outfn, sep = "\t", row.names = F, quote = F, 
+      col.names = F)
   }
   return(pp_samplegroup)
 }
@@ -46,9 +47,11 @@ get_pp_samplegroup <- function(samples, group, outfn = NULL) {
 #' raw_meta$group <- group
 #' raw_meta$value <- c(rep(c('Adult', 'Pediatric'), 3),  'Male')
 #' meta_age <- format_pp_meta_age(raw_meta)
-format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_value = "Adult", child_value = "Pediatric", adult_color = "#c20b01", 
-  child_color = "#196abd", ...) {
-  pp_meta <- format_pp_meta_2_level(raw_meta, outfn, age_group, adult_value, child_value, adult_color, child_color, ...)
+format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_value = "Adult", 
+  child_value = "Pediatric", adult_color = "#c20b01", child_color = "#196abd", 
+  ...) {
+  pp_meta <- format_pp_meta_2_level(raw_meta, outfn, age_group, adult_value, child_value, 
+    adult_color, child_color, ...)
   return(pp_meta)
 }
 
@@ -75,14 +78,16 @@ format_pp_meta_age <- function(raw_meta, outfn = NULL, age_group = "Age", adult_
 #' raw_meta$group <- group
 #' raw_meta$value <- c(rep(c('Male', 'Female'), 3), 'Male')
 #' meta_gender <- format_pp_meta_gender(raw_meta)
-format_pp_meta_gender <- function(raw_meta, outfn = NULL, gender_group = "Gender", male_value = "Male", female_value = "Female", 
-  male_color = "#c20b01", female_color = "#196abd", ...) {
-  pp_meta <- format_pp_meta_2_level(raw_meta, outfn, gender_group, male_value, female_value, male_color, female_color, ...)
+format_pp_meta_gender <- function(raw_meta, outfn = NULL, gender_group = "Gender", 
+  male_value = "Male", female_value = "Female", male_color = "#c20b01", female_color = "#196abd", 
+  ...) {
+  pp_meta <- format_pp_meta_2_level(raw_meta, outfn, gender_group, male_value, 
+    female_value, male_color, female_color, ...)
   return(pp_meta)
 }
 
-format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", positive_value = "1", negative_value = "0", positive_color = NULL, 
-  negative_color = NULL, ...) {
+format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", positive_value = "1", 
+  negative_value = "0", positive_color = NULL, negative_color = NULL, ...) {
   if (is.null(positive_color)) {
     colors <- set_colors(...)
   } else {
@@ -139,7 +144,8 @@ format_pp_meta_2_level <- function(raw_meta, outfn = NULL, group = "default", po
 #' 'MEF2D-PB', 'ABC-ZNF384', 'MEF2D-PB', 'ABD-ZNF384', 
 #'                        'DUX4-IGH')
 #' meta_fusions <- format_pp_meta_fusions(meta_test_2)
-format_pp_meta_fusions <- function(raw_meta, outfn = NULL, fusions_color = NULL, ...) {
+format_pp_meta_fusions <- function(raw_meta, outfn = NULL, fusions_color = NULL, 
+  ...) {
   if (is.null(fusions_color)) {
     fusions_color <- set_colors(...)
   }

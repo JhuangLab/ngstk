@@ -71,11 +71,13 @@ get_config_value <- function(config_input, level_1, level_2) {
 
 # initial config_meta_format
 
-initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, format_flag, hander_funs = NULL, mhander_funs = NULL, 
-  hander_confg_file = NULL, mhander_confg_file = NULL) {
+initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, 
+  format_flag, hander_funs = NULL, mhander_funs = NULL, hander_confg_file = NULL, 
+  mhander_confg_file = NULL) {
   if (is.null(config_list)) {
     config_meta <- eval.config(value = meta_flag, config = this_section, file = config_file)
-    config_format <- eval.config(value = format_flag, config = this_section, file = config_file)
+    config_format <- eval.config(value = format_flag, config = this_section, 
+      file = config_file)
   } else {
     config_meta <- config_list[[this_section]][[meta_flag]]
     config_format <- config_list[[this_section]][[format_flag]]
@@ -94,21 +96,24 @@ initial_params <- function(config_file, config_list, input_type, this_section, m
     if (is.null(mhander_lib)) {
       mhander_lib <- "default_mhanders"
     }
-    mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", file = mhander_confg_file)
+    mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", 
+      file = mhander_confg_file)
     mhander_funs <- mhander_lib_data$mhander_funs
   }
   config_input <- config_format[[input_type]]
-  return(list(config_meta = config_meta, config_format = config_format, config_input = config_input, defined_cols = defined_cols, 
-    hander_funs = hander_funs, mhander_funs = mhander_funs))
+  return(list(config_meta = config_meta, config_format = config_format, config_input = config_input, 
+    defined_cols = defined_cols, hander_funs = hander_funs, mhander_funs = mhander_funs))
 }
 
 # format converter
-data_format_converter <- function(input_data, input_type = "", config_file = "", config_list = NULL, hander_confg_file = "", mhander_confg_file = "", 
-  hander_funs = NULL, mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL, function_name = "", 
-  hander_api = "", mhander_api = "", meta_flag = "meta", format_flag = "format") {
+data_format_converter <- function(input_data, input_type = "", config_file = "", 
+  config_list = NULL, hander_confg_file = "", mhander_confg_file = "", hander_funs = NULL, 
+  mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
+  outfn = NULL, function_name = "", hander_api = "", mhander_api = "", meta_flag = "meta", 
+  format_flag = "format") {
   
-  params <- initial_params(config_file, config_list, input_type, function_name, meta_flag, format_flag, hander_funs, mhander_funs, 
-    hander_confg_file, mhander_confg_file)
+  params <- initial_params(config_file, config_list, input_type, function_name, 
+    meta_flag, format_flag, hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
@@ -116,24 +121,28 @@ data_format_converter <- function(input_data, input_type = "", config_file = "",
   mhander_funs <- params$mhander_funs
   hander_data <- NULL
   for (i in 1:length(defined_cols)) {
-    hander_data <- do.call(hander_api, list(hander_data = hander_data, config_input = config_input, defined_cols = defined_cols, 
-      input_data = input_data, index = i, hander_funs = hander_funs, extra_params = hander_extra_params))
+    hander_data <- do.call(hander_api, list(hander_data = hander_data, config_input = config_input, 
+      defined_cols = defined_cols, input_data = input_data, index = i, hander_funs = hander_funs, 
+      extra_params = hander_extra_params))
   }
-  hander_data <- do.call(mhander_api, list(hander_data = hander_data, config_input = config_input, mhander_funs = mhander_funs, 
-    extra_params = hander_extra_params))
+  hander_data <- do.call(mhander_api, list(hander_data = hander_data, config_input = config_input, 
+    mhander_funs = mhander_funs, extra_params = hander_extra_params))
   if (!is.null(outfn)) {
     write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
   }
   return(hander_data)
 }
 
-default_hander_api <- function(hander_data, config_input, defined_cols, input_data, index, hander_funs = NULL, extra_params = NULL) {
+default_hander_api <- function(hander_data, config_input, defined_cols, input_data, 
+  index, hander_funs = NULL, extra_params = NULL) {
   
-  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, hander_funs = hander_funs, extra_params = extra_params)
+  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, 
+    hander_funs = hander_funs, extra_params = extra_params)
   return(hander_data)
 }
 
-default_mhandler_api <- function(hander_data, config_input, mhander_funs = NULL, extra_params = NULL) {
+default_mhandler_api <- function(hander_data, config_input, mhander_funs = NULL, 
+  extra_params = NULL) {
   
   hander_data <- mhandler(hander_data, config_input, mhander_funs, extra_params)
   return(hander_data)
