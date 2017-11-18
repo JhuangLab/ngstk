@@ -153,3 +153,23 @@ mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_ge
 result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
 head(result_5)
 ```
+
+### Log related
+
+In the data analysis process, we usually need to check the create time and modification time of some result files, e.g. all of files create or change time are identical. ngstk provied `get_files_mtime` and `get_files_ctime` to process the files time check step. The default time check function is check all files time wheather are identical and you can use your own function.
+
+```{r}
+file_a <- tempfile()
+file_b <- tempfile()
+file.create(c(file_a, file_b))
+x <- get_files_mtime(input_files = c(file_a, file_b))
+x
+x <- get_files_mtime(input_files = c(file_a, file_b), return_check = FALSE)
+x
+x <- get_files_mtime(input_files = c(file_a, file_b), return_mtime = FALSE)
+x
+x <- get_files_ctime(input_files = c(file_a, file_b))
+x
+x <- get_files_ctime(input_files = c(file_a, file_b), return_check = FALSE)
+x
+```
