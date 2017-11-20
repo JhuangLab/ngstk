@@ -1,7 +1,7 @@
 2017-11-20 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-                * get_split_seqs, split_row_data and split_col_data 
-                be added in R/split.R
+                * get_split_seqs, split_row_data split_row_file, 
+				and split_col_data be added in R/split.R
 				* rename R/file.R to R/merge.R
 
 2017-11-18 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>

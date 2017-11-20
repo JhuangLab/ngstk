@@ -68,3 +68,10 @@ test_that("get_split_regions", {
   sections <- 3
   x <- get_split_seqs(total_num, sections)
 })
+
+test_that("split_row_file", {
+  dat <- data.frame(col1 = 1:10000)
+  outfn <- tempfile()
+  write.table(dat, outfn, sep = "\t")
+  split_row_file(outfn)
+})
