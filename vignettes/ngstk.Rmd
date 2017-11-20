@@ -173,3 +173,20 @@ x
 x <- get_files_ctime(input_files = c(file_a, file_b), return_check = FALSE)
 x
 ```
+
+### Split data
+
+Split data is an optional step if you want to parallel process the data stream. ngstk provide `split_row_data` and `split_col_data` to split data.frame and data.table object.
+
+```{r}
+x1 <- data.frame(col1 = 1:39, col2 = 1:39)
+x1
+x <- split_row_data(x1, sections = 2)
+x
+x <- split_row_data(x1, sections = 3)
+x
+x1 <- data.frame(col1 = 1:10, col2 = 11:20)
+x1.t <- t(x1)
+x <- split_col_data(x1.t, sections = 3)
+x
+```
