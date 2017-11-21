@@ -189,4 +189,9 @@ x1 <- data.frame(col1 = 1:10, col2 = 11:20)
 x1.t <- t(x1)
 x <- split_col_data(x1.t, sections = 3)
 x
+# split file
+dat <- data.frame(col1 = 1:10000)
+outfn <- tempfile()
+write.table(dat, outfn, sep = "\t")
+split_row_file(outfn)
 ```

@@ -86,6 +86,23 @@ mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_ge
 result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
 ```
 
+### Data split
+
+```r
+x1 <- data.frame(col1 = 1:39, col2 = 1:39)
+x <- split_row_data(x1, sections = 2)
+x <- split_row_data(x1, sections = 3)
+x1 <- data.frame(col1 = 1:10, col2 = 11:20)
+x1.t <- t(x1)
+x <- split_col_data(x1.t, sections = 3)
+# split file
+dat <- data.frame(col1 = 1:10000)
+outfn <- tempfile()
+write.table(dat, outfn, sep = "\t")
+split_row_file(outfn)
+split_row_file(outfn, use_system_split = TRUE)
+```
+
 ## Tools
 
 Some of experimental or unpacked scripts or tools for NGS data analysis will be collected in ngstk package. A defined markdown document will tell you how to use it, such as [QualityConfirm](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/QualityConfirm/README.md) and [gvmap](https://github.com/JhuangLab/ngstk/tree/master/inst/extdata/tools/gvmap/).

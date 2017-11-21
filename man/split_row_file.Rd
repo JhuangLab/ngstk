@@ -15,6 +15,11 @@ split_row_file(filename, each_file_lines = 100, use_system_split = FALSE,
 
 \item{each_file_lines}{Each file row num}
 
+\item{use_system_split}{Wheather use system split commend}
+
+\item{system_split_params}{When use_system_split, provide the prefix and other params
+default is 'split'}
+
 \item{write_fun}{Function to read data, default is read.table}
 
 \item{write_params_x}{Parameter name of output object in read.fun}
@@ -22,8 +27,6 @@ split_row_file(filename, each_file_lines = 100, use_system_split = FALSE,
 \item{write_params_file}{Parameter name of input file in read.fun}
 
 \item{write_params}{Other parameters pass to write_fun}
-
-\item{use_gnu_split}{Wheather use system split commend}
 }
 \description{
 Function to split big file to a series small files (by row)

@@ -50,7 +50,9 @@ split_col_data <- function(x, sections = 1) {
 #' Function to split big file to a series small files (by row)
 #' @param filename Filename that need to be split
 #' @param each_file_lines Each file row num
-#' @param use_gnu_split Wheather use system split commend
+#' @param use_system_split Wheather use system split commend
+#' @param system_split_params When use_system_split, provide the prefix and other params
+#' default is 'split'
 #' @param write_fun Function to read data, default is read.table
 #' @param write_params_x Parameter name of output object in read.fun
 #' @param write_params_file Parameter name of input file in read.fun
