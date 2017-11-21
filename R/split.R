@@ -50,6 +50,7 @@ split_col_data <- function(x, sections = 1) {
 #' Function to split big file to a series small files (by row)
 #' @param filename Filename that need to be split
 #' @param each_file_lines Each file row num
+#' @param use_gnu_split Wheather use system split commend
 #' @param write_fun Function to read data, default is read.table
 #' @param write_params_x Parameter name of output object in read.fun
 #' @param write_params_file Parameter name of input file in read.fun
@@ -60,9 +61,21 @@ split_col_data <- function(x, sections = 1) {
 #' outfn <- tempfile()
 #' write.table(dat, outfn, sep = '\t', quote = FALSE, row.names = FALSE)
 #' split_row_file(outfn)
-split_row_file <- function(filename, each_file_lines = 100,
-  write_fun = "write.table", write_params_x = "x", write_params_file = "file", 
-  write_params = list(sep = "", row.names = FALSE, col.names = FALSE, quote = FALSE)) {
+split_row_file <- function(filename, each_file_lines = 100, use_system_split = FALSE, 
+  system_split_params = "_split", write_fun = "write.table", write_params_x = "x", 
+  write_params_file = "file", write_params = list(sep = "", row.names = FALSE, 
+    col.names = FALSE, quote = FALSE)) {
+  if (use_system_split) {
+    split_path <- Sys.which("split")
+    split_path <- unname(split_path)
+    if (split_path == "") {
+      stop("Can't found executable file: split")
+    }
+    cmd <- sprintf("%s -l %s %s %s", split_path, each_file_lines, filename, paste0(filename, 
+      system_split_params))
+    cat(cmd, sep = "\n")
+    system(cmd)
+  }
   fn <- file(filename, "r")
   i <- 1
   pool <- "x"
@@ -82,6 +95,27 @@ split_row_file <- function(filename, each_file_lines = 100,
   }
   close(fn)
   return(i)
+}
+
+#' Function to split list
+#' @param x List object that need to be divided n sections
+#' @param sections Split section number (row)
+#' @export
+#' @examples
+#' x <- list(a=1:3, b=2:4, c=3, d=4)
+#' split_list(x, 2)
+split_list <- function(x, sections = 1) {
+  sections <- ceiling(length(x[[1]])/sections)
+  a <- seq(from = 1, to = length(x[[1]]), by = sections)
+  b <- seq(from = sections, to = length(x[[1]]), by = sections)
+  if (length(b) < length(a)) {
+    b <- c(b, length(x[[1]]))
+  }
+  result <- NULL
+  for (i in 1:length(a)) {
+    result[[i]] <- lapply(x, function(x) x[a[i]:b[i]])
+  }
+  return(result)
 }
 
 #' Function to calculate the split regions by sections and total numbers

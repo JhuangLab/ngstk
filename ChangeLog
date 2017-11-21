@@ -1,3 +1,8 @@
+2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+				* split_list be added in R/split.R
+				* param use_system_split be added in split_row_file
+
 2017-11-20 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
                 * get_split_seqs, split_row_data split_row_file, 

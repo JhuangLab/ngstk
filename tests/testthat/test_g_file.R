@@ -16,7 +16,7 @@ test_that("merge_table_files", {
   expect_that(colnames(x)[1], equals("col1"))
   expect_that(colnames(x)[2], equals("col2"))
   
-  outfn = tempfile() 
+  outfn = paste0(tempfile(), "_temp")
   x <- merge_table_files(files_dir = tempdir(), pattern = ".*.a$", outfn = outfn)
   expect_that(is.null(x), equals(TRUE))
   x <- read.table(outfn, header = TRUE, sep = "\t")

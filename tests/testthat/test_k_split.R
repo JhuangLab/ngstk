@@ -74,4 +74,12 @@ test_that("split_row_file", {
   outfn <- tempfile()
   write.table(dat, outfn, sep = "\t")
   split_row_file(outfn)
+  split_row_file(outfn, use_system_split = TRUE)
+})
+
+test_that("split_list", {
+ x <- list(a=1:3, b=2:4, c=3, d=4)
+ x <- split_list(x, 2)
+ expect_that(length(x), equals(2))
+ expect_that(x[[1]][["a"]][1], equals(1))
 })
