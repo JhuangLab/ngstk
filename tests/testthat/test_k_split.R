@@ -74,7 +74,7 @@ test_that("split_row_file", {
   outfn <- tempfile()
   write.table(dat, outfn, sep = "\t")
   split_row_file(outfn)
-  split_row_file(outfn, use_system_split = TRUE)
+  #split_row_file(outfn, use_system_split = TRUE)
 })
 
 test_that("split_list", {
