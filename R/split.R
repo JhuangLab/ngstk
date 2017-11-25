@@ -67,6 +67,8 @@ split_row_file <- function(filename, each_file_lines = 100, use_system_split = F
   system_split_params = "_split", write_fun = "write.table", write_params_x = "x", 
   write_params_file = "file", write_params = list(sep = "", row.names = FALSE, 
     col.names = FALSE, quote = FALSE)) {
+  old.op <- options()
+  options(scipen = 200)
   if (use_system_split) {
     split_path <- Sys.which("split")
     split_path <- unname(split_path)
@@ -76,13 +78,16 @@ split_row_file <- function(filename, each_file_lines = 100, use_system_split = F
     cmd <- sprintf("%s -l %s %s %s", split_path, each_file_lines, filename, paste0(filename, 
       system_split_params))
     cat(cmd, sep = "\n")
-    system(cmd)
+    status <- system(cmd)
+    options(old.op)
+    return(status)
   }
-  fn <- file(filename, "r")
+  options(old.op)
   i <- 1
   pool <- "x"
   while (TRUE) {
-    assign(pool[1], value = readLines(fn, n = each_file_lines))
+    assign(pool[1], value = fread(input = filename, nrows = each_file_lines, 
+      skip = (i - 1) * each_file_lines, sep = "\n", header = FALSE)[[1L]])
     x <- get(pool[1])
     file <- paste(filename, "split", i, sep = "_")
     config.list.merge(list(x = x, file = file))
@@ -95,7 +100,6 @@ split_row_file <- function(filename, each_file_lines = 100, use_system_split = F
       i <- i + 1
     }
   }
-  close(fn)
   return(i)
 }
 

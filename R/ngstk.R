@@ -12,5 +12,5 @@
 #'
 #' @docType package
 #' @name ngstk
-#' @import stringr configr utils
+#' @import stringr configr utils data.table
 NULL
