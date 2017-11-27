@@ -12,6 +12,8 @@ In NGS data analysis process, a few of duplicated small scripts, colors theme al
 The purples of ngstk is that help us to manage those small scripts systematically, store some of the useful material for NGS data analysis.
 Especially, data visualization, conversion of data format and various database ID were the mainly mission in the recently development cycle.
 
+A simple guide can be found in [here](https://CRAN.R-project.org/package=ngstk/vignettes/ngstk.html).
+
 ## Installation
 
 ### CRAN
@@ -86,6 +88,19 @@ mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_ge
 result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
 ```
 
+### Mtime and Ctime
+
+```r
+file_a <- tempfile()
+file_b <- tempfile()
+file.create(c(file_a, file_b))
+x1 <- get_files_mtime(input_files = c(file_a, file_b))
+x2 <- get_files_mtime(input_files = c(file_a, file_b), return_check = FALSE)
+x3 <- get_files_mtime(input_files = c(file_a, file_b), return_mtime = FALSE)
+x4 <- get_files_ctime(input_files = c(file_a, file_b))
+x5 <- get_files_ctime(input_files = c(file_a, file_b), return_check = FALSE)
+```
+
 ### Data split
 
 ```r
@@ -101,6 +116,23 @@ outfn <- tempfile()
 write.table(dat, outfn, sep = "\t")
 split_row_file(outfn)
 split_row_file(outfn, use_system_split = TRUE)
+```
+
+### Filename Process
+
+```r
+files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
+pattern <- '*.txt'
+list.files(files_dir, pattern)
+x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
+```
+
+### Colors
+
+```r
+set_colors('default')
+set_colors('proteinpaint_mutations')
+set_colors('proteinpaint_chromHMM_state')
 ```
 
 ## Tools

@@ -195,3 +195,21 @@ outfn <- tempfile()
 write.table(dat, outfn, sep = "\t")
 split_row_file(outfn)
 ```
+
+### Filename Process
+
+```{r}
+files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
+pattern <- '*.txt'
+list.files(files_dir, pattern)
+x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
+x
+```
+
+### Colors
+
+```{r}
+set_colors('default')
+set_colors('proteinpaint_mutations')
+set_colors('proteinpaint_chromHMM_state')
+```
