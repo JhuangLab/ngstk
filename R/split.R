@@ -83,24 +83,19 @@ split_row_file <- function(filename, each_file_lines = 100, use_system_split = F
     return(status)
   }
   options(old.op)
-  i <- 1
-  pool <- "x"
-  while (TRUE) {
-    assign(pool[1], value = fread(input = filename, nrows = each_file_lines, 
-      skip = (i - 1) * each_file_lines, sep = "\n", header = FALSE)[[1L]])
-    x <- get(pool[1])
-    file <- paste(filename, "split", i, sep = "_")
-    config.list.merge(list(x = x, file = file))
-    write_params <- eval(parse(text = sprintf("config.list.merge(write_params, list(%s=x, %s=file))", 
+  split_write_fun <- function(x = "", i = 1, ...) {
+    params <- list(...)
+    outfn = paste(params$filename, "split", i, sep = "_")
+    write_params <- params$write_params
+    write_params <- eval(parse(text = sprintf("config.list.merge(write_params, list(%s=x, %s=outfn))", 
       write_params_x, write_params_file)))
     do.call(write_fun, write_params)
-    if (length(get(pool[1])) < each_file_lines) {
-      break
-    } else {
-      i <- i + 1
-    }
+    return(outfn)
   }
-  return(i)
+  status <- batch_file(filename = filename, batch_lines = each_file_lines, split_write_fun, 
+    extra_params = list(write_fun = write_fun, write_params_x = write_params_x, 
+      write_params_file = write_params_file, write_params = write_params, filename = filename))
+  return(status)
 }
 
 #' Function to split list

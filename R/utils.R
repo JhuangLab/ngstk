@@ -64,7 +64,7 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 }
 
 #' Process the input file a batch of one batch
-#' @param input_file Filename need to process
+#' @param filename Filename need to process
 #' @param batch_lines Batch lines to process the data, default 10000000
 #' @param handler The function to process the data
 #' @param param_names Hander function required parameter names
@@ -72,13 +72,13 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 #' @export
 #' @examples
 #' dat <- data.frame(a=1:100, b=1:100)
-#' input_file <- tempfile()
-#' write.table(dat, input_file, sep = '\t', row.names = F, quote = F)
+#' filename <- tempfile()
+#' write.table(dat, filename, sep = '\t', row.names = FALSE, quote = FALSE)
 #' handler_fun <- function(x, i = 1) {
 #'   return(x[i])
 #' }
-#' batch_file(input_file, 10, handler_fun)
-batch_file <- function(input_file = "", batch_lines = 1e+07, handler = NULL, param_names = c("x", 
+#' batch_file(filename, 10, handler_fun)
+batch_file <- function(filename = "", batch_lines = 1e+07, handler = NULL, param_names = c("x", 
   "i"), extra_params = list()) {
   old.op <- options()
   options(scipen = 200)
@@ -86,7 +86,7 @@ batch_file <- function(input_file = "", batch_lines = 1e+07, handler = NULL, par
   pool <- "x"
   status <- c()
   while (TRUE) {
-    assign(pool[1], value = fread(input = input_file, nrows = batch_lines, skip = (i - 
+    assign(pool[1], value = fread(input = filename, nrows = batch_lines, skip = (i - 
       1) * batch_lines, sep = "\n", header = FALSE)[[1L]])
     x <- get(pool[1])
     params <- list(x = x, i = i)

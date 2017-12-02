@@ -4,11 +4,11 @@
 \alias{batch_file}
 \title{Process the input file a batch of one batch}
 \usage{
-batch_file(input_file = "", batch_lines = 1e+07, handler = NULL,
+batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
   param_names = c("x", "i"), extra_params = list())
 }
 \arguments{
-\item{input_file}{Filename need to process}
+\item{filename}{Filename need to process}
 
 \item{batch_lines}{Batch lines to process the data, default 10000000}
 
@@ -23,10 +23,10 @@ Process the input file a batch of one batch
 }
 \examples{
 dat <- data.frame(a=1:100, b=1:100)
-input_file <- tempfile()
-write.table(dat, input_file, sep = "\\t", row.names = F, quote = F)
+filename <- tempfile()
+write.table(dat, filename, sep = '\\t', row.names = FALSE, quote = FALSE)
 handler_fun <- function(x, i = 1) {
   return(x[i])
 }
-batch_file(input_file, 10, handler_fun)
+batch_file(filename, 10, handler_fun)
 }
