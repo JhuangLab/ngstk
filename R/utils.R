@@ -68,7 +68,8 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 #' @param batch_lines Batch lines to process the data, default 10000000
 #' @param handler The function to process the data
 #' @param param_names Hander function required parameter names
-#' @param extra_params Extra paramemters pass to handler
+#' @param extra_fread_params Extra fread parameters in read data step
+#' @param extra_params Extra paramemters pass to handler function
 #' @export
 #' @examples
 #' dat <- data.frame(a=1:100, b=1:100)
@@ -79,27 +80,44 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 #' }
 #' batch_file(filename, 10, handler_fun)
 batch_file <- function(filename = "", batch_lines = 1e+07, handler = NULL, param_names = c("x", 
-  "i"), extra_params = list()) {
+  "i"), extra_fread_params = list(sep = "\n", header = FALSE, return_1L = TRUE), 
+  extra_params = list()) {
   old.op <- options()
   options(scipen = 200)
   i <- 1
   pool <- "x"
-  status <- c()
+  status <- NULL
+  return_1L <- extra_fread_params$return_1L
+  extra_fread_params$return_1L <- NULL
   while (TRUE) {
-    assign(pool[1], value = fread(input = filename, nrows = batch_lines, skip = (i - 
-      1) * batch_lines, sep = "\n", header = FALSE)[[1L]])
+    fread_params <- config.list.merge(list(input = filename, nrows = batch_lines, 
+      skip = (i - 1) * batch_lines), extra_fread_params)
+    if (return_1L) {
+      assign(pool[1], value = do.call(fread, fread_params)[[1L]])
+    } else {
+      assign(pool[1], value = do.call(fread, fread_params))
+    }
     x <- get(pool[1])
     params <- list(x = x, i = i)
     names(params) <- param_names
     params <- config.list.merge(params, extra_params)
     status.tmp <- do.call(handler, params)
-    status <- c(status, status.tmp)
-    if (length(get(pool[1])) < batch_lines) {
+    if (is.null(status)) {
+      status <- list(i = status.tmp)
+      names(status) <- i
+    } else {
+      status <- config.list.merge(status, list(i = status.tmp))
+      names(status)[i] <- i
+    }
+    if (return_1L && length(get(pool[1])) < batch_lines) {
+      break
+    } else if (!return_1L && nrow(x) < batch_lines) {
       break
     } else {
       i <- i + 1
     }
   }
+  status[length(status)] <- NULL
   return(status)
 }
 

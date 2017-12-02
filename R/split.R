@@ -92,7 +92,7 @@ split_row_file <- function(filename, each_file_lines = 100, use_system_split = F
     do.call(write_fun, write_params)
     return(outfn)
   }
-  status <- batch_file(filename = filename, batch_lines = each_file_lines, split_write_fun, 
+  status <- batch_file(filename = filename, batch_lines = each_file_lines, handler = split_write_fun, 
     extra_params = list(write_fun = write_fun, write_params_x = write_params_x, 
       write_params_file = write_params_file, write_params = write_params, filename = filename))
   return(status)

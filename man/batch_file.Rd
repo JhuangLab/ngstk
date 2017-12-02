@@ -5,7 +5,8 @@
 \title{Process the input file a batch of one batch}
 \usage{
 batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
-  param_names = c("x", "i"), extra_params = list())
+  param_names = c("x", "i"), extra_fread_params = list(sep = "\\n", header =
+  FALSE, return_1L = TRUE), extra_params = list())
 }
 \arguments{
 \item{filename}{Filename need to process}
@@ -16,7 +17,9 @@ batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
 
 \item{param_names}{Hander function required parameter names}
 
-\item{extra_params}{Extra paramemters pass to handler}
+\item{extra_fread_params}{Extra fread parameters in read data step}
+
+\item{extra_params}{Extra paramemters pass to handler function}
 }
 \description{
 Process the input file a batch of one batch
