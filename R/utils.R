@@ -63,6 +63,46 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
   return(colors)
 }
 
+#' Process the input file a batch of one batch
+#' @param input_file Filename need to process
+#' @param batch_lines Batch lines to process the data, default 10000000
+#' @param handler The function to process the data
+#' @param param_names Hander function required parameter names
+#' @param extra_params Extra paramemters pass to handler
+#' @export
+#' @examples
+#' dat <- data.frame(a=1:100, b=1:100)
+#' input_file <- tempfile()
+#' write.table(dat, input_file, sep = '\t', row.names = F, quote = F)
+#' handler_fun <- function(x, i = 1) {
+#'   return(x[i])
+#' }
+#' batch_file(input_file, 10, handler_fun)
+batch_file <- function(input_file = "", batch_lines = 1e+07, handler = NULL, param_names = c("x", 
+  "i"), extra_params = list()) {
+  old.op <- options()
+  options(scipen = 200)
+  i <- 1
+  pool <- "x"
+  status <- c()
+  while (TRUE) {
+    assign(pool[1], value = fread(input = input_file, nrows = batch_lines, skip = (i - 
+      1) * batch_lines, sep = "\n", header = FALSE)[[1L]])
+    x <- get(pool[1])
+    params <- list(x = x, i = i)
+    names(params) <- param_names
+    params <- config.list.merge(params, extra_params)
+    status.tmp <- do.call(handler, params)
+    status <- c(status, status.tmp)
+    if (length(get(pool[1])) < batch_lines) {
+      break
+    } else {
+      i <- i + 1
+    }
+  }
+  return(status)
+}
+
 # Get config value (2 depth)
 get_config_value <- function(config_input, level_1, level_2) {
   config_input[[level_1]][[level_2]]
@@ -72,8 +112,8 @@ get_config_value <- function(config_input, level_1, level_2) {
 # initial config_meta_format
 
 initial_params <- function(config_file, config_list, input_type, this_section, meta_flag, 
-  format_flag, hander_funs = NULL, mhander_funs = NULL, hander_confg_file = NULL, 
-  mhander_confg_file = NULL) {
+  format_flag, handler_funs = NULL, mhandler_funs = NULL, handler_confg_file = NULL, 
+  mhandler_confg_file = NULL) {
   if (is.null(config_list)) {
     config_meta <- eval.config(value = meta_flag, config = this_section, file = config_file)
     config_format <- eval.config(value = format_flag, config = this_section, 
@@ -83,67 +123,69 @@ initial_params <- function(config_file, config_list, input_type, this_section, m
     config_format <- config_list[[this_section]][[format_flag]]
   }
   defined_cols <- config_meta[["defined_cols"]][["colnames"]]
-  if (is.null(hander_funs)) {
-    hander_lib <- config_meta[["defined_cols"]][["hander_lib"]]
-    if (is.null(hander_lib)) {
-      hander_lib <- "default_handers"
+  if (is.null(handler_funs)) {
+    handler_lib <- config_meta[["defined_cols"]][["handler_lib"]]
+    if (is.null(handler_lib)) {
+      handler_lib <- "default_handlers"
     }
-    hander_lib_data <- eval.config(value = hander_lib, config = "hander", file = hander_confg_file)
-    hander_funs <- hander_lib_data$hander_funs
+    handler_lib_data <- eval.config(value = handler_lib, config = "handler", 
+      file = handler_confg_file)
+    handler_funs <- handler_lib_data$handler_funs
   }
-  if (is.null(mhander_funs)) {
-    mhander_lib <- config_meta[["defined_cols"]][["mhander_lib"]]
-    if (is.null(mhander_lib)) {
-      mhander_lib <- "default_mhanders"
+  if (is.null(mhandler_funs)) {
+    mhandler_lib <- config_meta[["defined_cols"]][["mhandler_lib"]]
+    if (is.null(mhandler_lib)) {
+      mhandler_lib <- "default_mhandlers"
     }
-    mhander_lib_data <- eval.config(value = mhander_lib, config = "mhander", 
-      file = mhander_confg_file)
-    mhander_funs <- mhander_lib_data$mhander_funs
+    mhandler_lib_data <- eval.config(value = mhandler_lib, config = "mhandler", 
+      file = mhandler_confg_file)
+    mhandler_funs <- mhandler_lib_data$mhandler_funs
   }
   config_input <- config_format[[input_type]]
   return(list(config_meta = config_meta, config_format = config_format, config_input = config_input, 
-    defined_cols = defined_cols, hander_funs = hander_funs, mhander_funs = mhander_funs))
+    defined_cols = defined_cols, handler_funs = handler_funs, mhandler_funs = mhandler_funs))
 }
 
 # format converter
 data_format_converter <- function(input_data, input_type = "", config_file = "", 
-  config_list = NULL, hander_confg_file = "", mhander_confg_file = "", hander_funs = NULL, 
-  mhander_funs = NULL, hander_extra_params = NULL, mhander_extra_params = NULL, 
-  outfn = NULL, function_name = "", hander_api = "", mhander_api = "", meta_flag = "meta", 
+  config_list = NULL, handler_confg_file = "", mhandler_confg_file = "", handler_funs = NULL, 
+  mhandler_funs = NULL, handler_extra_params = NULL, mhandler_extra_params = NULL, 
+  outfn = NULL, function_name = "", handler_api = "", mhandler_api = "", meta_flag = "meta", 
   format_flag = "format") {
   
   params <- initial_params(config_file, config_list, input_type, function_name, 
-    meta_flag, format_flag, hander_funs, mhander_funs, hander_confg_file, mhander_confg_file)
+    meta_flag, format_flag, handler_funs, mhandler_funs, handler_confg_file, 
+    mhandler_confg_file)
   config_input <- params$config_input
   defined_cols <- params$defined_cols
   config_input <- params$config_input
-  hander_funs <- params$hander_funs
-  mhander_funs <- params$mhander_funs
-  hander_data <- NULL
+  handler_funs <- params$handler_funs
+  mhandler_funs <- params$mhandler_funs
+  handler_data <- NULL
   for (i in 1:length(defined_cols)) {
-    hander_data <- do.call(hander_api, list(hander_data = hander_data, config_input = config_input, 
-      defined_cols = defined_cols, input_data = input_data, index = i, hander_funs = hander_funs, 
-      extra_params = hander_extra_params))
+    handler_data <- do.call(handler_api, list(handler_data = handler_data, config_input = config_input, 
+      defined_cols = defined_cols, input_data = input_data, index = i, handler_funs = handler_funs, 
+      extra_params = handler_extra_params))
   }
-  hander_data <- do.call(mhander_api, list(hander_data = hander_data, config_input = config_input, 
-    mhander_funs = mhander_funs, extra_params = hander_extra_params))
+  handler_data <- do.call(mhandler_api, list(handler_data = handler_data, config_input = config_input, 
+    mhandler_funs = mhandler_funs, extra_params = handler_extra_params))
   if (!is.null(outfn)) {
-    write.table(hander_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
+    write.table(handler_data, outfn, sep = "\t", row.names = F, quote = F, col.names = T)
   }
-  return(hander_data)
+  return(handler_data)
 }
 
-default_hander_api <- function(hander_data, config_input, defined_cols, input_data, 
-  index, hander_funs = NULL, extra_params = NULL) {
+default_handler_api <- function(handler_data, config_input, defined_cols, input_data, 
+  index, handler_funs = NULL, extra_params = NULL) {
   
-  hander_data <- handler(hander_data, config_input, defined_cols, input_data, index, 
-    hander_funs = hander_funs, extra_params = extra_params)
-  return(hander_data)
+  handler_data <- handler(handler_data, config_input, defined_cols, input_data, 
+    index, handler_funs = handler_funs, extra_params = extra_params)
+  return(handler_data)
 }
 
-default_mhandler_api <- function(hander_data, config_input, mhander_funs = NULL, 
+default_mhandler_api <- function(handler_data, config_input, mhandler_funs = NULL, 
   extra_params = NULL) {
   
-  hander_data <- mhandler(hander_data, config_input, mhander_funs, extra_params)
-  return(hander_data)
+  handler_data <- mhandler(handler_data, config_input, mhandler_funs, extra_params)
+  return(handler_data)
 }

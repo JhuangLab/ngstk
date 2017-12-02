@@ -15,3 +15,14 @@ test_that("set_colors", {
   default <- set_colors("default")
   expect_that(length(default) > 0, equals(TRUE))
 })
+
+test_that("batch_file", {
+  dat <- data.frame(a=1:100, b=1:100)
+  input_file <- tempfile()
+  write.table(dat, input_file, sep = "\t", row.names = F, quote = F)
+  handler_fun <- function(x, i = 1) {
+    return(x[i])
+  }
+  x <- batch_file(input_file = input_file, batch_lines = 10, handler = handler_fun)
+  expect_that(x[1], equals("a\tb"))
+})

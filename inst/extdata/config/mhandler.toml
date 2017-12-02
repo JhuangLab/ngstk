@@ -1,0 +1,8 @@
+Title = "ngstk mhandler configuration file"
+
+[mhandler]
+[mhandler.default_mhandlers]
+mhandler_funs = ["mhandler_fusions_left_match", "mhandler_fusions_right_match",
+                     "mhandler_fusions_any_match", "mhandler_fusions_full_match",
+                     "mhandler_fusions_anyfull_match"]
+descripition = "ngstk default mhandler lib"

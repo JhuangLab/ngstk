@@ -6,16 +6,16 @@
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' 
 #' @return
@@ -31,13 +31,13 @@
 #' muts2pp(input_data, input_type = 'iseq')
 
 muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "muts2pp", "default_hander_api", "default_mhandler_api")
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "muts2pp", "default_handler_api", "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
@@ -48,16 +48,16 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' @return
 #' A data frame
@@ -70,15 +70,15 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
 #' sampletype <- 'diagnose'
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
-#' hander_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
+#' handler_data <- fusions2pp(input_data, input_type = 'fusioncatcher')
 fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "fusions2pp", "default_hander_api", "default_mhandler_api")
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "fusions2pp", "default_handler_api", "default_mhandler_api")
 }
 
 #' Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.
@@ -89,16 +89,16 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' @return
 #' A data frame
@@ -111,13 +111,13 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
 #' sampletype <- 'diagnose'
 #' input_data <- data.frame(input_data, disease, sampletype)
 #' input_data$disease <- as.character(input_data$disease)
-#' #hander_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
+#' #handler_data <- fusions2pp_meta(input_data, input_type = 'fusioncatcher')
 fusions2pp_meta <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "fusions2pp_meta", "default_hander_api", "default_mhandler_api")
+  "config/proteinpaint.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "fusions2pp_meta", "default_handler_api", "default_mhandler_api")
 }

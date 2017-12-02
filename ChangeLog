@@ -1,5 +1,10 @@
 2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
+			    * rename all hander to handler and mhander to mhandler
+				* add function batch_file in R/utils.R
+
+2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
 				* split_list be added in R/split.R
 				* param use_system_split be added in split_row_file
 

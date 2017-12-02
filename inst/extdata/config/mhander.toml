@@ -1,8 +1,0 @@
-Title = "ngstk mhander configuration file"
-
-[mhander]
-[mhander.default_mhanders]
-mhander_funs = ["mhander_fusions_left_match", "mhander_fusions_right_match",
-                     "mhander_fusions_any_match", "mhander_fusions_full_match",
-                     "mhander_fusions_anyfull_match"]
-descripition = "ngstk default mhander lib"

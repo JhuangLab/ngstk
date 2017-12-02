@@ -6,11 +6,11 @@
 \usage{
 muts2pp(input_data, input_type = "iseq",
   config_file = system.file("extdata", "config/proteinpaint.toml", package =
-  "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata",
-  "config/hander.toml", package = "ngstk"),
-  mhander_confg_file = system.file("extdata", "config/mhander.toml", package =
-  "ngstk"), hander_funs = NULL, mhander_funs = NULL,
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL)
+  "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata",
+  "config/handler.toml", package = "ngstk"),
+  mhandler_confg_file = system.file("extdata", "config/mhandler.toml", package
+  = "ngstk"), handler_funs = NULL, mhandler_funs = NULL,
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A mutation data.frame need to be converted to ProteinPaint input.}
@@ -23,21 +23,21 @@ system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')}
 \item{config_list}{ngstk ProteinPaint configuration, default is NULL and 
 read from config_file}
 
-\item{hander_confg_file}{ngstk hander configuration file path, default is 
-system.file('extdata', 'config/hander.toml', package = 'ngstk')}
+\item{handler_confg_file}{ngstk handler configuration file path, default is 
+system.file('extdata', 'config/handler.toml', package = 'ngstk')}
 
-\item{mhander_confg_file}{ngstk hander configuration file path, default is 
-system.file('extdata', 'config/mhander.toml', package = 'ngstk')}
+\item{mhandler_confg_file}{ngstk handler configuration file path, default is 
+system.file('extdata', 'config/mhandler.toml', package = 'ngstk')}
 
-\item{hander_funs}{hander function for single colnum, 
+\item{handler_funs}{handler function for single colnum, 
 default is NULL and get value from config_file}
 
-\item{mhander_funs}{hander function for mulitple colnums,
+\item{mhandler_funs}{handler function for mulitple colnums,
 #' default is NULL and get value from config_file}
 
-\item{hander_extra_params}{Extra parameters pass to handler}
+\item{handler_extra_params}{Extra parameters pass to handler}
 
-\item{mhander_extra_params}{Extra parameters pass to mhandler}
+\item{mhandler_extra_params}{Extra parameters pass to mhandler}
 
 \item{outfn}{Default is NULL and not output the result to file}
 }

@@ -1,0 +1,8 @@
+Title = "ngstk handler configuration file"
+
+[handler]
+[handler.default_handlers]
+handler_funs = ["handler_default_value", "handler_na_replace", "handler_lower", "handler_upper",
+               "handler_value_map", "handler_extract", "handler_replace", "handler_split",
+               "handler_prefix", "handler_postfix"]
+descripition = "ngstk default handler lib"

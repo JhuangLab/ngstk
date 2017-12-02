@@ -7,16 +7,16 @@
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' 
 #' @return
@@ -32,13 +32,13 @@
 #' muts2mutation_mapper(input_data, input_type = 'iseq')
 
 muts2mutation_mapper <- function(input_data, input_type = "iseq", config_file = system.file("extdata", 
-  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "muts2mutation_mapper", "default_hander_api", "default_mhandler_api")
+  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "muts2mutation_mapper", "default_handler_api", "default_mhandler_api")
 }
 
 #' Function to convert mutation data to Oncoprinter
@@ -50,16 +50,16 @@ muts2mutation_mapper <- function(input_data, input_type = "iseq", config_file = 
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' 
 #' @return
@@ -74,13 +74,13 @@ muts2mutation_mapper <- function(input_data, input_type = "iseq", config_file = 
 #' input_data$disease <- as.character(input_data$disease)
 #' muts2oncoprinter(input_data, input_type = 'iseq')
 muts2oncoprinter <- function(input_data, input_type = "iseq", config_file = system.file("extdata", 
-  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "muts2oncoprinter", "default_hander_api", "default_mhandler_api")
+  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "muts2oncoprinter", "default_handler_api", "default_mhandler_api")
 }
 
 #' Function to convert mutation data to Oncoprinter
@@ -92,16 +92,16 @@ muts2oncoprinter <- function(input_data, input_type = "iseq", config_file = syst
 #' system.file('extdata', 'config/proteinpaint.toml', package = 'ngstk')
 #' @param config_list ngstk ProteinPaint configuration, default is NULL and 
 #' read from config_file
-#' @param hander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/hander.toml', package = 'ngstk')
-#' @param mhander_confg_file ngstk hander configuration file path, default is 
-#' system.file('extdata', 'config/mhander.toml', package = 'ngstk')
-#' @param hander_funs hander function for single colnum, 
+#' @param handler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/handler.toml', package = 'ngstk')
+#' @param mhandler_confg_file ngstk handler configuration file path, default is 
+#' system.file('extdata', 'config/mhandler.toml', package = 'ngstk')
+#' @param handler_funs handler function for single colnum, 
 #' default is NULL and get value from config_file
-#' @param mhander_funs hander function for mulitple colnums,
+#' @param mhandler_funs handler function for mulitple colnums,
 #' #' default is NULL and get value from config_file
-#' @param hander_extra_params Extra parameters pass to handler
-#' @param mhander_extra_params Extra parameters pass to mhandler
+#' @param handler_extra_params Extra parameters pass to handler
+#' @param mhandler_extra_params Extra parameters pass to mhandler
 #' @param outfn Default is NULL and not output the result to file
 #' 
 #' @return
@@ -116,11 +116,11 @@ muts2oncoprinter <- function(input_data, input_type = "iseq", config_file = syst
 #' input_data$disease <- as.character(input_data$disease)
 #' fusions2oncoprinter(input_data, input_type = 'fusioncatcher')
 fusions2oncoprinter <- function(input_data, input_type = "fusioncatcher", config_file = system.file("extdata", 
-  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, hander_confg_file = system.file("extdata", 
-  "config/hander.toml", package = "ngstk"), mhander_confg_file = system.file("extdata", 
-  "config/mhander.toml", package = "ngstk"), hander_funs = NULL, mhander_funs = NULL, 
-  hander_extra_params = NULL, mhander_extra_params = NULL, outfn = NULL) {
-  data_format_converter(input_data, input_type, config_file, config_list, hander_confg_file, 
-    mhander_confg_file, hander_funs, mhander_funs, hander_extra_params, mhander_extra_params, 
-    outfn, "fusions2oncoprinter", "default_hander_api", "default_mhandler_api")
+  "config/cbioportal.toml", package = "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata", 
+  "config/handler.toml", package = "ngstk"), mhandler_confg_file = system.file("extdata", 
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL, mhandler_funs = NULL, 
+  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL) {
+  data_format_converter(input_data, input_type, config_file, config_list, handler_confg_file, 
+    mhandler_confg_file, handler_funs, mhandler_funs, handler_extra_params, mhandler_extra_params, 
+    outfn, "fusions2oncoprinter", "default_handler_api", "default_mhandler_api")
 }
