@@ -70,6 +70,7 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 #' @param param_names Hander function required parameter names
 #' @param extra_fread_params Extra fread parameters in read data step
 #' @param extra_params Extra paramemters pass to handler function
+#' @param start_index default is 1, control the skip rows, n = (i-1) * batch_lines
 #' @export
 #' @examples
 #' dat <- data.frame(a=1:100, b=1:100)
@@ -81,17 +82,18 @@ set_colors <- function(theme = NULL, theme_config_file = NULL) {
 #' batch_file(filename, 10, handler_fun)
 batch_file <- function(filename = "", batch_lines = 1e+07, handler = NULL, param_names = c("x", 
   "i"), extra_fread_params = list(sep = "\n", header = FALSE, return_1L = TRUE), 
-  extra_params = list()) {
-  old.op <- options()
-  options(scipen = 200)
-  i <- 1
+  extra_params = list(), start_index = 1) {
+  old_op <- options()
+  options(scipen = 200) 
+  i <- start_index
   pool <- "x"
   status <- NULL
   return_1L <- extra_fread_params$return_1L
   extra_fread_params$return_1L <- NULL
   while (TRUE) {
+    skip <- as.numeric((i - 1) * batch_lines)
     fread_params <- config.list.merge(list(input = filename, nrows = batch_lines, 
-      skip = (i - 1) * batch_lines), extra_fread_params)
+      skip = skip), extra_fread_params)
     if (return_1L) {
       assign(pool[1], value = do.call(fread, fread_params)[[1L]])
     } else {
@@ -117,6 +119,7 @@ batch_file <- function(filename = "", batch_lines = 1e+07, handler = NULL, param
       i <- i + 1
     }
   }
+  options(old_op)
   status[length(status)] <- NULL
   return(status)
 }

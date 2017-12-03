@@ -1,3 +1,7 @@
+2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+				* parameter start_index be added in batch_file function
+
 2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
 			    * rename all hander to handler and mhander to mhandler

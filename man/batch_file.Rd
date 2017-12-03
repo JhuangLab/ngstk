@@ -6,7 +6,7 @@
 \usage{
 batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
   param_names = c("x", "i"), extra_fread_params = list(sep = "\\n", header =
-  FALSE, return_1L = TRUE), extra_params = list())
+  FALSE, return_1L = TRUE), extra_params = list(), start_index = 1)
 }
 \arguments{
 \item{filename}{Filename need to process}
@@ -20,6 +20,8 @@ batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
 \item{extra_fread_params}{Extra fread parameters in read data step}
 
 \item{extra_params}{Extra paramemters pass to handler function}
+
+\item{start_index}{default is 1, control the skip rows, n = (i-1) * batch_lines}
 }
 \description{
 Process the input file a batch of one batch
