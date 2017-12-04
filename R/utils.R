@@ -87,7 +87,12 @@ batch_file <- function(filename = "", batch_lines = 1e+07, handler = NULL, param
   options(scipen = 200) 
   i <- start_index
   pool <- "x"
-  status <- NULL
+  if (start_index != 1) {
+    status <- lapply(1:start_index, function(x){return(NA)})
+    names(status)[1:(start_index - 1)] <- 1:start_index
+  } else {
+    status <- NULL
+  }
   return_1L <- extra_fread_params$return_1L
   extra_fread_params$return_1L <- NULL
   while (TRUE) {
