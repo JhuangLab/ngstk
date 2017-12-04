@@ -7,7 +7,7 @@ more easily download or use}
 \usage{
 format_filenames(input_files = NULL, files_dir = NULL, pattern = ".*.txt",
   do.rename = FALSE, profix = "", prefix = "", replace = list(old =
-  c("-", "__"), new = c("_", "_")))
+  c("-", "__"), new = c("_", "_")), toupper = FALSE, tolower = FALSE)
 }
 \arguments{
 \item{input_files}{Basename of files that need to be format, default is NULL 
@@ -24,6 +24,10 @@ and use the regular expression pattern to select files}
 \item{prefix}{Prefix of filenames added in those without the same profix}
 
 \item{replace}{Use str_replace to replace all old to new separately}
+
+\item{toupper}{Filenames toupper, default is FALSE}
+
+\item{tolower}{Filenames tolower, default is FALSE}
 }
 \description{
 Function to format filenames that can be used to unify the filenames style for 

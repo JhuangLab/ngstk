@@ -1,5 +1,9 @@
 2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
+				* add tolower and toupper in format_filenames
+
+2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
 				* fix start_index length problem
 				* when i != 1, set extra_fread_prams header to FALSE
 

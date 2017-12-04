@@ -8,6 +8,8 @@
 #' @param profix Profix of filenames added in those without the same profix
 #' @param prefix Prefix of filenames added in those without the same profix
 #' @param replace Use str_replace to replace all old to new separately
+#' @param toupper Filenames toupper, default is FALSE
+#' @param tolower Filenames tolower, default is FALSE
 #' @export
 #' @examples 
 #' files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
@@ -15,7 +17,7 @@
 #' x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
 format_filenames <- function(input_files = NULL, files_dir = NULL, pattern = ".*.txt", 
   do.rename = FALSE, profix = "", prefix = "", replace = list(old = c("-", "__"), 
-    new = c("_", "_"))) {
+    new = c("_", "_")), toupper = FALSE, tolower = FALSE) {
   
   input_files <- get_files(input_files, files_dir, pattern)
   input_files_dir <- dirname(input_files)
@@ -60,6 +62,14 @@ format_filenames <- function(input_files = NULL, files_dir = NULL, pattern = ".*
       str_replace(x, old, new)
     })
   }
+  
+  if (toupper) {
+    filenames.new <- toupper(filenames.new)
+  }
+  if (tolower) {
+    filenames.new <- tolower(filenames.new)
+  }
+  
   input_files_dir <- normalizePath(input_files_dir)
   input_files <- sprintf("%s/%s", input_files_dir, input_files)
   filenames.new <- sprintf("%s/%s", input_files_dir, filenames.new)
