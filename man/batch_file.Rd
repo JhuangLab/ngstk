@@ -17,7 +17,8 @@ batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
 
 \item{param_names}{Hander function required parameter names}
 
-\item{extra_fread_params}{Extra fread parameters in read data step}
+\item{extra_fread_params}{Extra fread parameters in read data step,
+default is list(sep = '\\n', header = TRUE, return_1L = TRUE), return_1L to get x[[1L]]}
 
 \item{extra_params}{Extra paramemters pass to handler function}
 
