@@ -8,21 +8,52 @@ colors = ["#0073c3", "#efc000", "#696969",
 colors = ["#c20b01", "#196abd"]
 
 [proteinpaint_mutations]
+journal = "Nature Gentics"
 colors = ["#3987cc", "#ff7f0e", "#db3d3d", "#6633ff",
           "#bbbbbb", "#9467bd", "#998199", "#8c564b", "#819981",
           "#5781ff"]
 
 [proteinpaint_domains]
+journal = "Nature Gentics"
 colors = ["#a6d854", "#8dd3c7", "#fb8072", "#80b1d3", "#bebada", "#e5c494", "#fdb462", "#b3b3b3"]
 
 [proteinpaint_chromHMM_state]
+journal = "Nature Gentics"
 colors = ["#c0222c", "#f12424", "#ff00c7", "#d192fb", "#f9982f", "#fcc88e",
           "#fbf876", "#a6d67b", "#1fb855", "#007d37", "#00a99e", "#11aaec",
           "#186db9", "#3800f8", "#961a8b", "#47005f"]
 
 [proteinpaint_significance]
+journal = "Nature Gentics"
 colors = ["#aaaaaa", "#e99002", "#5bc0de", "#f04124", "#90c3d4", "#f04124", "#43ac6a"]
 
 [adobe_color_cc_1]
 colors = ["#FFE350", "#E8740C", "#FF0000", "#9C0CE8", "#0D43FF",
           "#A6B212", "#1991FF", "#ECFF00", "#CC1E14", "#B25C58"]
+
+[ng_mutations]
+colors = ["#609ec2", "#b56248", "#d0cb6c", "#9cb46f", "#5d9e71", 
+          "#b36170", "#aed5ec", "3d456f", "da8142"]
+journal = "Nature Gentics"
+doi = "10.1038/ng.3900"
+figure = "figure4a"
+
+[nm_lines]
+colors = ["#3b7ab5", "#e7211c", "#ff831d", "#2ee0d1", "#9c48a0", "#a7582c"]
+journal = "Nature Methods"
+doi = "10.1038/nmeth.4083"
+figure = "figure2"
+
+[ball_subtype_colors]
+colors = ["#0071bc", "#82a6d7", "#003b64", "#e8c122", "#8b770e", "#868686", 
+          "#b2b1b3", "#005083", "#c05f56", "#d79f93"]
+journal = "Journal of Clinical Oncology"
+doi = "10.1200/JCO.2016.70.7836"
+figure = "figure1"
+
+[nature_brest_signatures]
+colors = ["#3d1572", "#7d4594", "#e84286", "#f7c0ba", "#006230", "#199d47", "#91cd84", 
+          "#143080", "#3277b6", "#9584b9", "#dcd8e8", "#fac935"]
+hournal = "Nature"
+doi = "10.1038/nature17676"
+figure = "figure3b"

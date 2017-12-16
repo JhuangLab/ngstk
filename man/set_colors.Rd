@@ -4,13 +4,16 @@
 \alias{set_colors}
 \title{Function to get a series defined theme colors}
 \usage{
-set_colors(theme = NULL, theme_config_file = NULL)
+set_colors(theme = NULL, theme_config_file = NULL,
+  show_all_themes = FALSE)
 }
 \arguments{
 \item{theme}{Colors theme, e.g. default, red_blue}
 
 \item{theme_config_file}{Theme configuration file, default is
 system.file('extdata', 'config/theme.toml', package = 'ngstk')}
+
+\item{show_all_themes}{Wheather show all avaliable colors theme, default is FALSE}
 }
 \value{
 A character
@@ -21,4 +24,5 @@ Function to get a series defined theme colors
 \examples{
 red_blue <- set_colors('red_blue')
 default <- set_colors('default')
+colors <- set_colors(show_all_themes = TRUE)
 }

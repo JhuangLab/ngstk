@@ -14,6 +14,8 @@ test_that("set_colors", {
   expect_that(length(red_blue) > 0, equals(TRUE))
   default <- set_colors("default")
   expect_that(length(default) > 0, equals(TRUE))
+  colors <- set_colors(show_all_themes = TRUE)
+  expect_that(is.list(colors), equals(TRUE))
 })
 
 test_that("batch_file", {

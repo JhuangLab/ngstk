@@ -14,7 +14,6 @@
 #' names(config.vec) <- 'samtools'
 #' tools <- set_tools(config.file, config.list, config.vec,
 #'                   eval.params = list(config = 'tools'))
-
 set_tools <- function(config.file = "", config.list = list(), config.vec = c(), eval.params = list()) {
   
   config.list.1 <- NULL
@@ -46,15 +45,21 @@ set_tools <- function(config.file = "", config.list = list(), config.vec = c(), 
 #' @param theme Colors theme, e.g. default, red_blue
 #' @param theme_config_file Theme configuration file, default is
 #' system.file('extdata', 'config/theme.toml', package = 'ngstk')
+#' @param show_all_themes Wheather show all avaliable colors theme, default is FALSE
 #' @export
 #' @return
 #' A character
 #' @examples
 #' red_blue <- set_colors('red_blue')
 #' default <- set_colors('default')
-set_colors <- function(theme = NULL, theme_config_file = NULL) {
+#' colors <- set_colors(show_all_themes = TRUE)
+set_colors <- function(theme = NULL, theme_config_file = NULL, show_all_themes = FALSE) {
   if (is.null(theme_config_file)) {
     theme_config_file <- system.file("extdata", "config/theme.toml", package = "ngstk")
+  }
+  if (show_all_themes) {
+    config <- read.config(file = theme_config_file)
+    return(config)
   }
   if (is.null(theme)) {
     theme <- "default"
