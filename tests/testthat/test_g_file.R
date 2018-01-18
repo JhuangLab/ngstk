@@ -1,6 +1,6 @@
 test_that("merge_table_files", {
-  a <- data.frame(col1=1:6, col2=2:7)
-  b <- data.frame(col1=6:11, col2=1:6)
+  a <- data.frame(col1 = 1:6, col2 = 2:7)
+  b <- data.frame(col1 = 6:11, col2 = 1:6)
   file_a <- paste0(tempfile(), ".a_temp")
   file_b <- paste0(tempfile(), ".a_temp")
   write.table(a, file_a, sep = "\t", row.names = FALSE)

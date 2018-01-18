@@ -1,0 +1,5 @@
+Samples	Group	Mut
+C001	G1	0
+C002	G2	0
+C003	G1	1
+C004	G2	1

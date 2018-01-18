@@ -19,7 +19,7 @@ test_that("set_colors", {
 })
 
 test_that("batch_file", {
-  dat <- data.frame(a=1:100, b=1:100)
+  dat <- data.frame(a = 1:100, b = 1:100)
   filename <- tempfile()
   write.table(dat, filename, sep = "\t", row.names = F, quote = F)
   handler_fun <- function(x, i = 1, ...) {
@@ -28,7 +28,7 @@ test_that("batch_file", {
   x <- batch_file(filename = filename, batch_lines = 10, handler = handler_fun)
   expect_that(x[[1]], equals("a\tb"))
   x <- batch_file(filename = filename, batch_lines = 10, handler = handler_fun, 
-                  extra_fread_params = list(sep = "\t", header = FALSE, return_1L = FALSE))
+    extra_fread_params = list(sep = "\t", header = FALSE, return_1L = FALSE))
   x <- rbindlist(x)
   expect_that(nrow(x), equals(10))
 })

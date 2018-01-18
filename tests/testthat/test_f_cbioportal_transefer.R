@@ -31,7 +31,8 @@ test_that("muts2oncoprinter", {
 })
 
 test_that("fusions2oncoprinter", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", 
+    package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   suppressWarnings(result <- fusions2oncoprinter(input_data, input_type = "fusioncatcher"))
   result_colnames <- colnames(result)

@@ -16,7 +16,8 @@ test_that("muts2pp", {
 
 
 test_that("fusions2pp", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", 
+    package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   disease <- "B-ALL"
   sampletype <- "diagnose"
@@ -39,11 +40,13 @@ test_that("fusions2pp", {
 
 
 test_that("fusions2pp_meta", {
-  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", package = "ngstk")
+  demo_file <- system.file("extdata", "demo/proteinpaint/fusions2pp_fusioncatcher.txt", 
+    package = "ngstk")
   input_data <- read.table(demo_file, sep = "\t", header = TRUE, stringsAsFactors = FALSE)
   disease <- "B-ALL"
   sampletype <- "diagnose"
   input_data <- data.frame(input_data, disease, sampletype)
   input_data$disease <- as.character(input_data$disease)
   result <- suppressWarnings(fusions2pp_meta(input_data, input_type = "fusioncatcher"))
+  expect_equal(colnames(result)[1], "sample")
 })

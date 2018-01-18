@@ -21,7 +21,7 @@ test_that("split_row_data", {
   expect_that(nrow(x[[4]]), equals(4))
   expect_that(x[[1]][2, 1], equals(2))
   expect_that(x[[4]][4, 2], equals(20))
-
+  
   x2 <- data.frame(col1 = 1:99, col2 = 101:199)
   x <- split_row_data(x2, sections = 2)
   expect_that(length(x), equals(2))
@@ -49,17 +49,17 @@ test_that("split_col_data", {
   x <- split_col_data(x1.t, sections = 1)
   expect_that(length(x), equals(1))
   expect_that(ncol(x[[1]]), equals(10))
-  y <- as.numeric(x[[1]][1,5])
+  y <- as.numeric(x[[1]][1, 5])
   expect_that(y, equals(5))
-  y <- as.numeric(x[[1]][2,5])
+  y <- as.numeric(x[[1]][2, 5])
   expect_that(y, equals(15))
-
+  
   x <- split_col_data(x2.t, sections = 4)
   expect_that(length(x), equals(4))
   expect_that(ncol(x[[4]]), equals(27))
-  y <- as.numeric(x[[1]][1,2])
+  y <- as.numeric(x[[1]][1, 2])
   expect_that(y, equals(2))
-  y <- as.numeric(x[[4]][2,4])
+  y <- as.numeric(x[[4]][2, 4])
   expect_that(y, equals(176))
 })
 
@@ -67,19 +67,21 @@ test_that("get_split_regions", {
   total_num <- 1000
   sections <- 3
   x <- get_split_seqs(total_num, sections)
+  expect_equal(length(x), 3)
 })
 
 test_that("split_row_file", {
   dat <- data.frame(col1 = 1:10000)
   outfn <- tempfile()
   write.table(dat, outfn, sep = "\t")
-  split_row_file(outfn)
-  #split_row_file(outfn, use_system_split = TRUE)
+  x <- split_row_file(outfn)
+  expect_equal(length(x), 100)
+  # split_row_file(outfn, use_system_split = TRUE)
 })
 
 test_that("split_list", {
- x <- list(a=1:3, b=2:4, c=3, d=4)
- x <- split_list(x, 2)
- expect_that(length(x), equals(2))
- expect_that(x[[1]][["a"]][1], equals(1))
+  x <- list(a = 1:3, b = 2:4, c = 3, d = 4)
+  x <- split_list(x, 2)
+  expect_that(length(x), equals(2))
+  expect_that(x[[1]][["a"]][1], equals(1))
 })

@@ -1,19 +1,18 @@
+2018-01-17 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+				* add supress_any_message R/log.R
+				* add tools deseq2
+
 2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
 				* add tolower and toupper in format_filenames
-
-2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-
 				* fix start_index length problem
 				* when i != 1, set extra_fread_prams header to FALSE
-
-2017-12-03 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-
 				* parameter start_index be added in batch_file function
 
 2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-			    * rename all hander to handler and mhander to mhandler
+				* rename all hander to handler and mhander to mhandler
 				* add function batch_file in R/utils.R
 
 2017-11-21 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
@@ -23,44 +22,44 @@
 
 2017-11-20 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-                * get_split_seqs, split_row_data split_row_file, 
+				* get_split_seqs, split_row_data split_row_file, 
 				and split_col_data be added in R/split.R
 				* rename R/file.R to R/merge.R
 
 2017-11-18 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-                * get_files_mtime and get_files_ctime be added in R/log.R 
+				* get_files_mtime and get_files_ctime be added in R/log.R 
 
 2017-11-08 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * vignettes be added
+				* vignettes be added
 
 2017-11-07 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * merge_table_files be added
-                * reduce qualityconfirm size
+				* merge_table_files be added
+				* reduce qualityconfirm size
 
 2017-10-13 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * gvmap be added in inst/extdata/tools/
+				* gvmap be added in inst/extdata/tools/
 
 2017-10-11 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * control flag be added in extra_params of hander and mhander
-                * QualityConfirm be added in inst/extdata/tools/
+				* control flag be added in extra_params of hander and mhander
+				* QualityConfirm be added in inst/extdata/tools/
 
 2017-10-10 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
-                * muts2mutation_mapper, muts2oncoprinter and fusions2oncoprinter be added in R/cbioportal_trasefer.R
-                * inst/extdata/config/cbioportal.toml be added
-                * reducing redundant code
+				* muts2mutation_mapper, muts2oncoprinter and fusions2oncoprinter be added in R/cbioportal_trasefer.R
+				* inst/extdata/config/cbioportal.toml be added
+				* reducing redundant code
 
 2017-09-30 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-                * R/hander.R, R/mhander.R and R/filter.R be added
-                * inst/extdata/config/filter.toml, hander.toml be added
-                * hander and mhander functions be added
-                * rename mut2pp and fusion2pp
-                * inst/extdata/config/hander.toml and mhander.toml be added
-                * hander_confg_file and mhander_confg_file API be added
-                * show_handers and show_mhanders be added
+				* R/hander.R, R/mhander.R and R/filter.R be added
+				* inst/extdata/config/filter.toml, hander.toml be added
+				* hander and mhander functions be added
+				* rename mut2pp and fusion2pp
+				* inst/extdata/config/hander.toml and mhander.toml be added
+				* hander_confg_file and mhander_confg_file API be added
+				* show_handers and show_mhanders be added
 
 2017-09-29 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
-                * age, gender and fusions format of proteinpaint be added in R/proteinpaint_utils.R
-                * mut2pp, fusion2pp and fusion2pp_meta be added in R/proteinpaint_transefer.R
+				* age, gender and fusions format of proteinpaint be added in R/proteinpaint_utils.R
+				* mut2pp, fusion2pp and fusion2pp_meta be added in R/proteinpaint_transefer.R
