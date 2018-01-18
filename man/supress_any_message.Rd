@@ -13,5 +13,5 @@ supress_any_message(...)
 suppressWarnings(suppressMessages(...))
 }
 \examples{
-supress_any_message(data.table)
+supress_any_message(ls())
 }

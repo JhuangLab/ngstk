@@ -78,7 +78,7 @@ get_files_ctime <- function(input_files = NULL, files_dir = NULL, pattern = ".*.
 #' @param ... Paramerters pass to downstream functions
 #' @export
 #' @examples
-#' supress_any_message(data.table)
+#' supress_any_message(ls())
 supress_any_message <- function(...) {
   suppressWarnings(suppressMessages(...))
 }
