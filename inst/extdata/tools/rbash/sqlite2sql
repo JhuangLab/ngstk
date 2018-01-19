@@ -1,0 +1,2 @@
+#!/bin/bash
+Rscript -e "annovarR::sqlite2sql(dbname='$1', out.sql = '$2')"

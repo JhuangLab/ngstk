@@ -1,0 +1,2 @@
+#!/bin/bash
+Rscript -e "BioInstaller::craw.all.versions('$1')"

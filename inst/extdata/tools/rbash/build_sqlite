@@ -1,0 +1,2 @@
+#!/bin/bash
+Rscript -e "annovarR::sqlite.auto.build(anno.name = '$1', database.dir = '$2')"
