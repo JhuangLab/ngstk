@@ -2,7 +2,7 @@ Package: ngstk
 Type: Package
 Title: Next-Generation Sequencing (NGS) Data Analysis Toolkit
 Version: 0.2.1.1
-Authors@R: person("Jianfeng", "Li", email = "lee_jianfeng@sjtu.edu.cn", role = c("aut", "cre"))
+Authors@R: person("Jianfeng", "Li", email = "lee_jianfeng@sjtu.edu.cn", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2349-208X"))
 Description:
     Can be used to facilitate the analysis of NGS data, such as visualization, conversion of data format for WEB service input and other purpose.
 Depends:
