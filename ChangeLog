@@ -1,3 +1,7 @@
+2018-03-10 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
+
+		* add ANNOVAR create_index.pl in inst/extdata/tools/annovar
+
 2018-01-25 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
 		* add ggsci package collected colors
