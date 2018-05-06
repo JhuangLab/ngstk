@@ -6,7 +6,7 @@ sudo: required
 cache: packages
 
 r:
-  - devel
+  - release
 
 os:
   - linux
@@ -22,6 +22,10 @@ r_packages:
   - configr
   - data.table
   - prettydoc
+
+brew_packages:
+  - llvm
+  - gcc
 
 after_failure:
   - ./travis-tool.sh dump_logs
