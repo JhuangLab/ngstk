@@ -1,0 +1,20 @@
+template:
+  package: lifetemplate
+  default_assets: true
+
+home:
+  strip_header: true
+
+navbar:
+  title: ~
+  type: default
+  left:
+  - text: Get started
+    href: articles/ngstk.html
+  - text: Reference
+    href: reference/index.html
+  - text: News
+    href: news/index.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/JhuangLab/ngstk

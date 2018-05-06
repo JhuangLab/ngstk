@@ -3,5 +3,8 @@
 ^\.Rproj\.user$
 ^.*\.test
 ^data-raw$
-.travis.yml
-Makefile
+^.travis.yml$
+^Makefile$
+^_pkgdown.yml$
+^README.Rmd$
+^Dockerfile$

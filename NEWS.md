@@ -1,6 +1,6 @@
-# ngstk v0.2.2
+# ngstk 0.2.1
 
-## Theme
+## New Features
 
-- add ggsci package collected colors
+* add ggsci package collected colors
 
