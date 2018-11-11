@@ -5,8 +5,9 @@
 \title{Process the input file a batch of one batch}
 \usage{
 batch_file(filename = "", batch_lines = 1e+07, handler = NULL,
-  param_names = c("x", "i"), extra_fread_params = list(sep = "\\n", header =
-  FALSE, return_1L = TRUE), extra_params = list(), start_index = 1)
+  param_names = c("x", "i"), extra_fread_params = list(sep = "\\n",
+  header = FALSE, return_1L = TRUE), extra_params = list(),
+  start_index = 1)
 }
 \arguments{
 \item{filename}{Filename need to process}

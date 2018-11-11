@@ -5,8 +5,8 @@
 #' @param files_dir Directory name of input files
 #' @param pattern Use regular expression to select files in files_dir
 #' @param do.rename If set TRUE, it will do rename step
-#' @param profix Profix of filenames added in those without the same profix
-#' @param prefix Prefix of filenames added in those without the same profix
+#' @param prefix Prefix of filenames added in those without the same prefix
+#' @param suffix Profix of filenames added in those without the same suffix
 #' @param replace Use str_replace to replace all old to new separately
 #' @param toupper Filenames toupper, default is FALSE
 #' @param tolower Filenames tolower, default is FALSE
@@ -14,9 +14,9 @@
 #' @examples 
 #' files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
 #' pattern <- '*.txt'
-#' x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
+#' x <- format_filenames(files_dir = files_dir, pattern = pattern, suffix = 'hg38_')
 format_filenames <- function(input_files = NULL, files_dir = NULL, pattern = ".*.txt", 
-  do.rename = FALSE, profix = "", prefix = "", replace = list(old = c("-", "__"), 
+  do.rename = FALSE, suffix = "", prefix = "", replace = list(old = c("-", "__"), 
     new = c("_", "_")), toupper = FALSE, tolower = FALSE) {
   
   input_files <- get_files(input_files, files_dir, pattern)
@@ -41,16 +41,16 @@ format_filenames <- function(input_files = NULL, files_dir = NULL, pattern = ".*
   }
   
   filenames.new <- sapply(filenames.new, function(x) {
-    if (!str_detect(x, paste0("^", profix))) {
-      return(paste0(profix, x))
+    if (!str_detect(x, paste0("^", prefix))) {
+      return(paste0(prefix, x))
     } else {
       return(x)
     }
   })
   
   filenames.new <- sapply(filenames.new, function(x) {
-    if (!str_detect(x, sprintf("%s$", prefix))) {
-      return(paste0(profix, x))
+    if (!str_detect(x, sprintf("%s$", suffix))) {
+      return(paste0(x, suffix))
     } else {
       return(x)
     }

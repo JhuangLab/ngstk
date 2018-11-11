@@ -5,12 +5,13 @@
 \title{Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.}
 \usage{
 fusions2pp_meta(input_data, input_type = "fusioncatcher",
-  config_file = system.file("extdata", "config/proteinpaint.toml", package =
-  "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata",
-  "config/handler.toml", package = "ngstk"),
-  mhandler_confg_file = system.file("extdata", "config/mhandler.toml", package
-  = "ngstk"), handler_funs = NULL, mhandler_funs = NULL,
-  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL)
+  config_file = system.file("extdata", "config/proteinpaint.toml",
+  package = "ngstk"), config_list = NULL,
+  handler_confg_file = system.file("extdata", "config/handler.toml",
+  package = "ngstk"), mhandler_confg_file = system.file("extdata",
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL,
+  mhandler_funs = NULL, handler_extra_params = NULL,
+  mhandler_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A gene fusions data.frame need to be converted to ProteinPaint input.}

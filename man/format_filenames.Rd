@@ -5,9 +5,10 @@
 \title{Function to format filenames that can be used to unify the filenames style for 
 more easily download or use}
 \usage{
-format_filenames(input_files = NULL, files_dir = NULL, pattern = ".*.txt",
-  do.rename = FALSE, profix = "", prefix = "", replace = list(old =
-  c("-", "__"), new = c("_", "_")), toupper = FALSE, tolower = FALSE)
+format_filenames(input_files = NULL, files_dir = NULL,
+  pattern = ".*.txt", do.rename = FALSE, suffix = "", prefix = "",
+  replace = list(old = c("-", "__"), new = c("_", "_")),
+  toupper = FALSE, tolower = FALSE)
 }
 \arguments{
 \item{input_files}{Basename of files that need to be format, default is NULL 
@@ -19,9 +20,9 @@ and use the regular expression pattern to select files}
 
 \item{do.rename}{If set TRUE, it will do rename step}
 
-\item{profix}{Profix of filenames added in those without the same profix}
+\item{suffix}{Profix of filenames added in those without the same suffix}
 
-\item{prefix}{Prefix of filenames added in those without the same profix}
+\item{prefix}{Prefix of filenames added in those without the same prefix}
 
 \item{replace}{Use str_replace to replace all old to new separately}
 
@@ -36,5 +37,5 @@ more easily download or use
 \examples{
 files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
 pattern <- '*.txt'
-x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
+x <- format_filenames(files_dir = files_dir, pattern = pattern, suffix = 'hg38_')
 }

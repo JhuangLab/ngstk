@@ -6,8 +6,8 @@
 \usage{
 show_handlers(handler_lib = "default_handlers", show_all_funs = TRUE,
   show_code = NULL, show_description = FALSE,
-  handler_confg_file = system.file("extdata", "config/handler.toml", package =
-  "ngstk"))
+  handler_confg_file = system.file("extdata", "config/handler.toml",
+  package = "ngstk"))
 }
 \arguments{
 \item{handler_lib}{handler lib name}

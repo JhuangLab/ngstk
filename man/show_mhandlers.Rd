@@ -4,10 +4,10 @@
 \alias{show_mhandlers}
 \title{Function to show all avaliabe mhandler function}
 \usage{
-show_mhandlers(mhandler_lib = "default_mhandlers", show_all_funs = TRUE,
-  show_code = NULL, show_description = FALSE,
-  mhandler_confg_file = system.file("extdata", "config/mhandler.toml", package
-  = "ngstk"))
+show_mhandlers(mhandler_lib = "default_mhandlers",
+  show_all_funs = TRUE, show_code = NULL, show_description = FALSE,
+  mhandler_confg_file = system.file("extdata", "config/mhandler.toml",
+  package = "ngstk"))
 }
 \arguments{
 \item{mhandler_lib}{handler lib name}

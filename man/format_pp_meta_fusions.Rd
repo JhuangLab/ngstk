@@ -4,7 +4,8 @@
 \alias{format_pp_meta_fusions}
 \title{To format ProteinPaint input meta data of gender}
 \usage{
-format_pp_meta_fusions(raw_meta, outfn = NULL, fusions_color = NULL, ...)
+format_pp_meta_fusions(raw_meta, outfn = NULL, fusions_color = NULL,
+  ...)
 }
 \arguments{
 \item{raw_meta}{A data.frame contain cols of 'sample', 

@@ -6,11 +6,12 @@
 \usage{
 fusions_filter(input_data, input_type = "common",
   config_file = system.file("extdata", "config/filter.toml", package =
-  "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata",
-  "config/handler.toml", package = "ngstk"),
-  mhandler_confg_file = system.file("extdata", "config/mhandler.toml", package
-  = "ngstk"), handler_funs = NULL, mhandler_funs = NULL,
-  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL)
+  "ngstk"), config_list = NULL,
+  handler_confg_file = system.file("extdata", "config/handler.toml",
+  package = "ngstk"), mhandler_confg_file = system.file("extdata",
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL,
+  mhandler_funs = NULL, handler_extra_params = NULL,
+  mhandler_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A data frame containing the fusions cols (gene5, gene3, fusion_type)}

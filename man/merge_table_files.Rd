@@ -7,10 +7,10 @@
 merge_table_files(input_files = NULL, files_dir = NULL,
   pattern = ".*.txt", outfn = NULL, add.filename = TRUE,
   read_fun = "read.table", read_params_file = "file",
-  read_params = list(sep = "\\t", header = TRUE), write_fun = "write.table",
-  write_params_x = "x", write_params_file = "file",
-  write_params = list(sep = "\\t", row.names = FALSE),
-  op = list(stringsAsFactors = FALSE))
+  read_params = list(sep = "\\t", header = TRUE),
+  write_fun = "write.table", write_params_x = "x",
+  write_params_file = "file", write_params = list(sep = "\\t",
+  row.names = FALSE), op = list(stringsAsFactors = FALSE))
 }
 \arguments{
 \item{input_files}{Basename of files that need to be merged, default is NULL 

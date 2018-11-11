@@ -6,12 +6,13 @@
 \url{http://www.cbioportal.org/mutation_mapper.jsp} input format.}
 \usage{
 muts2mutation_mapper(input_data, input_type = "iseq",
-  config_file = system.file("extdata", "config/cbioportal.toml", package =
-  "ngstk"), config_list = NULL, handler_confg_file = system.file("extdata",
-  "config/handler.toml", package = "ngstk"),
-  mhandler_confg_file = system.file("extdata", "config/mhandler.toml", package
-  = "ngstk"), handler_funs = NULL, mhandler_funs = NULL,
-  handler_extra_params = NULL, mhandler_extra_params = NULL, outfn = NULL)
+  config_file = system.file("extdata", "config/cbioportal.toml", package
+  = "ngstk"), config_list = NULL,
+  handler_confg_file = system.file("extdata", "config/handler.toml",
+  package = "ngstk"), mhandler_confg_file = system.file("extdata",
+  "config/mhandler.toml", package = "ngstk"), handler_funs = NULL,
+  mhandler_funs = NULL, handler_extra_params = NULL,
+  mhandler_extra_params = NULL, outfn = NULL)
 }
 \arguments{
 \item{input_data}{A mutation data.frame need to be converted to ProteinPaint input.}

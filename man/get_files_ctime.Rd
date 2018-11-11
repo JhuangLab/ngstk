@@ -5,8 +5,8 @@
 \title{Function to check file create time and 
 according the requirement to return check value}
 \usage{
-get_files_ctime(input_files = NULL, files_dir = NULL, pattern = ".*.txt",
-  return_ctime = TRUE, return_check = TRUE,
+get_files_ctime(input_files = NULL, files_dir = NULL,
+  pattern = ".*.txt", return_ctime = TRUE, return_check = TRUE,
   check_time_fun = function(files_ctime) {     all(files_ctime ==
   files_ctime[1]) })
 }

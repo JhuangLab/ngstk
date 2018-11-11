@@ -4,11 +4,11 @@
 \alias{split_row_file}
 \title{Function to split big file to a series small files (by row)}
 \usage{
-split_row_file(filename, each_file_lines = 100, use_system_split = FALSE,
-  system_split_params = "_split", write_fun = "write.table",
-  write_params_x = "x", write_params_file = "file",
-  write_params = list(sep = "", row.names = FALSE, col.names = FALSE, quote =
-  FALSE))
+split_row_file(filename, each_file_lines = 100,
+  use_system_split = FALSE, system_split_params = "_split",
+  write_fun = "write.table", write_params_x = "x",
+  write_params_file = "file", write_params = list(sep = "", row.names =
+  FALSE, col.names = FALSE, quote = FALSE))
 }
 \arguments{
 \item{filename}{Filename that need to be split}

@@ -5,8 +5,8 @@
 \title{To format ProteinPaint input meta data of gender}
 \usage{
 format_pp_meta_gender(raw_meta, outfn = NULL, gender_group = "Gender",
-  male_value = "Male", female_value = "Female", male_color = "#c20b01",
-  female_color = "#196abd", ...)
+  male_value = "Male", female_value = "Female",
+  male_color = "#c20b01", female_color = "#196abd", ...)
 }
 \arguments{
 \item{raw_meta}{A data.frame contain cols of 'sample', 

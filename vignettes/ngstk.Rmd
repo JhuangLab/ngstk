@@ -208,7 +208,7 @@ split_row_file(outfn)
 files_dir <- system.file('extdata', 'demo/format', package = 'ngstk')
 pattern <- '*.txt'
 list.files(files_dir, pattern)
-x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
+x <- format_filenames(files_dir = files_dir, pattern = pattern, prefix = 'hg38_')
 x
 ```
 

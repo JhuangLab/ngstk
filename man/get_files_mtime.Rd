@@ -5,8 +5,8 @@
 \title{Function to check file last change time and 
 according the requirement to return check value}
 \usage{
-get_files_mtime(input_files = NULL, files_dir = NULL, pattern = ".*.txt",
-  return_mtime = TRUE, return_check = TRUE,
+get_files_mtime(input_files = NULL, files_dir = NULL,
+  pattern = ".*.txt", return_mtime = TRUE, return_check = TRUE,
   check_time_fun = function(files_mtime) {     all(files_mtime ==
   files_mtime[1]) })
 }
