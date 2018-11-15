@@ -31,9 +31,9 @@ A list
 Function to download multiple file at the same time.
 }
 \examples{
-urls <- c(paste0("https://raw.githubusercontent.com/",
-"Miachol/ftp/master/files/images/bioinstaller/maftools3.png"), 
-paste0("https://raw.githubusercontent.com/",
-"Miachol/ftp/master/files/images/bioinstaller/maftools4.png"))
-par_download(urls, sprintf("\%s/\%s", tempdir(), basename(urls)))
+urls <- c(paste0('https://raw.githubusercontent.com/',
+'Miachol/ftp/master/files/images/bioinstaller/maftools3.png'), 
+paste0('https://raw.githubusercontent.com/',
+'Miachol/ftp/master/files/images/bioinstaller/maftools4.png'))
+par_download(urls, sprintf('\%s/\%s', tempdir(), basename(urls)))
 }

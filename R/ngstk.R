@@ -14,4 +14,5 @@
 #' @name ngstk
 #' @import stringr configr utils data.table future
 #' @importFrom stringi stri_rand_strings
+#' @importFrom parallel makeCluster stopCluster
 NULL
