@@ -1,6 +1,7 @@
 2018-11-17 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
 		* extend optpase using functions opt_parser and print_help 
+		* add function rbin
 
 2018-11-15 Li Jianfeng <lee_jianfeng@sjtu.edu.cn>
 
