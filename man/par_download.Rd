@@ -22,6 +22,8 @@ to be downloaded.}
 
 \item{logfn_func}{Function to define the log files}
 
+\item{parallel_method}{Method for future parallel [plan(multiprocess)]}
+
 \item{...}{Other params pass to \code{\link{download.file}}}
 }
 \value{

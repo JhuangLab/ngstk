@@ -6,6 +6,7 @@
 #' @param logdir Directory to store the download logs [tempdir()]
 #' @param ids_func Function to define the returned ids
 #' @param logfn_func Function to define the log files
+#' @param parallel_method Method for future parallel [plan(multiprocess)]
 #' @param ... Other params pass to \code{\link{download.file}}
 #' @export
 #' @return A list
@@ -26,8 +27,8 @@ par_download <- function(urls, destfiles = NULL, logdir = sprintf("%s/logs", tem
     warning(sprintf("%s is not character.", paste0(urls[!is_fine], collapse = ", ")))
   if (is.null(destfiles)) 
     destfiles <- basename(urls)
-  if (length(destfiles) != length(urls))
-      stop("Please keep the same nums: urls and destfiles")
+  if (length(destfiles) != length(urls)) 
+    stop("Please keep the same nums: urls and destfiles")
   eval(parse(text = parallel_method))
   ids <- do.call(ids_func, list(urls = urls))
   logs <- do.call(logfn_func, list(ids = ids, logdir = logdir))
@@ -50,9 +51,9 @@ par_download <- function(urls, destfiles = NULL, logdir = sprintf("%s/logs", tem
   }
   status <- lapply(status, FUN = value)
   if (length(grep("makeCluster", parallel_method)) > 0) {
-      x <- str_split(parallel_method, " =| <-")[[1]][1]
-      x <- str_replace_all(x, " ,", "")
-      do.call(stopCluster, list(x))
+    x <- str_split(parallel_method, " =| <-")[[1]][1]
+    x <- str_replace_all(x, " ,", "")
+    do.call(stopCluster, list(x))
   }
   return(status)
 }

@@ -15,4 +15,5 @@
 #' @import stringr configr utils data.table future
 #' @importFrom stringi stri_rand_strings
 #' @importFrom parallel makeCluster stopCluster
+#' @importFrom optparse OptionParser make_option parse_args parse_args2
 NULL
