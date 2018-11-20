@@ -145,6 +145,43 @@ list.files(files_dir, pattern)
 x <- format_filenames(files_dir = files_dir, pattern = pattern, profix = 'hg38_')
 ```
 
+### Command line utils functions
+
+``` r
+# Collect command line bins files in R package
+rbin('ngstk', tempdir())
+
+# Print sub commands
+option_list <- list(
+  make_option(c('-l', '--list-all-subcmds'), action = 'store_true',
+               default = FALSE, help = 'Print all supported subcmds of ngsjs.')
+ )
+subcmds_list <- list(subcmd1 = 'Use method 1 to plot boxplot',
+                      subcmd2 = 'Use method 2 to plot boxplot')
+ description <- 'Method to plot boxplot'
+ usage <- 'usage: %prog [options] [params]'
+ opt_parser_obj <- opt_parser(subcmds_list = subcmds_list,
+                             option_list = option_list,
+                             description = description,
+                             usage = usage)
+
+# Print the command line message
+# You can define the message order use 
+# paramter help_order = c("description", "usage", "options", "subcmds", "epilogue"
+print_help(opt_parser_obj)
+```
+
+# Download functions
+
+``` r
+# Use future package to parallel download urls with logs
+urls <- c(paste0('https://raw.githubusercontent.com/',
+ 'Miachol/ftp/master/files/images/bioinstaller/maftools3.png'), 
+ paste0('https://raw.githubusercontent.com/',
+ 'Miachol/ftp/master/files/images/bioinstaller/maftools4.png'))
+ par_download(urls, sprintf('%s/%s', tempdir(), basename(urls)))
+```
+
 ### Colors
 
 ``` r

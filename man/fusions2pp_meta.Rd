@@ -2,7 +2,7 @@
 % Please edit documentation in R/proteinpaint_transefer.R
 \name{fusions2pp_meta}
 \alias{fusions2pp_meta}
-\title{Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.}
+\title{Function to convert fusion data to ProteinPaint heatmap meta rows format.}
 \usage{
 fusions2pp_meta(input_data, input_type = "fusioncatcher",
   config_file = system.file("extdata", "config/proteinpaint.toml",
@@ -46,7 +46,7 @@ default is NULL and get value from config_file}
 A data frame
 }
 \description{
-Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.
+Function to convert fusion data to ProteinPaint heatmap meta rows format.
 }
 \examples{
 demo_file <- system.file('extdata', 

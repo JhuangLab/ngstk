@@ -2,8 +2,8 @@
 % Please edit documentation in R/cbioportal_trasefer.R
 \name{fusions2oncoprinter}
 \alias{fusions2oncoprinter}
-\title{Function to convert mutation data to Oncoprinter
-\url{http://www.cbioportal.org/oncoprinter.jsp} input format.}
+\title{Function to convert fusion data to cbioportal Oncoprinter
+format.}
 \usage{
 fusions2oncoprinter(input_data, input_type = "fusioncatcher",
   config_file = system.file("extdata", "config/cbioportal.toml", package
@@ -47,8 +47,8 @@ default is NULL and get value from config_file}
 A data frame
 }
 \description{
-Function to convert mutation data to Oncoprinter
-\url{http://www.cbioportal.org/oncoprinter.jsp} input format.
+Function to convert fusion data to cbioportal Oncoprinter
+format.
 }
 \examples{
 demo_file <- system.file('extdata', 

@@ -1,5 +1,5 @@
-#' Function to convert mutation data to MutationMapper
-#' \url{http://www.cbioportal.org/mutation_mapper.jsp} input format.
+#' Function to convert mutation data to cbioportal MutationMapper
+#' format.
 #'
 #' @param input_data A mutation data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (iseq or others)
@@ -41,8 +41,8 @@ muts2mutation_mapper <- function(input_data, input_type = "iseq", config_file = 
     outfn, "muts2mutation_mapper", "default_handler_api", "default_mhandler_api")
 }
 
-#' Function to convert mutation data to Oncoprinter
-#' \url{http://www.cbioportal.org/oncoprinter.jsp} input format.
+#' Function to convert mutation data to cbioportal Oncoprinter
+#' format.
 #'
 #' @param input_data A mutation data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (iseq or others)
@@ -83,8 +83,8 @@ muts2oncoprinter <- function(input_data, input_type = "iseq", config_file = syst
     outfn, "muts2oncoprinter", "default_handler_api", "default_mhandler_api")
 }
 
-#' Function to convert mutation data to Oncoprinter
-#' \url{http://www.cbioportal.org/oncoprinter.jsp} input format.
+#' Function to convert fusion data to cbioportal Oncoprinter
+#' format.
 #'
 #' @param input_data A mutation data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (iseq or others)

@@ -1,4 +1,4 @@
-#' Function to convert mutation data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
+#' Function to convert mutation data to ProteinPaint format.
 #'
 #' @param input_data A mutation data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (iseq or others)
@@ -40,7 +40,7 @@ muts2pp <- function(input_data, input_type = "iseq", config_file = system.file("
     outfn, "muts2pp", "default_handler_api", "default_mhandler_api")
 }
 
-#' Function to convert fusion data to ProteinPaint \url{https://pecan.stjude.org/pp} input format.
+#' Function to convert fusion data to ProteinPaint format.
 #'
 #' @param input_data A gene fusions data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (fusioncatcher or others)
@@ -81,7 +81,7 @@ fusions2pp <- function(input_data, input_type = "fusioncatcher", config_file = s
     outfn, "fusions2pp", "default_handler_api", "default_mhandler_api")
 }
 
-#' Function to convert fusion data to ProteinPaint heatmap meta rows \url{https://pecan.stjude.org/pp} input format.
+#' Function to convert fusion data to ProteinPaint heatmap meta rows format.
 #'
 #' @param input_data A gene fusions data.frame need to be converted to ProteinPaint input.
 #' @param input_type Point the input data format (fusioncatcher or others)
