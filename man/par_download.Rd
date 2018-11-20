@@ -7,7 +7,7 @@
 par_download(urls, destfiles = NULL, logdir = sprintf("\%s/logs",
   tempdir()), ids_func = function(urls) {     stri_rand_strings(n =
   length(urls), length = 20) }, logfn_func = function(ids, logdir) {    
-  sprintf("\%s/\%s.log", logdir, ids) },
+  normalizePath(sprintf("\%s/\%s.log", logdir, ids), mustWork = FALSE) },
   parallel_method = "plan(multiprocess)", ...)
 }
 \arguments{
@@ -37,5 +37,7 @@ urls <- c(paste0('https://raw.githubusercontent.com/',
 'Miachol/ftp/master/files/images/bioinstaller/maftools3.png'), 
 paste0('https://raw.githubusercontent.com/',
 'Miachol/ftp/master/files/images/bioinstaller/maftools4.png'))
+\dontrun{
 par_download(urls, sprintf('\%s/\%s', tempdir(), basename(urls)))
+}
 }

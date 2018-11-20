@@ -15,12 +15,14 @@
 #' 'Miachol/ftp/master/files/images/bioinstaller/maftools3.png'), 
 #' paste0('https://raw.githubusercontent.com/',
 #' 'Miachol/ftp/master/files/images/bioinstaller/maftools4.png'))
+#' \dontrun{
 #' par_download(urls, sprintf('%s/%s', tempdir(), basename(urls)))
+#' }
 par_download <- function(urls, destfiles = NULL, logdir = sprintf("%s/logs", tempdir()), 
   ids_func = function(urls) {
     stri_rand_strings(n = length(urls), length = 20)
   }, logfn_func = function(ids, logdir) {
-    sprintf("%s/%s.log", logdir, ids)
+    normalizePath(sprintf("%s/%s.log", logdir, ids), mustWork = FALSE)
   }, parallel_method = "plan(multiprocess)", ...) {
   is_fine <- is.character(urls)
   if (!all(is_fine)) 
@@ -30,6 +32,7 @@ par_download <- function(urls, destfiles = NULL, logdir = sprintf("%s/logs", tem
   if (length(destfiles) != length(urls)) 
     stop("Please keep the same nums: urls and destfiles")
   eval(parse(text = parallel_method))
+  destfiles <- normalizePath(destfiles, mustWork = FALSE)
   ids <- do.call(ids_func, list(urls = urls))
   logs <- do.call(logfn_func, list(ids = ids, logdir = logdir))
   if (!dir.exists(logdir)) 

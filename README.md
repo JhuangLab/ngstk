@@ -106,7 +106,7 @@ mhander_extra_params = list(gene_5 = 1, gene_3 = 2, left_gene = "GYPE", right_ge
 result_5 <- fusions_filter(input_data, mhander_extra_params = mhander_extra_params)
 ```
 
-### Mtime and Ctime
+### Times
 
 ``` r
 file_a <- tempfile()
@@ -117,6 +117,9 @@ x2 <- get_files_mtime(input_files = c(file_a, file_b), return_check = FALSE)
 x3 <- get_files_mtime(input_files = c(file_a, file_b), return_mtime = FALSE)
 x4 <- get_files_ctime(input_files = c(file_a, file_b))
 x5 <- get_files_ctime(input_files = c(file_a, file_b), return_check = FALSE)
+
+# time stamp
+time_stamp()
 ```
 
 ### Data split
@@ -171,7 +174,7 @@ subcmds_list <- list(subcmd1 = 'Use method 1 to plot boxplot',
 print_help(opt_parser_obj)
 ```
 
-# Download functions
+### Download functions
 
 ``` r
 # Use future package to parallel download urls with logs
